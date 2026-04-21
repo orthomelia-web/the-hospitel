@@ -291,9 +291,9 @@
   @media (max-width:900px){.journal{padding:5rem 1.2rem}.journal-grid{grid-template-columns:1fr;gap:2.5rem}}
 
   /* FULL BLEED IMAGE */
-  .bleed{position:relative;height:60vh;min-height:420px;overflow:hidden;isolation:isolate}
+  .bleed{position:relative;min-height:100vh;min-height:100svh;overflow:hidden;isolation:isolate}
   .bleed::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(13,13,16,.35),rgba(13,13,16,.55))}
-  .bleed-text{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:1;text-align:center;padding:2rem}
+  .bleed-text{position:sticky;top:0;height:100vh;height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:1;text-align:center;padding:2rem}
   .bleed-text .ey{font-family:var(--sans-en);font-size:.75rem;letter-spacing:.5em;text-transform:uppercase;color:var(--accent);margin-bottom:1.5rem;text-shadow:0 2px 6px rgba(0,0,0,.8)}
   .bleed-text h3{font-family:var(--serif-jp);font-weight:500;font-size:clamp(1.5rem,3vw,2.5rem);letter-spacing:.2em;line-height:1.8;color:#fbf8f1;max-width:30em;margin:0 auto;text-shadow:0 2px 16px rgba(0,0,0,.8)}
   @media (max-width:700px){.bleed{height:50vh;min-height:340px}}
@@ -423,7 +423,7 @@
       <div class="label">Reservation</div>
       <a href="mailto:info@the-hospitel.jp" class="contact">info@the-hospitel.jp</a>
       <div class="label">Location</div>
-      <p data-i18n="menu.aside.location" style="font-size:.85rem;margin-bottom:0">東京都内 / Tokyo Private Residence</p>
+      <p data-i18n="menu.aside.location" style="font-size:.85rem;margin-bottom:0">東京都墨田区東向島 1-20-13</p>
     </aside>
   </div>
 </div>
@@ -490,7 +490,7 @@
         <dt>Type</dt><dd data-i18n="feature.type">1棟貸し / Private Residence</dd>
         <dt>Capacity</dt><dd data-i18n="feature.capacity">1日1組限定</dd>
         <dt>Design</dt><dd>Doctor-Curated Sleep Design</dd>
-        <dt>Location</dt><dd data-i18n="feature.location">東京都内 / Tokyo</dd>
+        <dt>Location</dt><dd data-i18n="feature.location">東京都墨田区東向島 1-20-13</dd>
       </dl>
     </div>
   </div>
@@ -853,7 +853,7 @@
       "hero.meta.group": "<b>1日1組</b>One Group / Night",
 
       "menu.aside.intro": "医師監修・安眠特化型の1軒家ホテル。医学と宿泊体験の境界で、ひと夜の質を設計する場所。",
-      "menu.aside.location": "東京都内 / Tokyo Private Residence",
+      "menu.aside.location": "東京都墨田区東向島 1-20-13",
 
       "prologue.h2": "夜の質が、<br /><em>旅の質</em>を決める。",
       "prologue.p1": "旅の魅力を心ゆくまで味わうための、上質な一晩を。",
@@ -865,7 +865,7 @@
       "feature.p2": "中に入れば、ダーク基調の内装、やわらかな間接照明、香りのない清浄な空気——すべてが深い眠りへと意識を誘うよう設計されています。",
       "feature.type": "1棟貸し / Private Residence",
       "feature.capacity": "1日1組限定",
-      "feature.location": "東京都内 / Tokyo",
+      "feature.location": "東京都墨田区東向島 1-20-13",
 
       "story.h2": "開業への、<em>想い</em>。",
       "story.lead": "日本という素晴らしい国を、もっと多くの方に知ってほしい。",
@@ -964,7 +964,7 @@
       "hero.meta.group": "<b>One Group</b>Per Night",
 
       "menu.aside.intro": "A doctor-curated private villa for deep sleep. At the border of medicine and hospitality — a place that shapes the quality of a single night.",
-      "menu.aside.location": "Tokyo · Private Residence",
+      "menu.aside.location": "1-20-13 Higashi-Mukojima, Sumida-ku, Tokyo",
 
       "prologue.h2": "The night<br />shapes <em>the journey</em>.",
       "prologue.p1": "One night of true quality — so the days ahead can be felt to the fullest.",
@@ -976,7 +976,7 @@
       "feature.p2": "Step inside, and the dark palette, the softness of indirect light, the clean unscented air — every detail is shaped to draw the mind toward deep sleep.",
       "feature.type": "Private Residence · Whole-House Rental",
       "feature.capacity": "One group per night",
-      "feature.location": "Tokyo, Japan",
+      "feature.location": "1-20-13 Higashi-Mukojima, Sumida-ku, Tokyo",
 
       "story.h2": "The <em>story</em><br />behind our doors.",
       "story.lead": "I want more people to experience the wonder of Japan.",
