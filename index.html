@@ -32,10 +32,16 @@
   img{max-width:100%;display:block}
 
   /* HEADER */
-  header{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.6rem 3rem;display:flex;justify-content:space-between;align-items:center;mix-blend-mode:difference;color:#fff}
-  .brand{font-family:var(--serif-en);font-size:1rem;letter-spacing:.4em;font-weight:400}
+  header{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.6rem 3rem;display:flex;justify-content:space-between;align-items:center;gap:2rem;mix-blend-mode:difference;color:#fff}
+  .brand{font-family:var(--serif-en);font-size:1rem;letter-spacing:.4em;font-weight:400;flex-shrink:0}
   .brand .dot{color:var(--gold);margin:0 .3em}
-  .menu-trigger{display:flex;align-items:center;gap:.9rem;cursor:pointer;background:transparent;border:none;color:inherit;padding:.4rem 0;font-family:var(--sans-en);font-size:.72rem;letter-spacing:.4em;text-transform:uppercase;transition:opacity .3s}
+  .header-nav{flex:1;display:flex;justify-content:center}
+  .header-nav ul{display:flex;gap:2rem;list-style:none;align-items:center}
+  .header-nav a{display:inline-flex;flex-direction:column;align-items:center;gap:.25rem;font-family:var(--sans-en);font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;font-weight:400;opacity:.85;line-height:1;transition:opacity .3s}
+  .header-nav a .jp{font-family:var(--serif-jp);font-size:.58rem;letter-spacing:.25em;opacity:.7;text-transform:none;font-weight:500}
+  .header-nav a:hover{opacity:1}
+  @media (max-width:1200px){.header-nav{display:none}}
+  .menu-trigger{display:flex;align-items:center;gap:.9rem;cursor:pointer;background:transparent;border:none;color:inherit;padding:.4rem 0;font-family:var(--sans-en);font-size:.72rem;letter-spacing:.4em;text-transform:uppercase;transition:opacity .3s;flex-shrink:0}
   .menu-trigger:hover{opacity:.7}
   .menu-trigger .bars{display:inline-flex;flex-direction:column;gap:5px;width:26px}
   .menu-trigger .bars span{display:block;height:1px;background:currentColor;transition:all .4s}
@@ -279,6 +285,18 @@
 
 <header>
   <div class="brand">THE<span class="dot">·</span>HOSPITEL</div>
+  <nav class="header-nav">
+    <ul>
+      <li><a href="#prologue">Prologue<span class="jp">序章</span></a></li>
+      <li><a href="#feature">Sanctuary<span class="jp">邸宅</span></a></li>
+      <li><a href="#story">Story<span class="jp">想い</span></a></li>
+      <li><a href="#spaces">Spaces<span class="jp">空間</span></a></li>
+      <li><a href="#sleep">Sleep<span class="jp">安眠</span></a></li>
+      <li><a href="#journal">Journal<span class="jp">医師の言葉</span></a></li>
+      <li><a href="#info">Info<span class="jp">施設情報</span></a></li>
+      <li><a href="#booking">Booking<span class="jp">予約</span></a></li>
+    </ul>
+  </nav>
   <button class="menu-trigger" id="menu-open" aria-label="Open menu">
     <span>Menu</span>
     <span class="bars" aria-hidden="true"><span></span><span></span></span>
