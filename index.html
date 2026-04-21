@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <title>THE HOSPITEL | 医師監修・安眠特化型 1軒家ホテル</title>
-<meta name="description" content="医師監修・安眠特化型の1軒家ホテル「THE HOSPITEL」。サーカディアンリズム照明、ドクターズチョイス寝具、薬膳風呂など、医学の英知で設計された深い眠りで、旅の疲れを癒す。" />
+<meta name="description" content="医師監修・安眠特化型の1軒家ホテル「THE HOSPITEL」。サーカディアンリズム照明、医師が厳選した高品質寝具、薬膳風呂など、医学の英知で設計された深い眠りで、旅の疲れを癒す。" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Shippori+Mincho:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -250,7 +250,29 @@
   .sleep-row.is-open .sleep-toggle .label-open{display:none}
   .sleep-toggle .label-close{display:none}
   .sleep-row.is-open .sleep-toggle .label-close{display:inline}
-  @media (max-width:900px){.sleep{padding:5rem 1.2rem}.sleep-head{grid-template-columns:1fr;gap:1.5rem}.sleep-row{grid-template-columns:48px 1fr;gap:.8rem 1rem;padding:2rem 0}.sleep-row > div:nth-child(3){grid-column:1/-1;margin-top:.5rem}.sleep-row .thumb{grid-column:1/-1;aspect-ratio:16/9;margin-top:.8rem}.sleep-row h3{font-size:1.1rem;letter-spacing:.1em}.sleep-row h3 .en{font-size:.65rem;letter-spacing:.25em;margin-top:.4rem}.sleep-row .num{font-size:1.8rem}.sleep-row p{font-size:.93rem;line-height:1.95}.sleep-specs li{font-size:.68rem;padding:.35rem .7rem}}
+  @media (max-width:900px){
+    .sleep{padding:5rem 0 0;overflow:hidden}
+    .sleep-inner{padding:0 1.2rem}
+    .sleep-head{grid-template-columns:1fr;gap:1.5rem}
+    .sleep-list{border-top:none;margin-top:3rem}
+
+    .sleep-row{display:block;grid-template-columns:none;gap:0;padding:5rem 1.8rem;min-height:100vh;min-height:100svh;position:relative;overflow:hidden;isolation:isolate;border-bottom:1px solid rgba(255,255,255,.08)}
+    .sleep-row:hover{background:transparent}
+    .sleep-row::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,13,16,.4) 0%,rgba(13,13,16,.72) 45%,rgba(13,13,16,.92) 100%);z-index:0;pointer-events:none}
+
+    .sleep-row .thumb{position:sticky;top:0;width:100%;height:100vh;height:100svh;aspect-ratio:auto;background-size:cover;background-position:center;margin:0 0 calc(-100vh);margin:0 0 calc(-100svh);filter:none;border:none;z-index:-1}
+    .sleep-row:hover .thumb{filter:none;border:none}
+
+    .sleep-row > div:not(.thumb){position:relative;z-index:1}
+    .sleep-row > .num{font-family:var(--serif-en);font-size:2rem;color:var(--gold);margin-bottom:1.2rem}
+    .sleep-row > div:nth-child(2) h3{color:#fbf8f1;font-size:1.3rem;letter-spacing:.12em;margin-bottom:1.5rem;line-height:1.6}
+    .sleep-row > div:nth-child(2) h3 .en{color:var(--gold);font-size:.7rem;letter-spacing:.3em;margin-top:.6rem;opacity:.9}
+    .sleep-row > div:nth-child(3){margin-top:.8rem}
+    .sleep-row > div:nth-child(3) p{color:#e0dcd0;font-size:.95rem;line-height:2;max-width:none;text-shadow:0 1px 4px rgba(0,0,0,.5)}
+    .sleep-specs{gap:.5rem .6rem}
+    .sleep-specs li{font-size:.68rem;padding:.4rem .8rem;background:rgba(13,13,16,.5);border-color:rgba(200,169,106,.3);color:#e0d9c4}
+    .sleep-toggle{color:var(--gold);margin-top:1.8rem}
+  }
 
   /* OPTIONS */
   .options{padding:8rem 3rem;border-bottom:1px solid var(--line-soft)}
@@ -621,7 +643,7 @@
       <div class="sleep-row" onclick="this.classList.toggle('is-open')">
         <div class="num">02</div>
         <div>
-          <h3><span data-i18n="sleep.02.h3">ドクターズチョイス寝具</span><span class="en">Curated Bedding</span></h3>
+          <h3><span data-i18n="sleep.02.h3">医師が厳選した高品質寝具</span><span class="en">Curated Bedding</span></h3>
         </div>
         <div>
           <p data-i18n="sleep.02.p">マットレス・枕・寝具のすべてを医師の視点で厳選。体圧分散と寝姿勢の最適化で、身体に負担のかからない深い眠りへと導きます。</p>
@@ -846,7 +868,7 @@
   var translations = {
     ja: {
       "meta.title": "THE HOSPITEL | 医師監修・安眠特化型 1軒家ホテル",
-      "meta.description": "医師監修・安眠特化型の1軒家ホテル「THE HOSPITEL」。サーカディアンリズム照明、ドクターズチョイス寝具、薬膳風呂など、医学の英知で設計された深い眠りで、旅の疲れを癒す。",
+      "meta.description": "医師監修・安眠特化型の1軒家ホテル「THE HOSPITEL」。サーカディアンリズム照明、医師が厳選した高品質寝具、薬膳風呂など、医学の英知で設計された深い眠りで、旅の疲れを癒す。",
 
       "hero.sub": "医師監修・安眠特化型 1軒家ホテル",
       "hero.lead": "旅の疲れを、深い眠りで解き放つ。<br />医学の英知で設計された、東京の夜の隠れ家。",
@@ -893,7 +915,7 @@
       "sleep.01.s1": "色温度 2000K–6500K 可変",
       "sleep.01.s2": "朝・昼・夕・夜の 4 シーン自動制御",
       "sleep.01.s3": "医師監修のカスタム光環境",
-      "sleep.02.h3": "ドクターズチョイス寝具",
+      "sleep.02.h3": "医師が厳選した高品質寝具",
       "sleep.02.p": "マットレス・枕・寝具のすべてを医師の視点で厳選。体圧分散と寝姿勢の最適化で、身体に負担のかからない深い眠りへと導きます。",
       "sleep.02.s1": "高密度ポケットコイル マットレス",
       "sleep.02.s2": "高さ 5 段階 × 形状 4 型の枕から選定",
@@ -942,7 +964,7 @@
       "info.capacity": "1日1組限定",
       "info.checkin": "16:00 〜",
       "info.checkout": "〜 10:00",
-      "info.amenity": "サーカディアン照明 / ドクターズチョイス寝具 / 薬膳風呂 / 薬膳茶 / ウェイクアップライト",
+      "info.amenity": "サーカディアン照明 / 医師が厳選した高品質寝具 / 薬膳風呂 / 薬膳茶 / ウェイクアップライト",
       "info.option": "デジタルデトックス / Oura Ring 睡眠分析・医師フィードバック",
 
       "booking.h2": "深い眠りを、<br />予約する。",
@@ -1004,7 +1026,7 @@
       "sleep.01.s1": "Adjustable color temperature, 2000K–6500K",
       "sleep.01.s2": "Four automated scenes: morning, midday, evening, night",
       "sleep.01.s3": "A custom light environment, curated by a doctor",
-      "sleep.02.h3": "Doctor's Choice Bedding",
+      "sleep.02.h3": "Physician-Curated Premium Bedding",
       "sleep.02.p": "Every mattress, pillow, and linen chosen from a medical perspective. Pressure distribution and sleep posture are tuned so the body carries no burden into the night.",
       "sleep.02.s1": "High-density pocket-coil mattress",
       "sleep.02.s2": "Pillows selected from 5 heights and 4 shapes",
