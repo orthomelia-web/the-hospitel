@@ -35,10 +35,11 @@
   header{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.6rem 3rem;display:flex;justify-content:space-between;align-items:center;mix-blend-mode:difference;color:#fff}
   .brand{font-family:var(--serif-en);font-size:1rem;letter-spacing:.4em;font-weight:400}
   .brand .dot{color:var(--gold);margin:0 .3em}
-  nav ul{display:flex;gap:2.4rem;list-style:none}
-  nav a{font-family:var(--sans-en);font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;font-weight:400;opacity:.85}
+  nav ul{display:flex;gap:2rem;list-style:none;align-items:center}
+  nav a{display:inline-flex;flex-direction:column;align-items:center;gap:.25rem;font-family:var(--sans-en);font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;font-weight:400;opacity:.85;line-height:1}
+  nav a .jp{font-family:var(--serif-jp);font-size:.58rem;letter-spacing:.25em;opacity:.7;text-transform:none;font-weight:500}
   nav a:hover{opacity:1}
-  @media (max-width:860px){header{padding:1rem 1.2rem;mix-blend-mode:normal;background:rgba(13,13,16,.75);backdrop-filter:blur(10px);color:var(--ink)}nav ul{gap:1rem}nav a{font-size:.62rem;letter-spacing:.18em}}
+  @media (max-width:860px){header{padding:.9rem 1rem;mix-blend-mode:normal;background:rgba(13,13,16,.75);backdrop-filter:blur(10px);color:var(--ink)}nav ul{gap:.7rem}nav a{font-size:.55rem;letter-spacing:.15em}nav a .jp{font-size:.5rem;letter-spacing:.1em}}
 
   /* HERO */
   .hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:3rem 3rem 5rem;overflow:hidden}
@@ -240,14 +241,14 @@
   <div class="brand">THE<span class="dot">·</span>HOSPITEL</div>
   <nav>
     <ul>
-      <li><a href="#prologue">Prologue</a></li>
-      <li><a href="#feature">Sanctuary</a></li>
-      <li><a href="#story">Story</a></li>
-      <li><a href="#spaces">Spaces</a></li>
-      <li><a href="#sleep">Sleep</a></li>
-      <li><a href="#journal">Journal</a></li>
-      <li><a href="#info">Info</a></li>
-      <li><a href="#booking">Booking</a></li>
+      <li><a href="#prologue">Prologue<span class="jp">序章</span></a></li>
+      <li><a href="#feature">Sanctuary<span class="jp">邸宅</span></a></li>
+      <li><a href="#story">Story<span class="jp">想い</span></a></li>
+      <li><a href="#spaces">Spaces<span class="jp">空間</span></a></li>
+      <li><a href="#sleep">Sleep<span class="jp">安眠</span></a></li>
+      <li><a href="#journal">Journal<span class="jp">医師の言葉</span></a></li>
+      <li><a href="#info">Info<span class="jp">施設情報</span></a></li>
+      <li><a href="#booking">Booking<span class="jp">予約</span></a></li>
     </ul>
   </nav>
 </header>
@@ -525,7 +526,7 @@
       <div class="journal-portrait" style="background-image:url('founder.jpg');background-position:63% 20%">
         <div class="meta">
           <div class="role">Founder · Doctor of Medicine</div>
-          <div class="name">医師　佐藤雄亮</div>
+          <div class="name">医師　佐藤 雄亮</div>
         </div>
       </div>
       <div class="journal-body">
