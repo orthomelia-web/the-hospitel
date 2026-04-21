@@ -149,12 +149,13 @@
   .story{padding:10rem 3rem;background-image:linear-gradient(rgba(13,13,16,.58),rgba(13,13,16,.78)),url("tokyo-night.jpg");background-size:cover;background-position:center;background-attachment:fixed;background-repeat:no-repeat;border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
   .story .story-body{text-shadow:0 1px 8px rgba(0,0,0,.75)}
   @media (max-width:860px){.story{background-attachment:scroll}}
-  .story-inner{max-width:880px;margin:0 auto}
+  .story-inner{max-width:880px;margin:0 auto;background:rgba(13,13,16,.55);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);padding:4rem 3.5rem;border:1px solid rgba(255,255,255,.04);border-radius:2px}
+  @media (max-width:700px){.story-inner{padding:2.5rem 1.5rem}}
   .story-head{text-align:center;margin-bottom:5rem}
   .story-head .eyebrow{justify-content:center}
   .story-head .eyebrow::before{display:none}
   .story-head h2{margin-top:0}
-  .story-body{font-size:1.08rem;line-height:2.25;color:var(--ink-sub);font-weight:500}
+  .story-body{font-size:1.08rem;line-height:2.25;color:#e8e0cd;font-weight:500}
   .story-body .lead-para{font-size:1.25rem;color:var(--ink);margin-bottom:3rem;letter-spacing:.08em;font-weight:500;line-height:2}
   .story-body p{margin-bottom:1.8rem}
   .story-body .pull{display:block;font-family:var(--serif-jp);text-align:center;font-size:clamp(1.25rem,2.2vw,1.7rem);color:var(--accent);margin:4rem 0;padding:2.5rem 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);line-height:2;letter-spacing:.15em;font-weight:500}
