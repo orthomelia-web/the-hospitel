@@ -291,9 +291,9 @@
   @media (max-width:900px){.journal{padding:5rem 1.2rem}.journal-grid{grid-template-columns:1fr;gap:2.5rem}}
 
   /* FULL BLEED IMAGE */
-  .bleed{position:relative;min-height:100vh;min-height:100svh;overflow:hidden;isolation:isolate}
+  .bleed{position:relative;height:100vh;height:100svh;min-height:420px;overflow:hidden;isolation:isolate}
   .bleed::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(13,13,16,.35),rgba(13,13,16,.55))}
-  .bleed-text{position:sticky;top:0;height:100vh;height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:1;text-align:center;padding:2rem}
+  .bleed-text{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:1;text-align:center;padding:2rem}
   .bleed-text .ey{font-family:var(--sans-en);font-size:.75rem;letter-spacing:.5em;text-transform:uppercase;color:var(--accent);margin-bottom:1.5rem;text-shadow:0 2px 6px rgba(0,0,0,.8)}
   .bleed-text h3{font-family:var(--serif-jp);font-weight:500;font-size:clamp(1.5rem,3vw,2.5rem);letter-spacing:.2em;line-height:1.8;color:#fbf8f1;max-width:30em;margin:0 auto;text-shadow:0 2px 16px rgba(0,0,0,.8)}
   @media (max-width:700px){.bleed{height:50vh;min-height:340px}}
