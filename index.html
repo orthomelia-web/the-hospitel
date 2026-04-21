@@ -73,14 +73,14 @@
   .h-en{font-family:var(--serif-en);font-weight:300;font-size:clamp(2rem,5vw,4rem);letter-spacing:.04em;line-height:1;color:var(--ink)}
 
   /* PROLOGUE */
-  .prologue{padding-top:11rem;padding-bottom:7rem;border-bottom:1px solid var(--line-soft)}
+  .prologue{padding-top:11rem;padding-bottom:7rem;border-bottom:1px solid var(--line-soft);background-image:linear-gradient(rgba(13,13,16,.78),rgba(13,13,16,.9)),url("lounge-2.jpg");background-size:cover;background-position:center;background-attachment:fixed;background-repeat:no-repeat}
   .prologue-grid{display:grid;grid-template-columns:1fr 2fr;gap:5rem;align-items:start}
   .prologue .no{font-family:var(--serif-en);font-size:.9rem;letter-spacing:.35em;color:var(--gold-soft);margin-bottom:1.2rem}
   .prologue .no::after{content:"";display:block;width:32px;height:1px;background:var(--gold-soft);margin-top:1rem}
   .prologue .aside{font-family:var(--sans-en);font-size:.7rem;letter-spacing:.4em;text-transform:uppercase;color:var(--ink-dim);margin-top:2rem;line-height:2}
   .prologue-text .h-display{margin-bottom:2.5rem}
   .prologue-text p{color:var(--ink-sub);font-size:1.05rem;line-height:2.15;margin-bottom:1.4rem;max-width:36rem;font-weight:500}
-  @media (max-width:860px){.prologue{padding-top:6rem;padding-bottom:4rem}.prologue-grid{grid-template-columns:1fr;gap:2rem}}
+  @media (max-width:860px){.prologue{padding-top:6rem;padding-bottom:4rem;background-attachment:scroll}.prologue-grid{grid-template-columns:1fr;gap:2rem}}
 
   /* FEATURED SHOWCASE */
   .feature{padding:8rem 0;background:var(--bg)}
@@ -529,12 +529,6 @@
         </div>
       </div>
       <div class="journal-body">
-        <p class="quote">
-          睡眠は、医療の言葉で<br />
-          「治療」ではなく「回復」と呼ばれます。<br />
-          回復できる夜を設計したい——<br />
-          そこから、すべてが始まりました。
-        </p>
         <p>
           医療の現場では、睡眠薬に頼らざるを得ない方々と日々向き合ってきました。一方で、環境さえ整えば、薬に頼らずとも深い眠りに辿り着けることも、科学は示しています。
         </p>
