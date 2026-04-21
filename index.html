@@ -29,7 +29,40 @@
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth;font-size:18.5px}
-  @media (max-width:700px){html{font-size:17px}}
+  @media (max-width:700px){html{font-size:clamp(14px,4vw,17px)}}
+
+  /* MOBILE-TUNED TYPOGRAPHY (~matches tokitoki-patina zen sizing) */
+  @media (max-width:700px){
+    body{line-height:1.9;letter-spacing:.05em}
+    .hero h1{font-size:clamp(2.4rem,10vw,3.6rem);letter-spacing:.04em;line-height:1.05;margin-bottom:1.4rem}
+    .hero .sub{font-size:.9rem;letter-spacing:.32em;margin-bottom:1.6rem}
+    .hero .lead{font-size:.88rem;line-height:2;max-width:none}
+    .hero-body .kicker{font-size:.58rem;letter-spacing:.45em;margin-bottom:1.2rem}
+    .hero-foot{margin-top:2.2rem}
+    .h-display{font-size:clamp(1.45rem,5.2vw,2.1rem);letter-spacing:.14em;line-height:1.55}
+    .eyebrow{font-size:.58rem;letter-spacing:.4em;margin-bottom:1.6rem}
+    .prologue-text p{font-size:.93rem;line-height:2}
+    .feature-text p{font-size:.93rem;line-height:2}
+    .story-body{font-size:.95rem;line-height:2.15}
+    .story-body .lead-para{font-size:1.05rem;line-height:1.85;letter-spacing:.06em}
+    .story-body .pull{font-size:clamp(1.05rem,3.8vw,1.4rem);letter-spacing:.12em;line-height:1.95;padding:2rem 0;margin:2.8rem 0}
+    .spaces-head .note{font-size:.92rem;line-height:2}
+    .sleep-head p{font-size:.92rem;line-height:2}
+    .opt h3{font-size:1.05rem;letter-spacing:.12em}
+    .opt p{font-size:.88rem;line-height:1.95}
+    .journal-body .quote{font-size:clamp(1.1rem,4vw,1.45rem);letter-spacing:.08em;line-height:1.8}
+    .journal-body p{font-size:.93rem;line-height:2}
+    .bleed-text h3{font-size:clamp(1.25rem,5vw,1.8rem);letter-spacing:.14em;line-height:1.7}
+    .bleed-text .ey{font-size:.62rem;letter-spacing:.45em;margin-bottom:1.2rem}
+    .booking h2{font-size:clamp(1.55rem,5.5vw,2.2rem);letter-spacing:.14em;line-height:1.55}
+    .booking p{font-size:.9rem;line-height:2}
+  }
+
+  /* BG KEN BURNS on mobile — substitute for fixed parallax */
+  @keyframes bg-ken-burns{0%{background-size:108%}50%{background-size:120%}100%{background-size:108%}}
+  @media (max-width:860px){
+    .prologue,.story,.bleed{animation:bg-ken-burns 30s ease-in-out infinite}
+  }
   body{background:var(--bg);color:var(--ink);font-family:var(--serif-jp);font-weight:400;line-height:1.95;letter-spacing:.04em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
   a{color:inherit;text-decoration:none;transition:color .3s,opacity .3s}
   img{max-width:100%;display:block}
