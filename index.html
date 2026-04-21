@@ -367,13 +367,14 @@
   .journal-body .byline{margin-top:2.5rem;font-family:var(--sans-en);font-size:.7rem;letter-spacing:.4em;text-transform:uppercase;color:var(--ink-dim)}
   @media (max-width:900px){
     .journal{padding:5rem 1.2rem}
-    .journal-grid{display:grid;grid-template-columns:130px 1fr;gap:1rem;align-items:start}
-    .journal-portrait{width:auto;height:auto;aspect-ratio:3/4;margin:0;background-size:cover;background-position:63% 20%}
-    .journal-portrait .meta{bottom:.35rem;left:.35rem;right:.35rem;padding:.4rem .55rem;background:rgba(13,13,16,.85)}
-    .journal-portrait .meta .role{font-size:.4rem;letter-spacing:.22em;margin-bottom:.2rem}
-    .journal-portrait .meta .name{font-size:.58rem;letter-spacing:.1em}
-    .journal-portrait .meta .name-jp{font-size:.5rem;letter-spacing:.08em;margin-top:.15rem}
+    .journal-grid{display:block}
+    .journal-portrait{width:140px;height:186px;aspect-ratio:auto;float:left;margin:0 1rem .7rem 0;background-size:cover;background-position:63% 20%}
+    .journal-portrait .meta{bottom:.3rem;left:.3rem;right:.3rem;padding:.35rem .5rem;background:rgba(13,13,16,.85)}
+    .journal-portrait .meta .role{font-size:.38rem;letter-spacing:.22em;margin-bottom:.18rem}
+    .journal-portrait .meta .name{font-size:.56rem;letter-spacing:.1em}
+    .journal-portrait .meta .name-jp{font-size:.48rem;letter-spacing:.08em;margin-top:.12rem}
     .journal-body .quote{padding-left:1rem;margin-bottom:1.4rem}
+    .journal-body::after{content:"";display:block;clear:both}
   }
 
   /* FULL BLEED IMAGE */
