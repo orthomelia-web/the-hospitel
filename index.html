@@ -35,11 +35,51 @@
   header{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.6rem 3rem;display:flex;justify-content:space-between;align-items:center;mix-blend-mode:difference;color:#fff}
   .brand{font-family:var(--serif-en);font-size:1rem;letter-spacing:.4em;font-weight:400}
   .brand .dot{color:var(--gold);margin:0 .3em}
-  nav ul{display:flex;gap:2rem;list-style:none;align-items:center}
-  nav a{display:inline-flex;flex-direction:column;align-items:center;gap:.25rem;font-family:var(--sans-en);font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;font-weight:400;opacity:.85;line-height:1}
-  nav a .jp{font-family:var(--serif-jp);font-size:.58rem;letter-spacing:.25em;opacity:.7;text-transform:none;font-weight:500}
-  nav a:hover{opacity:1}
-  @media (max-width:860px){header{padding:.9rem 1rem;mix-blend-mode:normal;background:rgba(13,13,16,.75);backdrop-filter:blur(10px);color:var(--ink)}nav ul{gap:.7rem}nav a{font-size:.55rem;letter-spacing:.15em}nav a .jp{font-size:.5rem;letter-spacing:.1em}}
+  .menu-trigger{display:flex;align-items:center;gap:.9rem;cursor:pointer;background:transparent;border:none;color:inherit;padding:.4rem 0;font-family:var(--sans-en);font-size:.72rem;letter-spacing:.4em;text-transform:uppercase;transition:opacity .3s}
+  .menu-trigger:hover{opacity:.7}
+  .menu-trigger .bars{display:inline-flex;flex-direction:column;gap:5px;width:26px}
+  .menu-trigger .bars span{display:block;height:1px;background:currentColor;transition:all .4s}
+  .menu-trigger .bars span:nth-child(1){width:100%}
+  .menu-trigger .bars span:nth-child(2){width:65%;margin-left:auto}
+  .menu-trigger:hover .bars span:nth-child(2){width:100%;margin-left:0}
+  @media (max-width:860px){header{padding:1rem 1.2rem;mix-blend-mode:normal;background:rgba(13,13,16,.8);backdrop-filter:blur(10px);color:var(--ink);border-bottom:1px solid var(--line-soft)}.menu-trigger{font-size:.62rem;letter-spacing:.25em}.menu-trigger .bars{width:22px}}
+
+  /* MENU OVERLAY */
+  .menu-overlay{position:fixed;inset:0;z-index:200;background:rgba(10,10,12,.98);backdrop-filter:blur(24px);opacity:0;visibility:hidden;transition:opacity .55s cubic-bezier(.2,.8,.2,1),visibility .55s;display:flex;flex-direction:column;overflow-y:auto}
+  .menu-overlay.open{opacity:1;visibility:visible}
+  .menu-head{display:flex;justify-content:space-between;align-items:center;padding:1.6rem 3rem;border-bottom:1px solid var(--line-soft);flex-shrink:0}
+  .menu-head .brand{color:var(--ink)}
+  .menu-close{display:flex;align-items:center;gap:.9rem;cursor:pointer;background:transparent;border:none;color:var(--ink);font-family:var(--sans-en);font-size:.72rem;letter-spacing:.4em;text-transform:uppercase;transition:color .3s}
+  .menu-close:hover{color:var(--gold)}
+  .menu-close .x{width:26px;height:26px;position:relative}
+  .menu-close .x::before,.menu-close .x::after{content:"";position:absolute;top:50%;left:0;right:0;height:1px;background:currentColor;transform-origin:center}
+  .menu-close .x::before{transform:rotate(45deg)}
+  .menu-close .x::after{transform:rotate(-45deg)}
+  .menu-body{flex:1;display:grid;grid-template-columns:1.6fr 1fr;gap:5rem;padding:5rem 5rem;max-width:1400px;margin:0 auto;width:100%;align-items:center}
+  .menu-nav{list-style:none}
+  .menu-nav li{border-bottom:1px solid var(--line-soft);transform:translateY(20px);opacity:0;transition:transform .6s cubic-bezier(.2,.8,.2,1),opacity .6s}
+  .menu-overlay.open .menu-nav li{transform:translateY(0);opacity:1}
+  .menu-overlay.open .menu-nav li:nth-child(1){transition-delay:.15s}
+  .menu-overlay.open .menu-nav li:nth-child(2){transition-delay:.2s}
+  .menu-overlay.open .menu-nav li:nth-child(3){transition-delay:.25s}
+  .menu-overlay.open .menu-nav li:nth-child(4){transition-delay:.3s}
+  .menu-overlay.open .menu-nav li:nth-child(5){transition-delay:.35s}
+  .menu-overlay.open .menu-nav li:nth-child(6){transition-delay:.4s}
+  .menu-overlay.open .menu-nav li:nth-child(7){transition-delay:.45s}
+  .menu-overlay.open .menu-nav li:nth-child(8){transition-delay:.5s}
+  .menu-nav a{display:grid;grid-template-columns:60px 1fr auto;align-items:baseline;gap:2rem;padding:1.4rem 0;color:var(--ink);transition:color .3s,padding-left .3s}
+  .menu-nav a:hover{color:var(--gold);padding-left:1rem}
+  .menu-nav a .num{font-family:var(--serif-en);color:var(--gold-soft);font-size:.85rem;letter-spacing:.25em}
+  .menu-nav a .en{font-family:var(--serif-en);font-size:clamp(1.5rem,3.2vw,2.4rem);font-weight:300;letter-spacing:.05em;line-height:1}
+  .menu-nav a .jp{font-family:var(--serif-jp);font-size:.85rem;letter-spacing:.25em;color:var(--ink-sub);font-weight:500}
+  .menu-aside{color:var(--ink-sub);padding:2rem 0;border-left:1px solid var(--line-soft);padding-left:3rem;opacity:0;transform:translateY(20px);transition:transform .6s .5s,opacity .6s .5s}
+  .menu-overlay.open .menu-aside{opacity:1;transform:translateY(0)}
+  .menu-aside h5{font-family:var(--sans-en);font-size:.7rem;letter-spacing:.45em;color:var(--accent);margin-bottom:1.2rem;text-transform:uppercase}
+  .menu-aside p{font-size:.92rem;line-height:2.1;margin-bottom:1.8rem;font-weight:500}
+  .menu-aside .label{font-family:var(--sans-en);font-size:.62rem;letter-spacing:.35em;text-transform:uppercase;color:var(--accent);margin-bottom:.4rem}
+  .menu-aside a.contact{display:block;font-family:var(--serif-en);font-size:1.05rem;letter-spacing:.15em;color:var(--ink);border-bottom:1px solid var(--line);padding-bottom:.4rem;margin-bottom:2rem;transition:color .3s}
+  .menu-aside a.contact:hover{color:var(--gold)}
+  @media (max-width:900px){.menu-head{padding:1rem 1.2rem}.menu-body{grid-template-columns:1fr;gap:3rem;padding:3rem 1.5rem}.menu-aside{border-left:none;border-top:1px solid var(--line-soft);padding-left:0;padding-top:2rem}.menu-nav a{grid-template-columns:40px 1fr;gap:1rem}.menu-nav a .jp{grid-column:2;font-size:.75rem}}
 
   /* HERO */
   .hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:3rem 3rem 5rem;overflow:hidden}
@@ -239,19 +279,42 @@
 
 <header>
   <div class="brand">THE<span class="dot">·</span>HOSPITEL</div>
-  <nav>
-    <ul>
-      <li><a href="#prologue">Prologue<span class="jp">序章</span></a></li>
-      <li><a href="#feature">Sanctuary<span class="jp">邸宅</span></a></li>
-      <li><a href="#story">Story<span class="jp">想い</span></a></li>
-      <li><a href="#spaces">Spaces<span class="jp">空間</span></a></li>
-      <li><a href="#sleep">Sleep<span class="jp">安眠</span></a></li>
-      <li><a href="#journal">Journal<span class="jp">医師の言葉</span></a></li>
-      <li><a href="#info">Info<span class="jp">施設情報</span></a></li>
-      <li><a href="#booking">Booking<span class="jp">予約</span></a></li>
-    </ul>
-  </nav>
+  <button class="menu-trigger" id="menu-open" aria-label="Open menu">
+    <span>Menu</span>
+    <span class="bars" aria-hidden="true"><span></span><span></span></span>
+  </button>
 </header>
+
+<!-- MENU OVERLAY -->
+<div class="menu-overlay" id="menu-overlay" aria-hidden="true">
+  <div class="menu-head">
+    <div class="brand">THE<span class="dot">·</span>HOSPITEL</div>
+    <button class="menu-close" id="menu-close" aria-label="Close menu">
+      <span>Close</span>
+      <span class="x" aria-hidden="true"></span>
+    </button>
+  </div>
+  <div class="menu-body">
+    <ul class="menu-nav">
+      <li><a href="#prologue"><span class="num">01</span><span class="en">Prologue</span><span class="jp">序章</span></a></li>
+      <li><a href="#feature"><span class="num">02</span><span class="en">Sanctuary</span><span class="jp">邸宅</span></a></li>
+      <li><a href="#story"><span class="num">03</span><span class="en">Story</span><span class="jp">想い</span></a></li>
+      <li><a href="#spaces"><span class="num">04</span><span class="en">Spaces</span><span class="jp">空間</span></a></li>
+      <li><a href="#sleep"><span class="num">05</span><span class="en">Sleep Design</span><span class="jp">安眠</span></a></li>
+      <li><a href="#journal"><span class="num">06</span><span class="en">Journal</span><span class="jp">医師の言葉</span></a></li>
+      <li><a href="#info"><span class="num">07</span><span class="en">Information</span><span class="jp">施設情報</span></a></li>
+      <li><a href="#booking"><span class="num">08</span><span class="en">Booking</span><span class="jp">予約</span></a></li>
+    </ul>
+    <aside class="menu-aside">
+      <h5>Doctor-Curated Sleep Sanctuary</h5>
+      <p>医師監修・安眠特化型の1軒家ホテル。医学と宿泊体験の境界で、ひと夜の質を設計する場所。</p>
+      <div class="label">Reservation</div>
+      <a href="mailto:info@the-hospitel.jp" class="contact">info@the-hospitel.jp</a>
+      <div class="label">Location</div>
+      <p style="font-size:.85rem;margin-bottom:0">東京都内 / Tokyo Private Residence</p>
+    </aside>
+  </div>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -636,6 +699,24 @@
     <div class="note">Tokyo · Private Residence</div>
   </div>
 </footer>
+
+<script>
+  (function(){
+    var overlay = document.getElementById('menu-overlay');
+    var openBtn = document.getElementById('menu-open');
+    var closeBtn = document.getElementById('menu-close');
+    function open(){ overlay.classList.add('open'); overlay.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
+    function close(){ overlay.classList.remove('open'); overlay.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
+    openBtn.addEventListener('click', open);
+    closeBtn.addEventListener('click', close);
+    overlay.addEventListener('click', function(e){
+      if (e.target.tagName === 'A' || e.target.closest('a')) { close(); }
+    });
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape' && overlay.classList.contains('open')) close();
+    });
+  })();
+</script>
 
 </body>
 </html>
