@@ -29,33 +29,62 @@
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth;font-size:18.5px}
-  @media (max-width:700px){html{font-size:clamp(14px,4vw,17px)}}
+  @media (max-width:700px){html{font-size:clamp(13px,3.6vw,15.5px)}}
 
   /* MOBILE-TUNED TYPOGRAPHY (~matches tokitoki-patina zen sizing) */
   @media (max-width:700px){
-    body{line-height:1.9;letter-spacing:.05em}
-    .hero h1{font-size:clamp(2.4rem,10vw,3.6rem);letter-spacing:.04em;line-height:1.05;margin-bottom:1.4rem}
-    .hero .sub{font-size:.9rem;letter-spacing:.32em;margin-bottom:1.6rem}
-    .hero .lead{font-size:.88rem;line-height:2;max-width:none}
-    .hero-body .kicker{font-size:.58rem;letter-spacing:.45em;margin-bottom:1.2rem}
-    .hero-foot{margin-top:2.2rem}
-    .h-display{font-size:clamp(1.45rem,5.2vw,2.1rem);letter-spacing:.14em;line-height:1.55}
-    .eyebrow{font-size:.58rem;letter-spacing:.4em;margin-bottom:1.6rem}
-    .prologue-text p{font-size:.93rem;line-height:2}
-    .feature-text p{font-size:.93rem;line-height:2}
-    .story-body{font-size:.95rem;line-height:2.15}
-    .story-body .lead-para{font-size:1.05rem;line-height:1.85;letter-spacing:.06em}
-    .story-body .pull{font-size:clamp(1.05rem,3.8vw,1.4rem);letter-spacing:.12em;line-height:1.95;padding:2rem 0;margin:2.8rem 0}
-    .spaces-head .note{font-size:.92rem;line-height:2}
-    .sleep-head p{font-size:.92rem;line-height:2}
-    .opt h3{font-size:1.05rem;letter-spacing:.12em}
-    .opt p{font-size:.88rem;line-height:1.95}
-    .journal-body .quote{font-size:clamp(1.1rem,4vw,1.45rem);letter-spacing:.08em;line-height:1.8}
-    .journal-body p{font-size:.93rem;line-height:2}
-    .bleed-text h3{font-size:clamp(1.25rem,5vw,1.8rem);letter-spacing:.14em;line-height:1.7}
-    .bleed-text .ey{font-size:.62rem;letter-spacing:.45em;margin-bottom:1.2rem}
-    .booking h2{font-size:clamp(1.55rem,5.5vw,2.2rem);letter-spacing:.14em;line-height:1.55}
-    .booking p{font-size:.9rem;line-height:2}
+    body{line-height:1.85;letter-spacing:.04em}
+    .hero h1{font-size:clamp(2rem,8.5vw,3.2rem);letter-spacing:.04em;line-height:1.05;margin-bottom:1.3rem}
+    .hero .sub{font-size:.82rem;letter-spacing:.28em;margin-bottom:1.4rem}
+    .hero .lead{font-size:.8rem;line-height:1.95;max-width:none}
+    .hero-body .kicker{font-size:.54rem;letter-spacing:.4em;margin-bottom:1.1rem}
+    .hero-foot{margin-top:2rem}
+    .hero-foot .meta{font-size:.56rem;letter-spacing:.25em;gap:1rem}
+    .hero-foot .meta span b{font-size:.82rem}
+    .hero-foot .scroll{font-size:.55rem;letter-spacing:.4em}
+    .h-display{font-size:clamp(1.3rem,4.8vw,1.9rem);letter-spacing:.12em;line-height:1.55}
+    .eyebrow{font-size:.54rem;letter-spacing:.38em;margin-bottom:1.4rem}
+    .prologue-text p{font-size:.85rem;line-height:1.95}
+    .feature-text p{font-size:.85rem;line-height:1.95}
+    .feature-text .detail dt{font-size:.58rem;letter-spacing:.3em}
+    .feature-text .detail dd{font-size:.82rem}
+    .story-body{font-size:.86rem;line-height:2.05}
+    .story-body .lead-para{font-size:.96rem;line-height:1.85;letter-spacing:.06em}
+    .story-body p{margin-bottom:1.5rem}
+    .story-body .pull{font-size:clamp(.95rem,3.4vw,1.25rem);letter-spacing:.1em;line-height:1.9;padding:1.8rem 0;margin:2.4rem 0}
+    .story-body .signoff .name{font-size:.82rem;letter-spacing:.25em}
+    .story-body .signoff .title{font-size:.58rem;letter-spacing:.25em}
+    .spaces-head .note{font-size:.83rem;line-height:1.95}
+    .sleep-head p{font-size:.83rem;line-height:1.95}
+    .sleep-row p{font-size:.82rem;line-height:1.9}
+    .sleep-row h3{font-size:1rem;letter-spacing:.08em}
+    .sleep-row h3 .en{font-size:.58rem;letter-spacing:.22em;margin-top:.35rem}
+    .sleep-row .num{font-size:1.6rem}
+    .sleep-specs li{font-size:.62rem;padding:.3rem .6rem}
+    .sleep-toggle{font-size:.58rem;letter-spacing:.32em}
+    .opt h3{font-size:.96rem;letter-spacing:.1em}
+    .opt p{font-size:.8rem;line-height:1.9}
+    .opt .no{font-size:.6rem;letter-spacing:.32em;margin-bottom:1rem}
+    .journal-body .quote{font-size:clamp(1rem,3.6vw,1.3rem);letter-spacing:.06em;line-height:1.78;padding-left:1.4rem}
+    .journal-body p{font-size:.83rem;line-height:1.95}
+    .journal-body .byline{font-size:.58rem;letter-spacing:.32em}
+    .journal-portrait .meta .role{font-size:.55rem;letter-spacing:.32em}
+    .journal-portrait .meta .name{font-size:.88rem;letter-spacing:.18em}
+    .journal-portrait .meta .name-jp{font-size:.72rem;letter-spacing:.16em}
+    .bleed-text h3{font-size:clamp(1.1rem,4.4vw,1.6rem);letter-spacing:.12em;line-height:1.7}
+    .bleed-text .ey{font-size:.58rem;letter-spacing:.4em;margin-bottom:1rem}
+    .booking h2{font-size:clamp(1.35rem,4.8vw,1.9rem);letter-spacing:.12em;line-height:1.55}
+    .booking p{font-size:.82rem;line-height:1.95}
+    .btn{font-size:.62rem;letter-spacing:.32em;padding:1rem 2.4rem}
+    .footer-brand p{font-size:.74rem;line-height:1.85}
+    .footer-col h5{font-size:.6rem;letter-spacing:.32em}
+    .footer-col a{font-size:.76rem}
+    .footer-operator .fo-label{font-size:.6rem;letter-spacing:.32em}
+    .footer-operator .fo-company{font-size:.88rem;letter-spacing:.14em}
+    .footer-operator .fo-meta{font-size:.72rem}
+    .book-bar-cta{font-size:.78rem;letter-spacing:.1em;gap:.7rem;padding:.8rem .9rem}
+    .book-bar-cta .arrow{font-size:.6rem;letter-spacing:.22em}
+    body.lang-en .book-bar-cta{font-size:.85rem}
   }
 
   /* BG KEN BURNS on mobile — substitute for fixed parallax */
@@ -257,7 +286,7 @@
   .space.third{grid-column:span 4}
   .space.wide .space-img{aspect-ratio:16/11}
   .space.narrow .space-img{aspect-ratio:4/5}
-  @media (max-width:900px){.spaces{padding:5rem 1.2rem}.spaces-head{grid-template-columns:1fr;gap:1.5rem}.spaces-grid{grid-template-columns:1fr;gap:1rem}.space.wide,.space.narrow,.space.third{grid-column:span 1}.space.wide .space-img,.space.narrow .space-img{aspect-ratio:4/3}}
+  @media (max-width:900px){.spaces{padding:5rem 1.2rem}.spaces-head{grid-template-columns:1fr;gap:1.5rem}.spaces-grid{grid-template-columns:repeat(2,1fr);gap:.7rem}.space.wide,.space.narrow,.space.third{grid-column:span 1}.space.wide .space-img,.space.narrow .space-img,.space.third .space-img{aspect-ratio:4/5}.space-meta{bottom:.9rem;left:.9rem;right:.9rem}.space-meta .num{font-size:.6rem;letter-spacing:.3em;margin-bottom:.35rem}.space-meta h3{font-size:.88rem;letter-spacing:.14em}.space-meta .en{font-size:.62rem;letter-spacing:.3em}}
 
   /* SLEEP DESIGN (reasons) */
   .sleep{padding:10rem 3rem;background:var(--surface);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
