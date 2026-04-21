@@ -26,15 +26,20 @@
     --sans-en: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth;font-size:17px}
+  html{scroll-behavior:smooth;font-size:18.5px}
+  @media (max-width:700px){html{font-size:17px}}
   body{background:var(--bg);color:var(--ink);font-family:var(--serif-jp);font-weight:400;line-height:1.95;letter-spacing:.04em;-webkit-font-smoothing:antialiased}
   a{color:inherit;text-decoration:none;transition:color .3s,opacity .3s}
   img{max-width:100%;display:block}
 
   /* HEADER */
-  header{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.6rem 3rem;display:flex;justify-content:space-between;align-items:center;gap:2rem;mix-blend-mode:difference;color:#fff}
+  header{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.6rem 3rem;display:flex;justify-content:space-between;align-items:center;gap:2rem;mix-blend-mode:difference;color:#fff;transition:padding .4s ease,background .4s ease,border-color .4s ease,backdrop-filter .4s ease}
+  header.scrolled{mix-blend-mode:normal;background:rgba(13,13,16,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);color:var(--ink);padding:1rem 3rem;border-bottom:1px solid var(--line-soft)}
+  header.scrolled .header-nav a{opacity:.95}
+  @media (max-width:860px){header.scrolled{padding:.85rem 1.2rem}}
   .brand{font-family:var(--serif-en);font-size:1rem;letter-spacing:.4em;font-weight:400;flex-shrink:0}
   .brand .dot{color:var(--gold);margin:0 .3em}
+  .brand .by{font-style:italic;font-size:.75em;letter-spacing:.15em;color:var(--gold);margin-left:.7em;font-weight:300}
   .header-nav{flex:1;display:flex;justify-content:center}
   .header-nav ul{display:flex;gap:2rem;list-style:none;align-items:center}
   .header-nav a{display:inline-flex;flex-direction:column;align-items:center;gap:.25rem;font-family:var(--sans-en);font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;font-weight:400;opacity:.85;line-height:1;transition:opacity .3s}
@@ -191,16 +196,26 @@
   .sleep-head{display:grid;grid-template-columns:1fr 1.2fr;gap:4rem;align-items:end;margin-bottom:5rem}
   .sleep-head p{color:var(--ink-sub);line-height:2.1;font-size:1rem;font-weight:500}
   .sleep-list{border-top:1px solid var(--line)}
-  .sleep-row{display:grid;grid-template-columns:90px 1fr 1.6fr 60px;gap:2.5rem;padding:3rem 0;border-bottom:1px solid var(--line);align-items:start;transition:background .4s;position:relative}
+  .sleep-row{display:grid;grid-template-columns:90px 1fr 1.6fr 140px;gap:2.5rem;padding:3rem 0;border-bottom:1px solid var(--line);align-items:start;transition:background .4s;position:relative;cursor:pointer}
   .sleep-row:hover{background:rgba(200,169,106,.03)}
   .sleep-row .num{font-family:var(--serif-en);font-size:2.2rem;color:var(--gold);letter-spacing:.1em;line-height:1;font-weight:300}
   .sleep-row h3{font-family:var(--serif-jp);font-weight:500;font-size:1.25rem;letter-spacing:.15em;line-height:1.7;color:var(--ink);margin-bottom:.5rem}
   .sleep-row h3 .en{display:block;font-family:var(--serif-en);font-size:.72rem;letter-spacing:.35em;color:var(--gold-soft);margin-top:.7rem;text-transform:uppercase;font-weight:400}
   .sleep-row p{color:var(--ink-sub);font-size:.98rem;line-height:2;max-width:42rem;font-weight:500}
-  .sleep-row .icon{color:var(--gold);display:flex;align-items:center;justify-content:flex-end;opacity:.7;transition:opacity .4s}
-  .sleep-row:hover .icon{opacity:1}
-  .sleep-row .icon svg{width:44px;height:44px}
-  @media (max-width:900px){.sleep{padding:5rem 1.2rem}.sleep-head{grid-template-columns:1fr;gap:1.5rem}.sleep-row{grid-template-columns:60px 1fr;gap:1rem 1.5rem;padding:2rem 0}.sleep-row p{grid-column:2;font-size:.93rem}.sleep-row .icon{display:none}}
+  .sleep-row .thumb{width:100%;aspect-ratio:4/3;background-size:cover;background-position:center;border:1px solid var(--line);filter:saturate(.85) brightness(.92);transition:all .5s}
+  .sleep-row:hover .thumb{filter:saturate(1) brightness(1);border-color:var(--gold-soft)}
+  .sleep-specs{max-height:0;overflow:hidden;opacity:0;margin-top:0;list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:.55rem .7rem;transition:max-height .55s ease, opacity .4s .1s, margin-top .4s}
+  .sleep-specs li{font-family:var(--sans-en);font-size:.74rem;letter-spacing:.12em;color:var(--gold-soft);padding:.45rem .95rem;border:1px solid var(--line);background:rgba(200,169,106,.035);font-weight:400;transition:all .3s}
+  .sleep-row.is-open .sleep-specs{max-height:400px;opacity:1;margin-top:1.4rem}
+  .sleep-row:hover .sleep-specs li{border-color:var(--gold-soft);background:rgba(200,169,106,.07);color:var(--gold)}
+  .sleep-toggle{display:inline-flex;align-items:center;gap:.6rem;margin-top:1.3rem;font-family:var(--sans-en);font-size:.68rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold-soft);font-weight:400;transition:color .3s;user-select:none}
+  .sleep-row:hover .sleep-toggle{color:var(--gold)}
+  .sleep-toggle::after{content:'';width:10px;height:10px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:rotate(45deg) translate(-2px,-2px);transition:transform .3s}
+  .sleep-row.is-open .sleep-toggle::after{transform:rotate(-135deg) translate(-2px,-2px)}
+  .sleep-row.is-open .sleep-toggle .label-open{display:none}
+  .sleep-toggle .label-close{display:none}
+  .sleep-row.is-open .sleep-toggle .label-close{display:inline}
+  @media (max-width:900px){.sleep{padding:5rem 1.2rem}.sleep-head{grid-template-columns:1fr;gap:1.5rem}.sleep-row{grid-template-columns:60px 1fr;gap:1rem 1.2rem;padding:2rem 0}.sleep-row p{grid-column:1/-1;font-size:.93rem}.sleep-row .thumb{grid-column:1/-1;aspect-ratio:16/9;margin-top:.5rem}.sleep-specs{grid-column:1/-1}.sleep-specs li{font-size:.68rem;padding:.35rem .7rem}.sleep-toggle{grid-column:1/-1}}
 
   /* OPTIONS */
   .options{padding:8rem 3rem;border-bottom:1px solid var(--line-soft)}
@@ -226,7 +241,8 @@
   .journal-portrait{aspect-ratio:3/4;background-color:var(--surface-2);background-size:cover;background-position:center top;background-repeat:no-repeat;position:relative;border:1px solid var(--line)}
   .journal-portrait .meta{position:absolute;bottom:1.5rem;left:1.5rem;right:1.5rem;background:rgba(13,13,16,.75);backdrop-filter:blur(6px);padding:1.2rem 1.4rem;border:1px solid var(--line)}
   .journal-portrait .meta .role{font-family:var(--sans-en);font-size:.65rem;letter-spacing:.4em;text-transform:uppercase;color:var(--accent);margin-bottom:.4rem}
-  .journal-portrait .meta .name{font-family:var(--serif-jp);font-weight:500;font-size:1rem;letter-spacing:.2em;color:var(--ink)}
+  .journal-portrait .meta .name{font-family:var(--serif-en);font-weight:400;font-size:1.05rem;letter-spacing:.22em;color:var(--ink)}
+  .journal-portrait .meta .name-jp{display:block;font-family:var(--serif-jp);font-weight:500;font-size:.82rem;letter-spacing:.2em;color:var(--ink-sub);margin-top:.35rem}
   .journal-body .quote{font-family:var(--serif-jp);font-size:clamp(1.35rem,2.3vw,1.9rem);line-height:1.95;letter-spacing:.1em;color:var(--ink);font-weight:500;margin-bottom:2.5rem;position:relative;padding-left:2rem}
   .journal-body .quote::before{content:"";position:absolute;left:0;top:.5rem;bottom:.5rem;width:2px;background:var(--gold)}
   .journal-body p{color:var(--ink-sub);font-size:1rem;line-height:2.1;margin-bottom:1.2rem;font-weight:500}
@@ -254,7 +270,7 @@
   @media (max-width:700px){.info{padding:5rem 1.2rem}.info-head{grid-template-columns:1fr;gap:1.5rem}.info-table li{grid-template-columns:1fr;gap:.3rem;padding:1.2rem 0}}
 
   /* BOOKING */
-  .booking{position:relative;padding:12rem 3rem;text-align:center;background-image:linear-gradient(rgba(13,13,16,.72),rgba(13,13,16,.88)),url("entrance.jpg");background-size:cover;background-position:center;border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+  .booking{position:relative;padding:12rem 3rem;text-align:center;background-image:linear-gradient(rgba(13,13,16,.72),rgba(13,13,16,.88)),url("booking-bg.jpg");background-size:cover;background-position:center;border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
   .booking-inner{max-width:720px;margin:0 auto;position:relative;z-index:1}
   .booking .eyebrow{justify-content:center;margin-bottom:2rem}
   .booking .eyebrow::before{display:none}
@@ -277,6 +293,14 @@
   .footer-col li{margin-bottom:.6rem}
   .footer-col a{color:var(--ink-sub);font-size:.85rem;letter-spacing:.12em}
   .footer-col a:hover{color:var(--gold)}
+  .footer-operator{display:grid;grid-template-columns:120px 1fr;gap:2.5rem;max-width:1200px;margin:2.5rem auto 0;padding:2.2rem 0;border-top:1px solid var(--line);align-items:start}
+  .footer-operator .fo-label{font-family:var(--sans-en);font-size:.7rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold-soft);padding-top:.25rem}
+  .footer-operator .fo-company{font-family:var(--serif-jp);font-size:1rem;letter-spacing:.2em;color:var(--ink);margin-bottom:.6rem;font-weight:500}
+  .footer-operator .fo-meta{font-family:var(--serif-jp);font-size:.82rem;letter-spacing:.1em;color:var(--ink-sub);line-height:2;font-weight:400}
+  .footer-operator .fo-meta a{color:var(--ink-sub);transition:color .3s}
+  .footer-operator .fo-meta a:hover{color:var(--gold)}
+  .footer-operator .fo-sep{color:var(--line);margin:0 .5em;opacity:.6}
+  @media (max-width:700px){.footer-operator{grid-template-columns:1fr;gap:.8rem}}
   .footer-bottom{display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;padding-top:2rem;border-top:1px solid var(--line);gap:1rem;flex-wrap:wrap}
   .footer-bottom .copy{font-family:var(--serif-en);font-size:.75rem;letter-spacing:.3em;color:var(--ink-dim)}
   .footer-bottom .note{font-family:var(--sans-en);font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-dim)}
@@ -286,7 +310,7 @@
 <body>
 
 <header>
-  <div class="brand">THE<span class="dot">·</span>HOSPITEL</div>
+  <div class="brand">THE<span class="dot">·</span>HOSPITEL<span class="by">by Dr.</span></div>
   <nav class="header-nav">
     <ul>
       <li><a href="#prologue">Prologue<span class="jp">序章</span></a></li>
@@ -308,7 +332,7 @@
 <!-- MENU OVERLAY -->
 <div class="menu-overlay" id="menu-overlay" aria-hidden="true">
   <div class="menu-head">
-    <div class="brand">THE<span class="dot">·</span>HOSPITEL</div>
+    <div class="brand">THE<span class="dot">·</span>HOSPITEL<span class="by">by Dr.</span></div>
     <button class="menu-close" id="menu-close" aria-label="Close menu">
       <span>Close</span>
       <span class="x" aria-hidden="true"></span>
@@ -373,7 +397,7 @@
       </div>
     </div>
     <div class="prologue-text">
-      <h2 class="h-display">夜の質が、<em>旅の質</em>を決める。</h2>
+      <h2 class="h-display">夜の質が、<br /><em>旅の質</em>を決める。</h2>
       <p>旅の魅力を心ゆくまで味わうための、最初の一晩を。</p>
       <p>THE HOSPITEL は、医師監修の安眠特化型1軒家ホテル。旅の疲れを、深い眠りで解き放つための静かな邸宅です。</p>
       <p>東京の落ち着いた住宅街に佇む一棟に、1日1組の皆さまだけをお迎えします。照明、寝具、湯、薬膳——睡眠科学と医師の知見で整えられた夜が、翌日の景色をそっと変える。</p>
@@ -420,7 +444,7 @@
       <p>そんな想いで、この THE HOSPITEL を開業しました。</p>
       <div class="signoff">
         <div>
-          <div class="name">INASE · Yusuke Sato</div>
+          <div class="name">Dr. YUSUKE SATO</div>
           <div class="title">Founder · Doctor of Medicine</div>
         </div>
       </div>
@@ -486,7 +510,7 @@
 </section>
 
 <!-- BLEED IMAGE -->
-<section class="bleed" style="background-image:url('dawn.jpg')">
+<section class="bleed" style="background-image:url('dawn-new.jpg')">
   <div class="bleed-text">
     <div class="ey">A Night of True Rest</div>
     <h3>深い眠りは、<br />明日の景色を変える。</h3>
@@ -506,65 +530,101 @@
       </p>
     </div>
     <div class="sleep-list">
-      <div class="sleep-row">
+      <div class="sleep-row" onclick="this.classList.toggle('is-open')">
         <div class="num">01</div>
         <div>
           <h3>サーカディアンリズム照明<span class="en">Circadian Lighting</span></h3>
         </div>
-        <p>時間帯に応じて色温度と照度が変化する照明を導入。日没から就寝、朝の覚醒まで、体内時計に寄り添うように光が移ろい、自然な入眠と目覚めを促します。</p>
-        <div class="icon">
-          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="32" r="9"/><path d="M32 8v6M32 50v6M8 32h6M50 32h6M15 15l4.2 4.2M44.8 44.8l4.2 4.2M15 49l4.2-4.2M44.8 19.2l4.2-4.2"/></svg>
+        <div>
+          <p>時間帯に応じて色温度と照度が変化する照明を導入。日没から就寝、朝の覚醒まで、体内時計に寄り添うように光が移ろい、自然な入眠と目覚めを促します。</p>
+          <ul class="sleep-specs">
+            <li>色温度 2000K–6500K 可変</li>
+            <li>朝・昼・夕・夜の 4 シーン自動制御</li>
+            <li>医師監修のカスタム光環境</li>
+          </ul>
+          <div class="sleep-toggle"><span class="label-open">詳細を見る</span><span class="label-close">閉じる</span></div>
         </div>
+        <div class="thumb" style="background-image:url('sleep-01.jpg')"></div>
       </div>
-      <div class="sleep-row">
+      <div class="sleep-row" onclick="this.classList.toggle('is-open')">
         <div class="num">02</div>
         <div>
           <h3>ドクターズチョイス寝具<span class="en">Curated Bedding</span></h3>
         </div>
-        <p>マットレス・枕・寝具のすべてを医師の視点で厳選。体圧分散と寝姿勢の最適化で、身体に負担のかからない深い眠りへと導きます。</p>
-        <div class="icon">
-          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 42v-8a6 6 0 0 1 6-6h28a12 12 0 0 1 12 12v2"/><path d="M4 42h56v6H4z"/><path d="M4 48v6M60 48v6"/><path d="M14 34h18a4 4 0 0 1 4 4v0H14v-4z"/></svg>
+        <div>
+          <p>マットレス・枕・寝具のすべてを医師の視点で厳選。体圧分散と寝姿勢の最適化で、身体に負担のかからない深い眠りへと導きます。</p>
+          <ul class="sleep-specs">
+            <li>高密度ポケットコイル マットレス</li>
+            <li>高さ 5 段階 × 形状 4 型の枕から選定</li>
+            <li>オーガニックコットン 60 番手シーツ</li>
+          </ul>
+          <div class="sleep-toggle"><span class="label-open">詳細を見る</span><span class="label-close">閉じる</span></div>
         </div>
+        <div class="thumb" style="background-image:url('sleep-02.jpg')"></div>
       </div>
-      <div class="sleep-row">
+      <div class="sleep-row" onclick="this.classList.toggle('is-open')">
         <div class="num">03</div>
         <div>
           <h3>薬膳風呂<span class="en">Medicinal Bath</span></h3>
         </div>
-        <p>睡眠の質を高める漢方の知見を取り入れたお風呂。湯上がりから入眠までの時間を、深部体温の自然な低下とともに穏やかに整えます。</p>
-        <div class="icon">
-          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M8 32h48v10a10 10 0 0 1-10 10H18a10 10 0 0 1-10-10z"/><path d="M4 32h56"/><path d="M44 32v-6a4 4 0 0 0-4-4h-2a4 4 0 0 1-4-4"/><path d="M22 14c-1.5 2.5-1.5 5 0 7M28 10c-1.5 3-1.5 6 0 9M34 14c-1.5 2.5-1.5 5 0 7" opacity=".7"/></svg>
+        <div>
+          <p>睡眠の質を高める漢方の知見を取り入れたお風呂。湯上がりから入眠までの時間を、深部体温の自然な低下とともに穏やかに整えます。</p>
+          <ul class="sleep-specs">
+            <li>当帰・川芎・生姜など 7 種の生薬</li>
+            <li>就寝 90 分前の入浴プログラム</li>
+            <li>湯温 38–40℃ の低温長湯設計</li>
+          </ul>
+          <div class="sleep-toggle"><span class="label-open">詳細を見る</span><span class="label-close">閉じる</span></div>
         </div>
+        <div class="thumb" style="background-image:url('sleep-03.jpg')"></div>
       </div>
-      <div class="sleep-row">
+      <div class="sleep-row" onclick="this.classList.toggle('is-open')">
         <div class="num">04</div>
         <div>
-          <h3>薬膳茶・漢方プレゼント<span class="en">Herbal Gift</span></h3>
+          <h3>薬膳茶・漢方提供<span class="en">Herbal Gift</span></h3>
         </div>
-        <p>就寝前にお召し上がりいただく安眠サポートの薬膳茶と、日常にお持ち帰りいただける漢方をご用意。旅の記憶を、体に優しく残します。</p>
-        <div class="icon">
-          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 26h32v16a10 10 0 0 1-10 10H22a10 10 0 0 1-10-10z"/><path d="M44 30h4a6 6 0 0 1 0 12h-4"/><path d="M12 56h36"/><path d="M22 12c-2 3-2 6 0 9M28 8c-2 4-2 8 0 12M34 12c-2 3-2 6 0 9" opacity=".7"/></svg>
+        <div>
+          <p>就寝前にお召し上がりいただく安眠サポートの薬膳茶と、日常にお持ち帰りいただける漢方をご用意。旅の記憶を、体に優しく残します。</p>
+          <ul class="sleep-specs">
+            <li>酸棗仁湯ベースの夜用薬膳茶</li>
+            <li>朝用・夜用 2 種のブレンド</li>
+            <li>漢方医監修の持ち帰りギフト</li>
+          </ul>
+          <div class="sleep-toggle"><span class="label-open">詳細を見る</span><span class="label-close">閉じる</span></div>
         </div>
+        <div class="thumb" style="background-image:url('sleep-04.jpg')"></div>
       </div>
-      <div class="sleep-row">
+      <div class="sleep-row" onclick="this.classList.toggle('is-open')">
         <div class="num">05</div>
         <div>
           <h3>ウェイクアップライト<span class="en">Wake-up Light</span></h3>
         </div>
-        <p>朝日のように徐々に明るくなる目覚まし照明。静かにコルチゾールの分泌を促し、目覚まし音ではなく光で、すっきりとした朝を迎えます。</p>
-        <div class="icon">
-          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 50h52"/><path d="M14 50a18 18 0 0 1 36 0"/><path d="M32 18v8M32 12v2M16 30l4 4M48 30l-4 4M8 42h4M52 42h4" opacity=".85"/></svg>
+        <div>
+          <p>朝日のように徐々に明るくなる目覚まし照明。静かにコルチゾールの分泌を促し、目覚まし音ではなく光で、すっきりとした朝を迎えます。</p>
+          <ul class="sleep-specs">
+            <li>起床 30 分前から光量が漸増</li>
+            <li>日の出を再現する 1500K→4000K の色推移</li>
+            <li>鳥のさえずり・環境音の自然アラーム</li>
+          </ul>
+          <div class="sleep-toggle"><span class="label-open">詳細を見る</span><span class="label-close">閉じる</span></div>
         </div>
+        <div class="thumb" style="background-image:url('sleep-05.jpg')"></div>
       </div>
-      <div class="sleep-row">
+      <div class="sleep-row" onclick="this.classList.toggle('is-open')">
         <div class="num">06</div>
         <div>
-          <h3>シックな安眠空間<span class="en">Calm Interior</span></h3>
+          <h3>安眠空間の設計<span class="en">Calm Interior</span></h3>
         </div>
-        <p>視覚的ノイズを排した落ち着いた内装。深い墨色、間接照明、静かな素材感——視覚から脳を鎮め、深い休息へと誘います。</p>
-        <div class="icon">
-          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M44 36a16 16 0 1 1-16-20 13 13 0 0 0 16 20z"/><path d="M14 16l1.5 3 3 1.5-3 1.5L14 25l-1.5-3-3-1.5 3-1.5z" opacity=".7"/></svg>
+        <div>
+          <p>視覚的ノイズを排した落ち着いた内装。深い墨色、間接照明、静かな素材感——視覚から脳を鎮め、深い休息へと誘います。</p>
+          <ul class="sleep-specs">
+            <li>墨黒 × 和紙 × 無垢材の三素材構成</li>
+            <li>寝室照度 10–50 ルクスの間接光</li>
+            <li>1 日 1 組限定の静謐な独立空間</li>
+          </ul>
+          <div class="sleep-toggle"><span class="label-open">詳細を見る</span><span class="label-close">閉じる</span></div>
         </div>
+        <div class="thumb" style="background-image:url('sleep-06.jpg')"></div>
       </div>
     </div>
   </div>
@@ -609,7 +669,7 @@
       <div class="journal-portrait" style="background-image:url('founder.jpg');background-position:63% 20%">
         <div class="meta">
           <div class="role">Founder · Doctor of Medicine</div>
-          <div class="name">医師　佐藤 雄亮</div>
+          <div class="name">Dr. YUSUKE SATO<span class="name-jp">医師　佐藤 雄亮</span></div>
         </div>
       </div>
       <div class="journal-body">
@@ -633,10 +693,10 @@
 </section>
 
 <!-- BLEED 2 -->
-<section class="bleed" style="background-image:url('bath.jpg')">
+<section class="bleed" style="background-image:url('dawn.jpg')">
   <div class="bleed-text">
     <div class="ey">Doctor-Curated Wellness</div>
-    <h3>医師の知見が、<br />ひと夜の質を変える。</h3>
+    <h3>医学の英知が、<br />ひと夜の質を変える。</h3>
   </div>
 </section>
 
@@ -653,11 +713,11 @@
       </p>
     </div>
     <ul class="info-table">
-      <li><span class="k">Location</span><span class="v">東京都内（詳細は予約確定後にご案内）</span></li>
+      <li><span class="k">Location</span><span class="v">東京都墨田区東向島 1-20-13</span></li>
       <li><span class="k">Type</span><span class="v">1棟貸し / Private Residence</span></li>
       <li><span class="k">Capacity</span><span class="v">1日1組限定</span></li>
-      <li><span class="k">Check-in</span><span class="v">15:00 〜</span></li>
-      <li><span class="k">Check-out</span><span class="v">〜 11:00</span></li>
+      <li><span class="k">Check-in</span><span class="v">16:00 〜</span></li>
+      <li><span class="k">Check-out</span><span class="v">〜 10:00</span></li>
       <li><span class="k">Amenity</span><span class="v">サーカディアン照明 / ドクターズチョイス寝具 / 薬膳風呂 / 薬膳茶 / ウェイクアップライト</span></li>
       <li><span class="k">Option</span><span class="v">デジタルデトックス / Oura Ring 睡眠分析・医師フィードバック</span></li>
       <li><span class="k">Language</span><span class="v">日本語 / English</span></li>
@@ -685,7 +745,7 @@
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <span class="brand">THE<span class="dot">·</span>HOSPITEL</span>
+      <span class="brand">THE<span class="dot">·</span>HOSPITEL<span class="by">by Dr.</span></span>
       <p>医師監修・安眠特化型 1軒家ホテル。医学と宿泊体験の境界で、ひと夜の質を設計する場所。</p>
     </div>
     <div class="footer-col">
@@ -714,6 +774,14 @@
       </ul>
     </div>
   </div>
+  <div class="footer-operator">
+    <div class="fo-label">Operator</div>
+    <div class="fo-body">
+      <div class="fo-company">医師の不動産株式会社</div>
+      <div class="fo-meta">〒104-0061 東京都中央区銀座 1-12-4 N&amp;E BLD. 7F</div>
+      <div class="fo-meta"><a href="tel:05088856566">TEL 050-8885-6566</a> <span class="fo-sep">/</span> <a href="mailto:support@dr-fudousan.jp">support@dr-fudousan.jp</a></div>
+    </div>
+  </div>
   <div class="footer-bottom">
     <div class="copy">© THE HOSPITEL · Doctor-Curated Sleep Sanctuary</div>
     <div class="note">Tokyo · Private Residence</div>
@@ -735,6 +803,21 @@
     document.addEventListener('keydown', function(e){
       if (e.key === 'Escape' && overlay.classList.contains('open')) close();
     });
+  })();
+
+  (function(){
+    var header = document.querySelector('header');
+    if (!header) return;
+    var ticking = false;
+    function update(){
+      if (window.scrollY > 60) header.classList.add('scrolled');
+      else header.classList.remove('scrolled');
+      ticking = false;
+    }
+    window.addEventListener('scroll', function(){
+      if (!ticking){ window.requestAnimationFrame(update); ticking = true; }
+    }, {passive:true});
+    update();
   })();
 </script>
 
