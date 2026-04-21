@@ -161,14 +161,14 @@
   .h-en{font-family:var(--serif-en);font-weight:300;font-size:clamp(2rem,5vw,4rem);letter-spacing:.04em;line-height:1;color:var(--ink)}
 
   /* PROLOGUE */
-  .prologue{padding-top:11rem;padding-bottom:7rem;border-bottom:1px solid var(--line-soft);position:relative;overflow:hidden;isolation:isolate}
+  .prologue{padding-top:11rem;padding-bottom:7rem;border-bottom:1px solid var(--line-soft);background-image:linear-gradient(rgba(13,13,16,.78),rgba(13,13,16,.9)),url("lounge-2.jpg");background-size:cover;background-position:center;background-attachment:fixed;background-repeat:no-repeat}
   .prologue-grid{display:grid;grid-template-columns:1fr 2fr;gap:5rem;align-items:start}
   .prologue .no{font-family:var(--serif-en);font-size:.9rem;letter-spacing:.35em;color:var(--gold-soft);margin-bottom:1.2rem}
   .prologue .no::after{content:"";display:block;width:32px;height:1px;background:var(--gold-soft);margin-top:1rem}
   .prologue .aside{font-family:var(--sans-en);font-size:.7rem;letter-spacing:.4em;text-transform:uppercase;color:var(--ink-dim);margin-top:2rem;line-height:2}
   .prologue-text .h-display{margin-bottom:2.5rem}
   .prologue-text p{color:var(--ink-sub);font-size:1.05rem;line-height:2.15;margin-bottom:1.4rem;max-width:36rem;font-weight:500}
-  @media (max-width:860px){.prologue{padding-top:6rem;padding-bottom:4rem}.prologue-grid{grid-template-columns:1fr;gap:2rem}}
+  @media (max-width:860px){.prologue{padding-top:6rem;padding-bottom:4rem;background-attachment:scroll}.prologue-grid{grid-template-columns:1fr;gap:2rem}}
 
   /* FEATURED SHOWCASE */
   .feature{padding:8rem 0;background:var(--bg)}
@@ -187,7 +187,8 @@
   @media (max-width:900px){.feature-inner{padding:0 1.2rem}.feature-grid{grid-template-columns:1fr;gap:2.5rem}.feature-image{aspect-ratio:3/4}}
 
   /* STORY (concept) */
-  .story{padding:10rem 3rem;border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);position:relative;overflow:hidden;isolation:isolate}
+  .story{padding:10rem 3rem;background-image:linear-gradient(rgba(13,13,16,.38),rgba(13,13,16,.62)),url("tokyo-night.jpg");background-size:cover;background-position:center;background-attachment:fixed;background-repeat:no-repeat;border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+  @media (max-width:860px){.story{background-attachment:scroll}}
   .story .story-body{text-shadow:0 1px 8px rgba(0,0,0,.75)}
   .story-inner{max-width:880px;margin:0 auto;background:rgba(13,13,16,.55);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);padding:4rem 3.5rem;border:1px solid rgba(255,255,255,.04);border-radius:2px}
   @media (max-width:700px){.story-inner{padding:2.5rem 1.5rem}}
@@ -291,7 +292,8 @@
   @media (max-width:900px){.journal{padding:5rem 1.2rem}.journal-grid{grid-template-columns:1fr;gap:2.5rem}}
 
   /* FULL BLEED IMAGE */
-  .bleed{position:relative;height:100vh;height:100svh;min-height:420px;overflow:hidden;isolation:isolate}
+  .bleed{position:relative;height:60vh;min-height:420px;background-size:cover;background-position:center;background-attachment:fixed;overflow:hidden}
+  @media (max-width:860px){.bleed{background-attachment:scroll}}
   .bleed::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(13,13,16,.35),rgba(13,13,16,.55))}
   .bleed-text{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:1;text-align:center;padding:2rem}
   .bleed-text .ey{font-family:var(--sans-en);font-size:.75rem;letter-spacing:.5em;text-transform:uppercase;color:var(--accent);margin-bottom:1.5rem;text-shadow:0 2px 6px rgba(0,0,0,.8)}
@@ -454,8 +456,7 @@
 </section>
 
 <!-- PROLOGUE -->
-<section class="prologue parallax-section" id="prologue">
-  <div class="parallax-bg" style="background-image:linear-gradient(rgba(13,13,16,.78),rgba(13,13,16,.9)),url('lounge-2.jpg')"></div>
+<section class="prologue" id="prologue">
   <div class="section-inner prologue-grid">
     <div>
       <div class="no">No. 01</div>
@@ -497,8 +498,7 @@
 </section>
 
 <!-- STORY -->
-<section class="story parallax-section" id="story">
-  <div class="parallax-bg" style="background-image:linear-gradient(rgba(13,13,16,.38),rgba(13,13,16,.62)),url('tokyo-night.jpg')"></div>
+<section class="story" id="story">
   <div class="story-inner">
     <div class="story-head">
       <span class="emblem emblem-lg" aria-hidden="true"></span>
@@ -581,8 +581,7 @@
 </section>
 
 <!-- BLEED IMAGE -->
-<section class="bleed parallax-section">
-  <div class="parallax-bg" style="background-image:url('dawn-new.jpg')"></div>
+<section class="bleed" style="background-image:url('dawn-new.jpg')">
   <div class="bleed-text">
     <div class="ey">A Night of True Rest</div>
     <h3 data-i18n="bleed1.h3">深い眠りは、<br />明日の景色を変える。</h3>
@@ -759,8 +758,7 @@
 </section>
 
 <!-- BLEED 2 -->
-<section class="bleed parallax-section">
-  <div class="parallax-bg" style="background-image:url('dawn.jpg')"></div>
+<section class="bleed" style="background-image:url('dawn.jpg')">
   <div class="bleed-text">
     <div class="ey">Doctor-Curated Wellness</div>
     <h3 data-i18n="bleed2.h3">医学の英知が、<br />ひと夜の質を変える。</h3>
