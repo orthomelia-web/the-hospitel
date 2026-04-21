@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://orthomelia-web.github.io/the-hospitel/</loc>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://orthomelia-web.github.io/the-hospitel/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://orthomelia-web.github.io/the-hospitel/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://orthomelia-web.github.io/the-hospitel/"/>
+    <image:image>
+      <image:loc>https://orthomelia-web.github.io/the-hospitel/exterior.jpg</image:loc>
+      <image:title>THE HOSPITEL 外観</image:title>
+      <image:caption>東京・墨田区東向島に佇む医師監修・安眠特化型の1棟貸し邸宅ホテル</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://orthomelia-web.github.io/the-hospitel/bedroom.jpg</image:loc>
+      <image:title>寝室</image:title>
+      <image:caption>医師厳選の高品質寝具とサーカディアン照明を備えた寝室</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://orthomelia-web.github.io/the-hospitel/bath.jpg</image:loc>
+      <image:title>薬膳風呂</image:title>
+      <image:caption>深い眠りへ誘う薬膳湯の浴室</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://orthomelia-web.github.io/the-hospitel/lounge.jpg</image:loc>
+      <image:title>ラウンジ</image:title>
+      <image:caption>夜を深めるダーク基調のラウンジ空間</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://orthomelia-web.github.io/the-hospitel/tatami.jpg</image:loc>
+      <image:title>和室</image:title>
+      <image:caption>静謐な和室</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://orthomelia-web.github.io/the-hospitel/founder.jpg</image:loc>
+      <image:title>Founder · Dr. Yusuke Sato</image:title>
+      <image:caption>Founder · Doctor of Medicine — 佐藤 雄亮</image:caption>
+    </image:image>
+  </url>
+</urlset>
