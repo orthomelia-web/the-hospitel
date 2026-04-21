@@ -4,10 +4,12 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>THE HOSPITEL | 医師監修・安眠特化型 1軒家ホテル</title>
-<meta name="description" content="医師監修・安眠特化型の1軒家ホテル「THE HOSPITEL」。サーカディアンリズム照明、ドクターズチョイス寝具、薬膳風呂など、医師の知見で設計された深い眠りで、旅の疲れを癒す。" />
+<meta name="description" content="医師監修・安眠特化型の1軒家ホテル「THE HOSPITEL」。サーカディアンリズム照明、ドクターズチョイス寝具、薬膳風呂など、医学の英知で設計された深い眠りで、旅の疲れを癒す。" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Shippori+Mincho:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png">
 <style>
   :root {
     --bg: #0d0d10;
@@ -33,19 +35,27 @@
   img{max-width:100%;display:block}
 
   /* HEADER */
-  header{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.6rem 3rem;display:flex;justify-content:space-between;align-items:center;gap:2rem;mix-blend-mode:difference;color:#fff;transition:padding .4s ease,background .4s ease,border-color .4s ease,backdrop-filter .4s ease}
-  header.scrolled{mix-blend-mode:normal;background:rgba(13,13,16,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);color:var(--ink);padding:1rem 3rem;border-bottom:1px solid var(--line-soft)}
+  header{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.6rem 2.4rem 1.6rem 2.2rem;display:flex;justify-content:space-between;align-items:center;gap:1.2rem;mix-blend-mode:difference;color:#fff;transition:padding .4s ease,background .4s ease,border-color .4s ease,backdrop-filter .4s ease}
+  header.scrolled{mix-blend-mode:normal;background:rgba(13,13,16,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);color:var(--ink);padding:1rem 2.4rem 1rem 2.2rem;border-bottom:1px solid var(--line-soft)}
   header.scrolled .header-nav a{opacity:.95}
   @media (max-width:860px){header.scrolled{padding:.85rem 1.2rem}}
-  .brand{font-family:var(--serif-en);font-size:1rem;letter-spacing:.4em;font-weight:400;flex-shrink:0}
-  .brand .dot{color:var(--gold);margin:0 .3em}
-  .brand .by{font-style:italic;font-size:.75em;letter-spacing:.15em;color:var(--gold);margin-left:.7em;font-weight:300}
+  .brand{font-family:var(--serif-en);font-size:1.25rem;letter-spacing:.4em;font-weight:400;flex-shrink:0;display:inline-flex;align-items:center;gap:.7em}
+  .brand .mark{width:1.9em;height:1.9em;flex-shrink:0;background-image:url('logo.png');background-size:contain;background-position:center;background-repeat:no-repeat;filter:brightness(0) invert(1);opacity:.95}
+  .brand{letter-spacing:.28em}
+  .brand .dot{color:var(--gold);margin:0 -.15em;letter-spacing:0;display:inline-block}
+  .brand .by{font-style:italic;font-size:.75em;letter-spacing:.15em;color:var(--gold);margin-left:.1em;font-weight:300}
+
+  /* EMBLEM (decorative standalone logo) */
+  .emblem{display:inline-block;background-image:url('logo.png');background-size:contain;background-position:center;background-repeat:no-repeat;filter:brightness(0) invert(1) sepia(.35) saturate(2.2) hue-rotate(350deg);opacity:.88}
+  .emblem-lg{width:68px;height:68px;margin:0 auto 2.2rem;display:block}
+  .emblem-xl{width:96px;height:96px;margin:0 auto 2.5rem;display:block;opacity:.78}
+  .emblem-sm{width:30px;height:30px}
   .header-nav{flex:1;display:flex;justify-content:center}
-  .header-nav ul{display:flex;gap:2rem;list-style:none;align-items:center}
+  .header-nav ul{display:flex;gap:1.1rem;list-style:none;align-items:center}
   .header-nav a{display:inline-flex;flex-direction:column;align-items:center;gap:.25rem;font-family:var(--sans-en);font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;font-weight:400;opacity:.85;line-height:1;transition:opacity .3s}
   .header-nav a .jp{font-family:var(--serif-jp);font-size:.58rem;letter-spacing:.25em;opacity:.7;text-transform:none;font-weight:500}
   .header-nav a:hover{opacity:1}
-  @media (max-width:1200px){.header-nav{display:none}}
+  @media (max-width:1400px){.header-nav{display:none}}
   .menu-trigger{display:flex;align-items:center;gap:.9rem;cursor:pointer;background:transparent;border:none;color:inherit;padding:.4rem 0;font-family:var(--sans-en);font-size:.72rem;letter-spacing:.4em;text-transform:uppercase;transition:opacity .3s;flex-shrink:0}
   .menu-trigger:hover{opacity:.7}
   .menu-trigger .bars{display:inline-flex;flex-direction:column;gap:5px;width:26px}
@@ -53,7 +63,29 @@
   .menu-trigger .bars span:nth-child(1){width:100%}
   .menu-trigger .bars span:nth-child(2){width:65%;margin-left:auto}
   .menu-trigger:hover .bars span:nth-child(2){width:100%;margin-left:0}
-  @media (max-width:860px){header{padding:1rem 1.2rem;mix-blend-mode:normal;background:rgba(13,13,16,.8);backdrop-filter:blur(10px);color:var(--ink);border-bottom:1px solid var(--line-soft)}.menu-trigger{font-size:.62rem;letter-spacing:.25em}.menu-trigger .bars{width:22px}}
+  @media (max-width:860px){header{padding:1rem 1.2rem;gap:.9rem;mix-blend-mode:normal;background:rgba(13,13,16,.8);backdrop-filter:blur(10px);color:var(--ink);border-bottom:1px solid var(--line-soft)}.brand{font-size:1rem;letter-spacing:.28em}.menu-trigger{font-size:.62rem;letter-spacing:.25em;gap:.6rem}.menu-trigger .bars{width:22px}}
+  @media (max-width:520px){.menu-trigger > span:first-child{display:none}.menu-trigger{gap:0}header{gap:.5rem}.brand{font-size:.9rem;letter-spacing:.22em}}
+
+  /* LANG TOGGLE */
+  .lang-toggle{position:relative;display:inline-flex;align-items:center;gap:.5rem;font-family:var(--sans-en);font-size:.7rem;letter-spacing:.28em;flex-shrink:0;padding:.15rem 1.1rem;margin:0 .7rem 0 1rem}
+  .lang-toggle::before,.lang-toggle::after{content:"";position:absolute;top:50%;transform:translateY(-50%);width:1px;height:16px;background:currentColor;opacity:.22}
+  .lang-toggle::before{left:0}
+  .lang-toggle::after{right:0}
+  .lang-toggle button{background:transparent;border:none;color:inherit;cursor:pointer;padding:.35rem .2rem;opacity:.5;transition:opacity .3s;font:inherit;letter-spacing:inherit;text-transform:uppercase;font-weight:400;line-height:1}
+  .lang-toggle button:hover{opacity:.85}
+  .lang-toggle button.is-active{opacity:1}
+  .lang-toggle .sep{opacity:.25;font-size:.9em}
+  .menu-head .lang-toggle{margin-right:1.5rem}
+  @media (max-width:1400px){.lang-toggle::before{display:none}}
+  @media (max-width:860px){.lang-toggle{margin:0 .35rem;padding:.1rem .75rem;font-size:.6rem;gap:.3rem;letter-spacing:.22em}.lang-toggle::before,.lang-toggle::after{height:12px}}
+  @media (max-width:520px){.lang-toggle{margin:0 .2rem;padding:.1rem .55rem;gap:.25rem}}
+
+  /* LANG EN — hide bilingual sub-labels when English is active */
+  body.lang-en .header-nav a .jp,
+  body.lang-en .menu-nav a .jp,
+  body.lang-en .spaces .space-meta .en,
+  body.lang-en .sleep-row h3 > .en,
+  body.lang-en .journal-portrait .name-jp{display:none}
 
   /* MENU OVERLAY */
   .menu-overlay{position:fixed;inset:0;z-index:200;background:rgba(10,10,12,.98);backdrop-filter:blur(24px);opacity:0;visibility:hidden;transition:opacity .55s cubic-bezier(.2,.8,.2,1),visibility .55s;display:flex;flex-direction:column;overflow-y:auto}
@@ -224,8 +256,14 @@
   .options-head .eyebrow{justify-content:center}
   .options-head .eyebrow::before{display:none}
   .options-flex{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
-  .opt{padding:3rem 2.5rem;border:1px solid var(--line);background:var(--surface-2);position:relative;transition:all .4s}
-  .opt:hover{border-color:var(--gold);background:rgba(200,169,106,.04)}
+  .opt{padding:5rem 2.8rem;border:1px solid var(--line);background:var(--surface-2);position:relative;transition:all .4s;min-height:380px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;isolation:isolate}
+  .opt::before{content:"";position:absolute;inset:0;background-size:cover;background-position:center;background-attachment:fixed;background-repeat:no-repeat;z-index:-2;transition:opacity .4s}
+  .opt::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,13,16,.55) 0%,rgba(13,13,16,.78) 55%,rgba(13,13,16,.92) 100%);z-index:-1;transition:background .4s}
+  .opt-detox::before{background-image:url('detox.jpg');background-position:center 45%}
+  .opt-oura::before{background-image:url('oura.jpg');background-position:center 38%}
+  .opt:hover{border-color:var(--gold);background:transparent}
+  .opt:hover::after{background:linear-gradient(180deg,rgba(13,13,16,.42) 0%,rgba(13,13,16,.72) 55%,rgba(13,13,16,.9) 100%)}
+  @media (max-width:900px){.opt::before{background-attachment:scroll}}
   .opt .no{font-family:var(--serif-en);font-size:.75rem;letter-spacing:.4em;color:var(--gold);margin-bottom:1.5rem;text-transform:uppercase}
   .opt h3{font-family:var(--serif-jp);font-weight:500;font-size:1.2rem;letter-spacing:.16em;margin-bottom:1.2rem;line-height:1.7}
   .opt p{color:var(--ink-sub);font-size:.95rem;line-height:2;font-weight:500}
@@ -283,6 +321,22 @@
   .btn.primary:hover{background:var(--accent);border-color:var(--accent)}
   @media (max-width:700px){.booking{padding:6rem 1.2rem}}
 
+  /* FLOATING BOOK BAR */
+  .book-bar{position:fixed;left:0;right:0;bottom:0;z-index:90;background:rgba(13,13,16,.92);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-top:1px solid rgba(200,169,106,.35);display:flex;align-items:stretch;transform:translateY(100%);transition:transform .6s cubic-bezier(.2,.8,.2,1);padding:0}
+  .book-bar.is-visible{transform:translateY(0)}
+  .book-bar.is-hidden{transform:translateY(100%)}
+  .book-bar-cta{flex:1;display:flex;align-items:center;justify-content:center;gap:1.6rem;padding:1.1rem 2rem;font-family:var(--serif-jp);font-size:1rem;letter-spacing:.2em;color:#fbf8f1;font-weight:500;transition:background .3s;text-align:center;line-height:1.6}
+  .book-bar-cta:hover{background:rgba(200,169,106,.08)}
+  .book-bar-cta .arrow{display:inline-flex;align-items:center;gap:.6rem;color:var(--gold);font-family:var(--serif-en);font-size:.85rem;letter-spacing:.3em;text-transform:uppercase;font-weight:400}
+  .book-bar-cta .arrow::after{content:"";display:inline-block;width:42px;height:1px;background:currentColor;transition:width .4s}
+  .book-bar-cta:hover .arrow::after{width:64px}
+  body.lang-en .book-bar-cta{font-family:var(--serif-en);font-size:1.1rem;letter-spacing:.08em;font-weight:400}
+  .book-bar-close{background:transparent;border:none;border-left:1px solid rgba(255,255,255,.08);color:var(--ink-dim);cursor:pointer;padding:0 1.6rem;display:flex;align-items:center;justify-content:center;transition:color .3s,background .3s;flex-shrink:0}
+  .book-bar-close:hover{color:var(--gold);background:rgba(200,169,106,.06)}
+  .book-bar-close svg{width:14px;height:14px}
+  @media (max-width:700px){.book-bar-cta{font-size:.88rem;padding:.9rem 1rem;gap:.9rem;letter-spacing:.12em}.book-bar-cta .arrow{font-size:.7rem;letter-spacing:.25em}.book-bar-cta .arrow::after{width:24px}.book-bar-cta:hover .arrow::after{width:36px}.book-bar-close{padding:0 1rem}body.lang-en .book-bar-cta{font-size:.95rem}}
+  @media (max-width:420px){.book-bar-cta{flex-direction:column;gap:.3rem;padding:.75rem 1rem;font-size:.82rem}.book-bar-cta .arrow{font-size:.62rem}.book-bar-cta .arrow::after{width:18px}}
+
   /* FOOTER */
   footer{background:var(--surface);padding:5rem 3rem 2.5rem;border-top:1px solid var(--line-soft)}
   .footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:3rem;max-width:1200px;margin:0 auto 3rem}
@@ -296,6 +350,8 @@
   .footer-operator{display:grid;grid-template-columns:120px 1fr;gap:2.5rem;max-width:1200px;margin:2.5rem auto 0;padding:2.2rem 0;border-top:1px solid var(--line);align-items:start}
   .footer-operator .fo-label{font-family:var(--sans-en);font-size:.7rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold-soft);padding-top:.25rem}
   .footer-operator .fo-company{font-family:var(--serif-jp);font-size:1rem;letter-spacing:.2em;color:var(--ink);margin-bottom:.6rem;font-weight:500}
+  .footer-operator .fo-company a{color:inherit;transition:color .3s;border-bottom:1px solid transparent}
+  .footer-operator .fo-company a:hover{color:var(--gold);border-bottom-color:rgba(200,169,106,.4)}
   .footer-operator .fo-meta{font-family:var(--serif-jp);font-size:.82rem;letter-spacing:.1em;color:var(--ink-sub);line-height:2;font-weight:400}
   .footer-operator .fo-meta a{color:var(--ink-sub);transition:color .3s}
   .footer-operator .fo-meta a:hover{color:var(--gold)}
@@ -307,10 +363,10 @@
   @media (max-width:860px){footer{padding:3rem 1.2rem 2rem}.footer-top{grid-template-columns:1fr 1fr;gap:2rem}.footer-bottom{justify-content:center;text-align:center}}
 </style>
 </head>
-<body>
+<body class="lang-ja">
 
 <header>
-  <div class="brand">THE<span class="dot">·</span>HOSPITEL<span class="by">by Dr.</span></div>
+  <div class="brand"><span class="mark" aria-hidden="true"></span>THE HOSPITEL<span class="by">by Dr.</span></div>
   <nav class="header-nav">
     <ul>
       <li><a href="#prologue">Prologue<span class="jp">序章</span></a></li>
@@ -319,10 +375,14 @@
       <li><a href="#spaces">Spaces<span class="jp">空間</span></a></li>
       <li><a href="#sleep">Sleep<span class="jp">安眠</span></a></li>
       <li><a href="#journal">Journal<span class="jp">医師の言葉</span></a></li>
-      <li><a href="#info">Info<span class="jp">施設情報</span></a></li>
       <li><a href="#booking">Booking<span class="jp">予約</span></a></li>
     </ul>
   </nav>
+  <div class="lang-toggle" role="group" aria-label="Language">
+    <button type="button" data-lang="ja" class="is-active" aria-label="日本語">JA</button>
+    <span class="sep" aria-hidden="true">/</span>
+    <button type="button" data-lang="en" aria-label="English">EN</button>
+  </div>
   <button class="menu-trigger" id="menu-open" aria-label="Open menu">
     <span>Menu</span>
     <span class="bars" aria-hidden="true"><span></span><span></span></span>
@@ -332,11 +392,18 @@
 <!-- MENU OVERLAY -->
 <div class="menu-overlay" id="menu-overlay" aria-hidden="true">
   <div class="menu-head">
-    <div class="brand">THE<span class="dot">·</span>HOSPITEL<span class="by">by Dr.</span></div>
-    <button class="menu-close" id="menu-close" aria-label="Close menu">
-      <span>Close</span>
-      <span class="x" aria-hidden="true"></span>
-    </button>
+    <div class="brand"><span class="mark" aria-hidden="true"></span>THE HOSPITEL<span class="by">by Dr.</span></div>
+    <div style="display:flex;align-items:center;gap:0">
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button type="button" data-lang="ja" class="is-active" aria-label="日本語">JA</button>
+        <span class="sep" aria-hidden="true">/</span>
+        <button type="button" data-lang="en" aria-label="English">EN</button>
+      </div>
+      <button class="menu-close" id="menu-close" aria-label="Close menu">
+        <span>Close</span>
+        <span class="x" aria-hidden="true"></span>
+      </button>
+    </div>
   </div>
   <div class="menu-body">
     <ul class="menu-nav">
@@ -346,16 +413,15 @@
       <li><a href="#spaces"><span class="num">04</span><span class="en">Spaces</span><span class="jp">空間</span></a></li>
       <li><a href="#sleep"><span class="num">05</span><span class="en">Sleep Design</span><span class="jp">安眠</span></a></li>
       <li><a href="#journal"><span class="num">06</span><span class="en">Journal</span><span class="jp">医師の言葉</span></a></li>
-      <li><a href="#info"><span class="num">07</span><span class="en">Information</span><span class="jp">施設情報</span></a></li>
-      <li><a href="#booking"><span class="num">08</span><span class="en">Booking</span><span class="jp">予約</span></a></li>
+      <li><a href="#booking"><span class="num">07</span><span class="en">Booking</span><span class="jp">予約</span></a></li>
     </ul>
     <aside class="menu-aside">
       <h5>Doctor-Curated Sleep Sanctuary</h5>
-      <p>医師監修・安眠特化型の1軒家ホテル。医学と宿泊体験の境界で、ひと夜の質を設計する場所。</p>
+      <p data-i18n="menu.aside.intro">医師監修・安眠特化型の1軒家ホテル。医学と宿泊体験の境界で、ひと夜の質を設計する場所。</p>
       <div class="label">Reservation</div>
       <a href="mailto:info@the-hospitel.jp" class="contact">info@the-hospitel.jp</a>
       <div class="label">Location</div>
-      <p style="font-size:.85rem;margin-bottom:0">東京都内 / Tokyo Private Residence</p>
+      <p data-i18n="menu.aside.location" style="font-size:.85rem;margin-bottom:0">東京都内 / Tokyo Private Residence</p>
     </aside>
   </div>
 </div>
@@ -369,15 +435,15 @@
   <div class="hero-body">
     <div class="kicker">Doctor-Curated Sleep Sanctuary</div>
     <h1>The art<br />of <em>deep</em> sleep.</h1>
-    <div class="sub">医師監修・安眠特化型 1軒家ホテル</div>
-    <p class="lead">
+    <div class="sub" data-i18n="hero.sub">医師監修・安眠特化型 1軒家ホテル</div>
+    <p class="lead" data-i18n="hero.lead">
       旅の疲れを、深い眠りで解き放つ。<br />
-      医師の知見で設計された、東京の夜の隠れ家。
+      医学の英知で設計された、東京の夜の隠れ家。
     </p>
   </div>
   <div class="hero-foot">
     <div class="meta">
-      <span><b>1日1組</b>One Group / Night</span>
+      <span data-i18n="hero.meta.group"><b>1日1組</b>One Group / Night</span>
       <span><b>Doctor</b>Curated by MD</span>
       <span><b>Tokyo</b>Private Residence</span>
     </div>
@@ -397,10 +463,10 @@
       </div>
     </div>
     <div class="prologue-text">
-      <h2 class="h-display">夜の質が、<br /><em>旅の質</em>を決める。</h2>
-      <p>旅の魅力を心ゆくまで味わうための、最初の一晩を。</p>
-      <p>THE HOSPITEL は、医師監修の安眠特化型1軒家ホテル。旅の疲れを、深い眠りで解き放つための静かな邸宅です。</p>
-      <p>東京の落ち着いた住宅街に佇む一棟に、1日1組の皆さまだけをお迎えします。照明、寝具、湯、薬膳——睡眠科学と医師の知見で整えられた夜が、翌日の景色をそっと変える。</p>
+      <h2 class="h-display" data-i18n="prologue.h2">夜の質が、<br /><em>旅の質</em>を決める。</h2>
+      <p data-i18n="prologue.p1">旅の魅力を心ゆくまで味わうための、上質な一晩を。</p>
+      <p data-i18n="prologue.p2">THE HOSPITEL は、医師監修の安眠特化型1軒家ホテル。旅の疲れを、深い眠りで解き放つための静かな邸宅です。</p>
+      <p data-i18n="prologue.p3">東京の落ち着いた住宅街に佇む一棟に、1日1組の皆さまだけをお迎えします。照明、寝具、湯、薬膳——睡眠科学と医学の英知で整えられた夜が、翌日の景色をそっと変える。</p>
     </div>
   </div>
 </section>
@@ -414,14 +480,14 @@
     </div>
     <div class="feature-text">
       <div class="eyebrow">Featured Sanctuary</div>
-      <h2 class="h-display">夜に沈む、<br /><em>邸宅</em>のかたち。</h2>
-      <p>深い墨色に塗り込められた外壁、玄関先に灯るアンバーの光。都会の喧騒が遠のいていく、静謐な佇まい。</p>
-      <p>中に入れば、ダーク基調の内装、やわらかな間接照明、香りのない清浄な空気——すべてが深い眠りへと意識を誘うよう設計されています。</p>
+      <h2 class="h-display" data-i18n="feature.h2">夜に沈む、<br /><em>邸宅</em>のかたち。</h2>
+      <p data-i18n="feature.p1">深い墨色に塗り込められた外壁、玄関先に灯るアンバーの光。都会の喧騒が遠のいていく、静謐な佇まい。</p>
+      <p data-i18n="feature.p2">中に入れば、ダーク基調の内装、やわらかな間接照明、香りのない清浄な空気——すべてが深い眠りへと意識を誘うよう設計されています。</p>
       <dl class="detail">
-        <dt>Type</dt><dd>1棟貸し / Private Residence</dd>
-        <dt>Capacity</dt><dd>1日1組限定</dd>
+        <dt>Type</dt><dd data-i18n="feature.type">1棟貸し / Private Residence</dd>
+        <dt>Capacity</dt><dd data-i18n="feature.capacity">1日1組限定</dd>
         <dt>Design</dt><dd>Doctor-Curated Sleep Design</dd>
-        <dt>Location</dt><dd>東京都内 / Tokyo</dd>
+        <dt>Location</dt><dd data-i18n="feature.location">東京都内 / Tokyo</dd>
       </dl>
     </div>
   </div>
@@ -431,17 +497,18 @@
 <section class="story" id="story">
   <div class="story-inner">
     <div class="story-head">
+      <span class="emblem emblem-lg" aria-hidden="true"></span>
       <div class="eyebrow">Our Story</div>
-      <h2 class="h-display">開業への、<em>想い</em>。</h2>
+      <h2 class="h-display" data-i18n="story.h2">開業への、<em>想い</em>。</h2>
     </div>
     <div class="story-body">
-      <p class="lead-para">日本という素晴らしい国を、もっと多くの方に知ってほしい。</p>
-      <p>日本人にとって当たり前のことでも、外国の方にとっては大変魅力的なのが今の日本です。治安がよく、食事が美味しく、観光地も日帰り可能なエリアに密集している。浅草、スカイツリー、銀座、渋谷、新宿——異なる顔を持つ街が密集している都市は、世界でも稀有な存在です。</p>
-      <p>けれど旅となると、長旅の疲れで思うように観光を楽しめないことも。それは、すごくもったいないことだと思いました。</p>
-      <span class="pull">旅館で安眠することができたら、<br />次の日を思いっきり楽しめるのではないか。</span>
-      <p>医師として働く中で、睡眠薬を飲んでいる方の多さに気づきました。睡眠は誰にでも関わる問題で、私自身も不眠に悩んだ時期があります。だからこそ、どのように環境を整えれば良質な睡眠を取れるのか——医師として追求してきました。</p>
-      <p>その知識と経験を応用し、長旅で疲れた体を安眠で存分に回復させ、翌日を思う存分楽しんでいただきたい。さらには旅が終わった後の日常にも、ここでの体験を持ち帰っていただき、人生の質を上げてほしい。</p>
-      <p>そんな想いで、この THE HOSPITEL を開業しました。</p>
+      <p class="lead-para" data-i18n="story.lead">日本という素晴らしい国を、もっと多くの方に知ってほしい。</p>
+      <p data-i18n="story.p1">日本人にとって当たり前のことでも、外国の方にとっては大変魅力的なのが今の日本です。治安がよく、食事が美味しく、観光地も日帰り可能なエリアに密集している。浅草、スカイツリー、銀座、渋谷、新宿——異なる顔を持つ街が密集している都市は、世界でも稀有な存在です。</p>
+      <p data-i18n="story.p2">けれど旅となると、長旅の疲れで思うように観光を楽しめないことも。それは、すごくもったいないことだと思いました。</p>
+      <span class="pull" data-i18n="story.pull">旅館で安眠することができたら、<br />次の日を思いっきり楽しめるのではないか。</span>
+      <p data-i18n="story.p3">医師として働く中で、睡眠薬を飲んでいる方の多さに気づきました。睡眠は誰にでも関わる問題で、私自身も不眠に悩んだ時期があります。だからこそ、どのように環境を整えれば良質な睡眠を取れるのか——医師として追求してきました。</p>
+      <p data-i18n="story.p4">その知識と経験を応用し、長旅で疲れた体を安眠で存分に回復させ、翌日を思う存分楽しんでいただきたい。さらには旅が終わった後の日常にも、ここでの体験を持ち帰っていただき、人生の質を上げてほしい。</p>
+      <p data-i18n="story.p5">そんな想いで、この THE HOSPITEL を開業しました。</p>
       <div class="signoff">
         <div>
           <div class="name">Dr. YUSUKE SATO</div>
@@ -458,9 +525,9 @@
     <div class="spaces-head">
       <div>
         <div class="eyebrow">The Spaces</div>
-        <h2 class="h-display">眠りのための、<br /><em>静謐</em>な空間。</h2>
+        <h2 class="h-display" data-i18n="spaces.h2">眠りのための、<br /><em>静謐</em>な空間。</h2>
       </div>
-      <p class="note">
+      <p class="note" data-i18n="spaces.note">
         ダーク基調の内装は、視覚的なノイズを徹底的に削ぎ落とし、脳の覚醒を静かに鎮めます。灯り、壁の色、素材感——すべてが深い休息のために選ばれています。
       </p>
     </div>
@@ -469,7 +536,7 @@
         <div class="space-img" style="background-image:url('bedroom.jpg')"></div>
         <div class="space-meta">
           <div class="num">01</div>
-          <h3>洋寝室</h3>
+          <h3 data-i18n="spaces.01.h3">洋寝室</h3>
           <div class="en">Bedroom</div>
         </div>
       </a>
@@ -477,7 +544,7 @@
         <div class="space-img" style="background-image:url('bath.jpg')"></div>
         <div class="space-meta">
           <div class="num">02</div>
-          <h3>薬膳風呂</h3>
+          <h3 data-i18n="spaces.02.h3">薬膳風呂</h3>
           <div class="en">Medicinal Bath</div>
         </div>
       </a>
@@ -485,7 +552,7 @@
         <div class="space-img" style="background-image:url('bedroom-jp.jpg')"></div>
         <div class="space-meta">
           <div class="num">03</div>
-          <h3>和寝室</h3>
+          <h3 data-i18n="spaces.03.h3">和寝室</h3>
           <div class="en">Japanese Room</div>
         </div>
       </a>
@@ -493,7 +560,7 @@
         <div class="space-img" style="background-image:url('tatami.jpg')"></div>
         <div class="space-meta">
           <div class="num">04</div>
-          <h3>畳の間</h3>
+          <h3 data-i18n="spaces.04.h3">畳の間</h3>
           <div class="en">Tatami Suite</div>
         </div>
       </a>
@@ -501,7 +568,7 @@
         <div class="space-img" style="background-image:url('lounge.jpg')"></div>
         <div class="space-meta">
           <div class="num">05</div>
-          <h3>ラウンジ</h3>
+          <h3 data-i18n="spaces.05.h3">ラウンジ</h3>
           <div class="en">Lounge</div>
         </div>
       </a>
@@ -513,7 +580,7 @@
 <section class="bleed" style="background-image:url('dawn-new.jpg')">
   <div class="bleed-text">
     <div class="ey">A Night of True Rest</div>
-    <h3>深い眠りは、<br />明日の景色を変える。</h3>
+    <h3 data-i18n="bleed1.h3">深い眠りは、<br />明日の景色を変える。</h3>
   </div>
 </section>
 
@@ -523,106 +590,106 @@
     <div class="sleep-head">
       <div>
         <div class="eyebrow">Sleep Design</div>
-        <h2 class="h-display">安眠のための、<br /><em>6 つ</em>の設計。</h2>
+        <h2 class="h-display" data-i18n="sleep.h2">安眠のための、<br /><em>6 つ</em>の設計。</h2>
       </div>
-      <p>
-        医師の知見と最新の睡眠科学を融合させた、THE HOSPITEL ならではの空間設計。体内時計、寝具、湯、薬膳、光、視覚——眠りに関わるすべての要素を、医師の手で整えています。
+      <p data-i18n="sleep.intro">
+        医学の英知と最新の睡眠科学を融合させた、THE HOSPITEL ならではの空間設計。体内時計、寝具、湯、薬膳、光、視覚——眠りに関わるすべての要素を、医師の手で整えています。
       </p>
     </div>
     <div class="sleep-list">
       <div class="sleep-row" onclick="this.classList.toggle('is-open')">
         <div class="num">01</div>
         <div>
-          <h3>サーカディアンリズム照明<span class="en">Circadian Lighting</span></h3>
+          <h3><span data-i18n="sleep.01.h3">サーカディアンリズム照明</span><span class="en">Circadian Lighting</span></h3>
         </div>
         <div>
-          <p>時間帯に応じて色温度と照度が変化する照明を導入。日没から就寝、朝の覚醒まで、体内時計に寄り添うように光が移ろい、自然な入眠と目覚めを促します。</p>
+          <p data-i18n="sleep.01.p">時間帯に応じて色温度と照度が変化する照明を導入。日没から就寝、朝の覚醒まで、体内時計に寄り添うように光が移ろい、自然な入眠と目覚めを促します。</p>
           <ul class="sleep-specs">
-            <li>色温度 2000K–6500K 可変</li>
-            <li>朝・昼・夕・夜の 4 シーン自動制御</li>
-            <li>医師監修のカスタム光環境</li>
+            <li data-i18n="sleep.01.s1">色温度 2000K–6500K 可変</li>
+            <li data-i18n="sleep.01.s2">朝・昼・夕・夜の 4 シーン自動制御</li>
+            <li data-i18n="sleep.01.s3">医師監修のカスタム光環境</li>
           </ul>
-          <div class="sleep-toggle"><span class="label-open">詳細を見る</span><span class="label-close">閉じる</span></div>
+          <div class="sleep-toggle"><span class="label-open" data-i18n="sleep.labelOpen">詳細を見る</span><span class="label-close" data-i18n="sleep.labelClose">閉じる</span></div>
         </div>
         <div class="thumb" style="background-image:url('sleep-01.jpg')"></div>
       </div>
       <div class="sleep-row" onclick="this.classList.toggle('is-open')">
         <div class="num">02</div>
         <div>
-          <h3>ドクターズチョイス寝具<span class="en">Curated Bedding</span></h3>
+          <h3><span data-i18n="sleep.02.h3">ドクターズチョイス寝具</span><span class="en">Curated Bedding</span></h3>
         </div>
         <div>
-          <p>マットレス・枕・寝具のすべてを医師の視点で厳選。体圧分散と寝姿勢の最適化で、身体に負担のかからない深い眠りへと導きます。</p>
+          <p data-i18n="sleep.02.p">マットレス・枕・寝具のすべてを医師の視点で厳選。体圧分散と寝姿勢の最適化で、身体に負担のかからない深い眠りへと導きます。</p>
           <ul class="sleep-specs">
-            <li>高密度ポケットコイル マットレス</li>
-            <li>高さ 5 段階 × 形状 4 型の枕から選定</li>
-            <li>オーガニックコットン 60 番手シーツ</li>
+            <li data-i18n="sleep.02.s1">高密度ポケットコイル マットレス</li>
+            <li data-i18n="sleep.02.s2">高さ 5 段階 × 形状 4 型の枕から選定</li>
+            <li data-i18n="sleep.02.s3">オーガニックコットン 60 番手シーツ</li>
           </ul>
-          <div class="sleep-toggle"><span class="label-open">詳細を見る</span><span class="label-close">閉じる</span></div>
+          <div class="sleep-toggle"><span class="label-open" data-i18n="sleep.labelOpen">詳細を見る</span><span class="label-close" data-i18n="sleep.labelClose">閉じる</span></div>
         </div>
         <div class="thumb" style="background-image:url('sleep-02.jpg')"></div>
       </div>
       <div class="sleep-row" onclick="this.classList.toggle('is-open')">
         <div class="num">03</div>
         <div>
-          <h3>薬膳風呂<span class="en">Medicinal Bath</span></h3>
+          <h3><span data-i18n="sleep.03.h3">薬膳風呂</span><span class="en">Medicinal Bath</span></h3>
         </div>
         <div>
-          <p>睡眠の質を高める漢方の知見を取り入れたお風呂。湯上がりから入眠までの時間を、深部体温の自然な低下とともに穏やかに整えます。</p>
+          <p data-i18n="sleep.03.p">睡眠の質を高める漢方の知見を取り入れたお風呂。湯上がりから入眠までの時間を、深部体温の自然な低下とともに穏やかに整えます。</p>
           <ul class="sleep-specs">
-            <li>当帰・川芎・生姜など 7 種の生薬</li>
-            <li>就寝 90 分前の入浴プログラム</li>
-            <li>湯温 38–40℃ の低温長湯設計</li>
+            <li data-i18n="sleep.03.s1">当帰・川芎・生姜など 7 種の生薬</li>
+            <li data-i18n="sleep.03.s2">就寝 90 分前の入浴プログラム</li>
+            <li data-i18n="sleep.03.s3">湯温 38–40℃ の低温長湯設計</li>
           </ul>
-          <div class="sleep-toggle"><span class="label-open">詳細を見る</span><span class="label-close">閉じる</span></div>
+          <div class="sleep-toggle"><span class="label-open" data-i18n="sleep.labelOpen">詳細を見る</span><span class="label-close" data-i18n="sleep.labelClose">閉じる</span></div>
         </div>
         <div class="thumb" style="background-image:url('sleep-03.jpg')"></div>
       </div>
       <div class="sleep-row" onclick="this.classList.toggle('is-open')">
         <div class="num">04</div>
         <div>
-          <h3>薬膳茶・漢方提供<span class="en">Herbal Gift</span></h3>
+          <h3><span data-i18n="sleep.04.h3">薬膳茶・漢方提供</span><span class="en">Herbal Gift</span></h3>
         </div>
         <div>
-          <p>就寝前にお召し上がりいただく安眠サポートの薬膳茶と、日常にお持ち帰りいただける漢方をご用意。旅の記憶を、体に優しく残します。</p>
+          <p data-i18n="sleep.04.p">就寝前にお召し上がりいただく安眠サポートの薬膳茶と、日常にお持ち帰りいただける漢方をご用意。旅の記憶を、体に優しく残します。</p>
           <ul class="sleep-specs">
-            <li>酸棗仁湯ベースの夜用薬膳茶</li>
-            <li>朝用・夜用 2 種のブレンド</li>
-            <li>漢方医監修の持ち帰りギフト</li>
+            <li data-i18n="sleep.04.s1">酸棗仁湯ベースの夜用薬膳茶</li>
+            <li data-i18n="sleep.04.s2">朝用・夜用 2 種のブレンド</li>
+            <li data-i18n="sleep.04.s3">漢方医監修の持ち帰りギフト</li>
           </ul>
-          <div class="sleep-toggle"><span class="label-open">詳細を見る</span><span class="label-close">閉じる</span></div>
+          <div class="sleep-toggle"><span class="label-open" data-i18n="sleep.labelOpen">詳細を見る</span><span class="label-close" data-i18n="sleep.labelClose">閉じる</span></div>
         </div>
         <div class="thumb" style="background-image:url('sleep-04.jpg')"></div>
       </div>
       <div class="sleep-row" onclick="this.classList.toggle('is-open')">
         <div class="num">05</div>
         <div>
-          <h3>ウェイクアップライト<span class="en">Wake-up Light</span></h3>
+          <h3><span data-i18n="sleep.05.h3">ウェイクアップライト</span><span class="en">Wake-up Light</span></h3>
         </div>
         <div>
-          <p>朝日のように徐々に明るくなる目覚まし照明。静かにコルチゾールの分泌を促し、目覚まし音ではなく光で、すっきりとした朝を迎えます。</p>
+          <p data-i18n="sleep.05.p">朝日のように徐々に明るくなる目覚まし照明。静かにコルチゾールの分泌を促し、目覚まし音ではなく光で、すっきりとした朝を迎えます。</p>
           <ul class="sleep-specs">
-            <li>起床 30 分前から光量が漸増</li>
-            <li>日の出を再現する 1500K→4000K の色推移</li>
-            <li>鳥のさえずり・環境音の自然アラーム</li>
+            <li data-i18n="sleep.05.s1">起床 30 分前から光量が漸増</li>
+            <li data-i18n="sleep.05.s2">日の出を再現する 1500K→4000K の色推移</li>
+            <li data-i18n="sleep.05.s3">鳥のさえずり・環境音の自然アラーム</li>
           </ul>
-          <div class="sleep-toggle"><span class="label-open">詳細を見る</span><span class="label-close">閉じる</span></div>
+          <div class="sleep-toggle"><span class="label-open" data-i18n="sleep.labelOpen">詳細を見る</span><span class="label-close" data-i18n="sleep.labelClose">閉じる</span></div>
         </div>
         <div class="thumb" style="background-image:url('sleep-05.jpg')"></div>
       </div>
       <div class="sleep-row" onclick="this.classList.toggle('is-open')">
         <div class="num">06</div>
         <div>
-          <h3>安眠空間の設計<span class="en">Calm Interior</span></h3>
+          <h3><span data-i18n="sleep.06.h3">安眠空間の設計</span><span class="en">Calm Interior</span></h3>
         </div>
         <div>
-          <p>視覚的ノイズを排した落ち着いた内装。深い墨色、間接照明、静かな素材感——視覚から脳を鎮め、深い休息へと誘います。</p>
+          <p data-i18n="sleep.06.p">視覚的ノイズを排した落ち着いた内装。深い墨色、間接照明、静かな素材感——視覚から脳を鎮め、深い休息へと誘います。</p>
           <ul class="sleep-specs">
-            <li>墨黒 × 和紙 × 無垢材の三素材構成</li>
-            <li>寝室照度 10–50 ルクスの間接光</li>
-            <li>1 日 1 組限定の静謐な独立空間</li>
+            <li data-i18n="sleep.06.s1">墨黒 × 和紙 × 無垢材の三素材構成</li>
+            <li data-i18n="sleep.06.s2">寝室照度 10–50 ルクスの間接光</li>
+            <li data-i18n="sleep.06.s3">1 日 1 組限定の静謐な独立空間</li>
           </ul>
-          <div class="sleep-toggle"><span class="label-open">詳細を見る</span><span class="label-close">閉じる</span></div>
+          <div class="sleep-toggle"><span class="label-open" data-i18n="sleep.labelOpen">詳細を見る</span><span class="label-close" data-i18n="sleep.labelClose">閉じる</span></div>
         </div>
         <div class="thumb" style="background-image:url('sleep-06.jpg')"></div>
       </div>
@@ -635,24 +702,18 @@
   <div class="options-inner">
     <div class="options-head">
       <div class="eyebrow">Optional Experiences</div>
-      <h2 class="h-display">夜を、<em>さらに深く</em>。</h2>
+      <h2 class="h-display" data-i18n="options.h2">夜を、<em>さらに深く</em>。</h2>
     </div>
     <div class="options-flex">
-      <div class="opt">
-        <div class="icon">
-          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="20" y="8" width="24" height="48" rx="4"/><line x1="20" y1="14" x2="44" y2="14"/><line x1="20" y1="50" x2="44" y2="50"/><line x1="14" y1="22" x2="50" y2="42" stroke-width="2"/></svg>
-        </div>
+      <div class="opt opt-detox">
         <div class="no">Option 01</div>
-        <h3>デジタルデトックス</h3>
-        <p>夜21時以降、スマートフォンをタイムロッキングコンテナまたはスタッフがお預かり。心と眠りを情報の波から解き放ちます。</p>
+        <h3 data-i18n="options.01.h3">デジタルデトックス</h3>
+        <p data-i18n="options.01.p">夜21時以降、スマートフォンをタイムロッキングコンテナまたはスタッフがお預かり。心と眠りを情報の波から解き放ちます。</p>
       </div>
-      <div class="opt">
-        <div class="icon">
-          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="32" cy="32" rx="18" ry="12"/><ellipse cx="32" cy="32" rx="14" ry="9"/><circle cx="32" cy="32" r="2" fill="currentColor"/></svg>
-        </div>
+      <div class="opt opt-oura">
         <div class="no">Option 02</div>
-        <h3>オーラリングで睡眠分析</h3>
-        <p>睡眠分析デバイス Oura Ring を装着し、滞在中の睡眠データを医師がフィードバック。日常の眠りへのヒントを持ち帰れます。</p>
+        <h3 data-i18n="options.02.h3">オーラリングで睡眠分析</h3>
+        <p data-i18n="options.02.p">睡眠分析デバイス Oura Ring を装着し、滞在中の睡眠データを医師がフィードバック。日常の眠りへのヒントを持ち帰れます。</p>
       </div>
     </div>
   </div>
@@ -663,7 +724,7 @@
   <div class="journal-inner">
     <div class="journal-head">
       <div class="eyebrow">Journal · Voice of the Doctor</div>
-      <h2 class="h-display">医師が語る、<em>夜の設計</em>。</h2>
+      <h2 class="h-display" data-i18n="journal.h2">医師が語る、<em>夜の設計</em>。</h2>
     </div>
     <div class="journal-grid">
       <div class="journal-portrait" style="background-image:url('founder.jpg');background-position:63% 20%">
@@ -673,17 +734,17 @@
         </div>
       </div>
       <div class="journal-body">
-        <p class="quote">
+        <p class="quote" data-i18n="journal.quote">
           回復できる夜を設計したい——<br />
           そこから、すべてが始まりました。
         </p>
-        <p>
+        <p data-i18n="journal.p1">
           医療の現場では、睡眠薬に頼らざるを得ない方々と日々向き合ってきました。一方で、環境さえ整えば、薬に頼らずとも深い眠りに辿り着けることも、科学は示しています。
         </p>
-        <p>
+        <p data-i18n="journal.p2">
           THE HOSPITEL は、病院でも、ただの旅館でもありません。医学と宿泊体験の境界で、「眠りそのもの」を設計する場所。光、温度、香り、寝具、湯、茶——夜を構成するすべての要素に、医師の意図を宿らせました。
         </p>
-        <p>
+        <p data-i18n="journal.p3">
           旅の疲れを癒やし、日常の眠りを見つめ直すきっかけに。そんな夜を、あなたのために用意しています。
         </p>
         <div class="byline">— Interview · THE HOSPITEL Journal</div>
@@ -696,43 +757,19 @@
 <section class="bleed" style="background-image:url('dawn.jpg')">
   <div class="bleed-text">
     <div class="ey">Doctor-Curated Wellness</div>
-    <h3>医学の英知が、<br />ひと夜の質を変える。</h3>
-  </div>
-</section>
-
-<!-- INFORMATION -->
-<section class="info" id="info">
-  <div class="info-inner">
-    <div class="info-head">
-      <div>
-        <div class="eyebrow">Information</div>
-        <h2 class="h-display">施設概要</h2>
-      </div>
-      <p>
-        1日1組限定、東京の静かな住宅街に佇む一棟貸しの隠れ家。チェックイン時刻や設備の詳細については、ご予約確定後に個別にご案内いたします。
-      </p>
-    </div>
-    <ul class="info-table">
-      <li><span class="k">Location</span><span class="v">東京都墨田区東向島 1-20-13</span></li>
-      <li><span class="k">Type</span><span class="v">1棟貸し / Private Residence</span></li>
-      <li><span class="k">Capacity</span><span class="v">1日1組限定</span></li>
-      <li><span class="k">Check-in</span><span class="v">16:00 〜</span></li>
-      <li><span class="k">Check-out</span><span class="v">〜 10:00</span></li>
-      <li><span class="k">Amenity</span><span class="v">サーカディアン照明 / ドクターズチョイス寝具 / 薬膳風呂 / 薬膳茶 / ウェイクアップライト</span></li>
-      <li><span class="k">Option</span><span class="v">デジタルデトックス / Oura Ring 睡眠分析・医師フィードバック</span></li>
-      <li><span class="k">Language</span><span class="v">日本語 / English</span></li>
-    </ul>
+    <h3 data-i18n="bleed2.h3">医学の英知が、<br />ひと夜の質を変える。</h3>
   </div>
 </section>
 
 <!-- BOOKING -->
 <section class="booking" id="booking">
   <div class="booking-inner">
+    <span class="emblem emblem-lg" aria-hidden="true"></span>
     <div class="eyebrow">Reservation</div>
-    <h2>深い眠りを、<br />予約する。</h2>
-    <p>
+    <h2 data-i18n="booking.h2">深い眠りを、<br />予約する。</h2>
+    <p data-i18n="booking.p">
       THE HOSPITEL は完全予約制です。<br />
-      ご予約・空室状況・オプションに関するお問い合わせは、以下よりお気軽にご連絡ください。
+      ご予約・空室状況・オプション・取材に関するお問い合わせは、以下よりお気軽にご連絡ください。
     </p>
     <div class="btn-row">
       <a href="mailto:info@the-hospitel.jp" class="btn primary">Book a Stay</a>
@@ -741,12 +778,23 @@
   </div>
 </section>
 
+<!-- FLOATING BOOK BAR -->
+<aside class="book-bar" id="book-bar" aria-hidden="true">
+  <a class="book-bar-cta" href="#booking">
+    <span data-i18n="bookBar.text">深い眠りを、予約する。</span>
+    <span class="arrow" data-i18n="bookBar.cta">Book</span>
+  </a>
+  <button class="book-bar-close" id="book-bar-close" type="button" aria-label="Close reservation bar">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+  </button>
+</aside>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <span class="brand">THE<span class="dot">·</span>HOSPITEL<span class="by">by Dr.</span></span>
-      <p>医師監修・安眠特化型 1軒家ホテル。医学と宿泊体験の境界で、ひと夜の質を設計する場所。</p>
+      <span class="brand"><span class="mark" aria-hidden="true"></span>THE HOSPITEL<span class="by">by Dr.</span></span>
+      <p data-i18n="footer.intro">医師監修・安眠特化型 1軒家ホテル。医学と宿泊体験の境界で、ひと夜の質を設計する場所。</p>
     </div>
     <div class="footer-col">
       <h5>Discover</h5>
@@ -762,7 +810,6 @@
       <ul>
         <li><a href="#sleep">Sleep Design</a></li>
         <li><a href="#journal">Journal</a></li>
-        <li><a href="#info">Information</a></li>
         <li><a href="#booking">Booking</a></li>
       </ul>
     </div>
@@ -777,8 +824,8 @@
   <div class="footer-operator">
     <div class="fo-label">Operator</div>
     <div class="fo-body">
-      <div class="fo-company">医師の不動産株式会社</div>
-      <div class="fo-meta">〒104-0061 東京都中央区銀座 1-12-4 N&amp;E BLD. 7F</div>
+      <div class="fo-company"><a href="https://dr-fudousan.jp/" target="_blank" rel="noopener" data-i18n="footer.operator.company">医師の不動産株式会社</a></div>
+      <div class="fo-meta" data-i18n="footer.operator.address">〒113-0021 東京都文京区本駒込5丁目16-10-3</div>
       <div class="fo-meta"><a href="tel:05088856566">TEL 050-8885-6566</a> <span class="fo-sep">/</span> <a href="mailto:support@dr-fudousan.jp">support@dr-fudousan.jp</a></div>
     </div>
   </div>
@@ -789,6 +836,266 @@
 </footer>
 
 <script>
+  // ============== i18n ==============
+  var translations = {
+    ja: {
+      "meta.title": "THE HOSPITEL | 医師監修・安眠特化型 1軒家ホテル",
+      "meta.description": "医師監修・安眠特化型の1軒家ホテル「THE HOSPITEL」。サーカディアンリズム照明、ドクターズチョイス寝具、薬膳風呂など、医学の英知で設計された深い眠りで、旅の疲れを癒す。",
+
+      "hero.sub": "医師監修・安眠特化型 1軒家ホテル",
+      "hero.lead": "旅の疲れを、深い眠りで解き放つ。<br />医学の英知で設計された、東京の夜の隠れ家。",
+      "hero.meta.group": "<b>1日1組</b>One Group / Night",
+
+      "menu.aside.intro": "医師監修・安眠特化型の1軒家ホテル。医学と宿泊体験の境界で、ひと夜の質を設計する場所。",
+      "menu.aside.location": "東京都内 / Tokyo Private Residence",
+
+      "prologue.h2": "夜の質が、<br /><em>旅の質</em>を決める。",
+      "prologue.p1": "旅の魅力を心ゆくまで味わうための、上質な一晩を。",
+      "prologue.p2": "THE HOSPITEL は、医師監修の安眠特化型1軒家ホテル。旅の疲れを、深い眠りで解き放つための静かな邸宅です。",
+      "prologue.p3": "東京の落ち着いた住宅街に佇む一棟に、1日1組の皆さまだけをお迎えします。照明、寝具、湯、薬膳——睡眠科学と医学の英知で整えられた夜が、翌日の景色をそっと変える。",
+
+      "feature.h2": "夜に沈む、<br /><em>邸宅</em>のかたち。",
+      "feature.p1": "深い墨色に塗り込められた外壁、玄関先に灯るアンバーの光。都会の喧騒が遠のいていく、静謐な佇まい。",
+      "feature.p2": "中に入れば、ダーク基調の内装、やわらかな間接照明、香りのない清浄な空気——すべてが深い眠りへと意識を誘うよう設計されています。",
+      "feature.type": "1棟貸し / Private Residence",
+      "feature.capacity": "1日1組限定",
+      "feature.location": "東京都内 / Tokyo",
+
+      "story.h2": "開業への、<em>想い</em>。",
+      "story.lead": "日本という素晴らしい国を、もっと多くの方に知ってほしい。",
+      "story.p1": "日本人にとって当たり前のことでも、外国の方にとっては大変魅力的なのが今の日本です。治安がよく、食事が美味しく、観光地も日帰り可能なエリアに密集している。浅草、スカイツリー、銀座、渋谷、新宿——異なる顔を持つ街が密集している都市は、世界でも稀有な存在です。",
+      "story.p2": "けれど旅となると、長旅の疲れで思うように観光を楽しめないことも。それは、すごくもったいないことだと思いました。",
+      "story.pull": "旅館で安眠することができたら、<br />次の日を思いっきり楽しめるのではないか。",
+      "story.p3": "医師として働く中で、睡眠薬を飲んでいる方の多さに気づきました。睡眠は誰にでも関わる問題で、私自身も不眠に悩んだ時期があります。だからこそ、どのように環境を整えれば良質な睡眠を取れるのか——医師として追求してきました。",
+      "story.p4": "その知識と経験を応用し、長旅で疲れた体を安眠で存分に回復させ、翌日を思う存分楽しんでいただきたい。さらには旅が終わった後の日常にも、ここでの体験を持ち帰っていただき、人生の質を上げてほしい。",
+      "story.p5": "そんな想いで、この THE HOSPITEL を開業しました。",
+
+      "spaces.h2": "眠りのための、<br /><em>静謐</em>な空間。",
+      "spaces.note": "ダーク基調の内装は、視覚的なノイズを徹底的に削ぎ落とし、脳の覚醒を静かに鎮めます。灯り、壁の色、素材感——すべてが深い休息のために選ばれています。",
+      "spaces.01.h3": "洋寝室",
+      "spaces.02.h3": "薬膳風呂",
+      "spaces.03.h3": "和寝室",
+      "spaces.04.h3": "畳の間",
+      "spaces.05.h3": "ラウンジ",
+
+      "bleed1.h3": "深い眠りは、<br />明日の景色を変える。",
+
+      "sleep.h2": "安眠のための、<br /><em>6 つ</em>の設計。",
+      "sleep.intro": "医学の英知と最新の睡眠科学を融合させた、THE HOSPITEL ならではの空間設計。体内時計、寝具、湯、薬膳、光、視覚——眠りに関わるすべての要素を、医師の手で整えています。",
+      "sleep.01.h3": "サーカディアンリズム照明",
+      "sleep.01.p": "時間帯に応じて色温度と照度が変化する照明を導入。日没から就寝、朝の覚醒まで、体内時計に寄り添うように光が移ろい、自然な入眠と目覚めを促します。",
+      "sleep.01.s1": "色温度 2000K–6500K 可変",
+      "sleep.01.s2": "朝・昼・夕・夜の 4 シーン自動制御",
+      "sleep.01.s3": "医師監修のカスタム光環境",
+      "sleep.02.h3": "ドクターズチョイス寝具",
+      "sleep.02.p": "マットレス・枕・寝具のすべてを医師の視点で厳選。体圧分散と寝姿勢の最適化で、身体に負担のかからない深い眠りへと導きます。",
+      "sleep.02.s1": "高密度ポケットコイル マットレス",
+      "sleep.02.s2": "高さ 5 段階 × 形状 4 型の枕から選定",
+      "sleep.02.s3": "オーガニックコットン 60 番手シーツ",
+      "sleep.03.h3": "薬膳風呂",
+      "sleep.03.p": "睡眠の質を高める漢方の知見を取り入れたお風呂。湯上がりから入眠までの時間を、深部体温の自然な低下とともに穏やかに整えます。",
+      "sleep.03.s1": "当帰・川芎・生姜など 7 種の生薬",
+      "sleep.03.s2": "就寝 90 分前の入浴プログラム",
+      "sleep.03.s3": "湯温 38–40℃ の低温長湯設計",
+      "sleep.04.h3": "薬膳茶・漢方提供",
+      "sleep.04.p": "就寝前にお召し上がりいただく安眠サポートの薬膳茶と、日常にお持ち帰りいただける漢方をご用意。旅の記憶を、体に優しく残します。",
+      "sleep.04.s1": "酸棗仁湯ベースの夜用薬膳茶",
+      "sleep.04.s2": "朝用・夜用 2 種のブレンド",
+      "sleep.04.s3": "漢方医監修の持ち帰りギフト",
+      "sleep.05.h3": "ウェイクアップライト",
+      "sleep.05.p": "朝日のように徐々に明るくなる目覚まし照明。静かにコルチゾールの分泌を促し、目覚まし音ではなく光で、すっきりとした朝を迎えます。",
+      "sleep.05.s1": "起床 30 分前から光量が漸増",
+      "sleep.05.s2": "日の出を再現する 1500K→4000K の色推移",
+      "sleep.05.s3": "鳥のさえずり・環境音の自然アラーム",
+      "sleep.06.h3": "安眠空間の設計",
+      "sleep.06.p": "視覚的ノイズを排した落ち着いた内装。深い墨色、間接照明、静かな素材感——視覚から脳を鎮め、深い休息へと誘います。",
+      "sleep.06.s1": "墨黒 × 和紙 × 無垢材の三素材構成",
+      "sleep.06.s2": "寝室照度 10–50 ルクスの間接光",
+      "sleep.06.s3": "1 日 1 組限定の静謐な独立空間",
+      "sleep.labelOpen": "詳細を見る",
+      "sleep.labelClose": "閉じる",
+
+      "options.h2": "夜を、<em>さらに深く</em>。",
+      "options.01.h3": "デジタルデトックス",
+      "options.01.p": "夜21時以降、スマートフォンをタイムロッキングコンテナまたはスタッフがお預かり。心と眠りを情報の波から解き放ちます。",
+      "options.02.h3": "オーラリングで睡眠分析",
+      "options.02.p": "睡眠分析デバイス Oura Ring を装着し、滞在中の睡眠データを医師がフィードバック。日常の眠りへのヒントを持ち帰れます。",
+
+      "journal.h2": "医師が語る、<em>夜の設計</em>。",
+      "journal.quote": "回復できる夜を設計したい——<br />そこから、すべてが始まりました。",
+      "journal.p1": "医療の現場では、睡眠薬に頼らざるを得ない方々と日々向き合ってきました。一方で、環境さえ整えば、薬に頼らずとも深い眠りに辿り着けることも、科学は示しています。",
+      "journal.p2": "THE HOSPITEL は、病院でも、ただの旅館でもありません。医学と宿泊体験の境界で、「眠りそのもの」を設計する場所。光、温度、香り、寝具、湯、茶——夜を構成するすべての要素に、医師の意図を宿らせました。",
+      "journal.p3": "旅の疲れを癒やし、日常の眠りを見つめ直すきっかけに。そんな夜を、あなたのために用意しています。",
+
+      "bleed2.h3": "医学の英知が、<br />ひと夜の質を変える。",
+
+      "info.h2": "施設概要",
+      "info.p": "1日1組限定、東京の静かな住宅街に佇む一棟貸しの隠れ家。チェックイン時刻や設備の詳細については、ご予約確定後に個別にご案内いたします。",
+      "info.location": "東京都墨田区東向島 1-20-13",
+      "info.type": "1棟貸し / Private Residence",
+      "info.capacity": "1日1組限定",
+      "info.checkin": "16:00 〜",
+      "info.checkout": "〜 10:00",
+      "info.amenity": "サーカディアン照明 / ドクターズチョイス寝具 / 薬膳風呂 / 薬膳茶 / ウェイクアップライト",
+      "info.option": "デジタルデトックス / Oura Ring 睡眠分析・医師フィードバック",
+
+      "booking.h2": "深い眠りを、<br />予約する。",
+      "booking.p": "THE HOSPITEL は完全予約制です。<br />ご予約・空室状況・オプション・取材に関するお問い合わせは、以下よりお気軽にご連絡ください。",
+
+      "footer.intro": "医師監修・安眠特化型 1軒家ホテル。医学と宿泊体験の境界で、ひと夜の質を設計する場所。",
+      "footer.operator.company": "医師の不動産株式会社",
+      "footer.operator.address": "〒113-0021 東京都文京区本駒込5丁目16-10-3",
+
+      "bookBar.text": "深い眠りを、予約する。",
+      "bookBar.cta": "Book"
+    },
+    en: {
+      "meta.title": "THE HOSPITEL | A Doctor-Curated Sleep Sanctuary in Tokyo",
+      "meta.description": "THE HOSPITEL is a doctor-curated private villa in Tokyo, designed for the deepest kind of rest. Circadian lighting, doctor-selected bedding, a medicinal bath — a hideaway shaped, by a physician, for the night's truest sleep.",
+
+      "hero.sub": "A Doctor-Curated Sleep Sanctuary · Private Villa in Tokyo",
+      "hero.lead": "Let the weariness of travel dissolve into deep sleep.<br />A Tokyo hideaway, shaped by a doctor's hand.",
+      "hero.meta.group": "<b>One Group</b>Per Night",
+
+      "menu.aside.intro": "A doctor-curated private villa for deep sleep. At the border of medicine and hospitality — a place that shapes the quality of a single night.",
+      "menu.aside.location": "Tokyo · Private Residence",
+
+      "prologue.h2": "The night<br />shapes <em>the journey</em>.",
+      "prologue.p1": "One night of true quality — so the days ahead can be felt to the fullest.",
+      "prologue.p2": "THE HOSPITEL is a doctor-curated, sleep-focused private villa. A quiet residence built to dissolve the weariness of travel into deep, restorative sleep.",
+      "prologue.p3": "Tucked into a calm Tokyo neighborhood, the house welcomes only one group per night. Lighting, bedding, bath, herbal remedies — a night shaped by sleep science and a doctor's insight quietly alters the shape of the day that follows.",
+
+      "feature.h2": "A <em>house</em><br />that settles into night.",
+      "feature.p1": "Walls steeped in deep ink-black. Amber light warming the entrance. A quiet presence, where the noise of the city begins to fade.",
+      "feature.p2": "Step inside, and the dark palette, the softness of indirect light, the clean unscented air — every detail is shaped to draw the mind toward deep sleep.",
+      "feature.type": "Private Residence · Whole-House Rental",
+      "feature.capacity": "One group per night",
+      "feature.location": "Tokyo, Japan",
+
+      "story.h2": "The <em>story</em><br />behind our doors.",
+      "story.lead": "I want more people to experience the wonder of Japan.",
+      "story.p1": "What feels ordinary to Japanese people is often what captivates visitors from abroad. Tokyo is safe, the food is exceptional, and an unusual number of destinations — Asakusa, Skytree, Ginza, Shibuya, Shinjuku — sit within an easy day's reach. Few cities in the world pack so many distinct faces into a single place.",
+      "story.p2": "And yet, long flights so often leave travelers too drained to truly take any of it in. To me, that always felt like a quiet waste.",
+      "story.pull": "If a night's sleep could truly restore,<br />wouldn't the next day open up entirely?",
+      "story.p3": "In clinical practice, I saw how many people had come to rely on sleeping pills. Sleep concerns all of us — I've had my own stretches of insomnia. So as a doctor, I kept returning to one question: what kind of environment lets a person truly sleep well?",
+      "story.p4": "I wanted to take that knowledge and experience, and let deeply rested nights restore bodies worn down by travel — opening up the day that follows. And more than that, I hoped something of the stay would follow our guests home, quietly lifting the quality of their nights long after the trip ends.",
+      "story.p5": "That is the thought behind THE HOSPITEL.",
+
+      "spaces.h2": "Quiet spaces,<br />made for <em>sleep</em>.",
+      "spaces.note": "A dark interior strips away visual noise and gently settles the waking mind. The light, the color of the walls, the feel of each material — every choice is made in service of deep rest.",
+      "spaces.01.h3": "Bedroom",
+      "spaces.02.h3": "Medicinal Bath",
+      "spaces.03.h3": "Japanese Bedroom",
+      "spaces.04.h3": "Tatami Room",
+      "spaces.05.h3": "Lounge",
+
+      "bleed1.h3": "A deeper sleep<br />reshapes tomorrow.",
+
+      "sleep.h2": "<em>Six</em> elements,<br />designed for sleep.",
+      "sleep.intro": "A spatial design unique to THE HOSPITEL, where medical insight meets the latest sleep science. Body clock, bedding, bath, herbal remedies, light, the visual field — every element that touches sleep, tuned by a doctor's hand.",
+      "sleep.01.h3": "Circadian Lighting",
+      "sleep.01.p": "Lighting that shifts in color temperature and intensity across the day. From dusk through bedtime to morning waking, the light moves alongside your body clock — drawing you naturally into sleep, and gently out of it.",
+      "sleep.01.s1": "Adjustable color temperature, 2000K–6500K",
+      "sleep.01.s2": "Four automated scenes: morning, midday, evening, night",
+      "sleep.01.s3": "A custom light environment, curated by a doctor",
+      "sleep.02.h3": "Doctor's Choice Bedding",
+      "sleep.02.p": "Every mattress, pillow, and linen chosen from a medical perspective. Pressure distribution and sleep posture are tuned so the body carries no burden into the night.",
+      "sleep.02.s1": "High-density pocket-coil mattress",
+      "sleep.02.s2": "Pillows selected from 5 heights and 4 shapes",
+      "sleep.02.s3": "60-count organic cotton sheets",
+      "sleep.03.h3": "Medicinal Bath",
+      "sleep.03.p": "A bath drawn from kampo tradition, tuned to deepen sleep. The interval between bath and bed is set to match the body's natural fall in core temperature.",
+      "sleep.03.s1": "Seven herbs, including angelica, cnidium, and ginger",
+      "sleep.03.s2": "Bathing protocol: 90 minutes before bedtime",
+      "sleep.03.s3": "Long, warm soak at 38–40°C",
+      "sleep.04.h3": "Herbal Tea &amp; Kampo",
+      "sleep.04.p": "A sleep-supporting herbal tea to drink before bed, and a kampo gift to carry home — so the stay lingers softly in the body, long after the journey ends.",
+      "sleep.04.s1": "Evening blend based on sansohnin-to",
+      "sleep.04.s2": "Two blends: one for morning, one for night",
+      "sleep.04.s3": "Take-home gift curated by a kampo physician",
+      "sleep.05.h3": "Wake-up Light",
+      "sleep.05.p": "A light that rises like the morning sun. Cortisol stirs gently, and you wake — not to an alarm, but to light.",
+      "sleep.05.s1": "Gradual brightening from 30 minutes before waking",
+      "sleep.05.s2": "1500K → 4000K shift, recreating sunrise",
+      "sleep.05.s3": "Natural alarm: birdsong and ambient sound",
+      "sleep.06.h3": "Calm Interior",
+      "sleep.06.p": "A composed interior, stripped of visual noise. Deep ink tones, indirect light, quiet materials — calming the mind through sight, guiding it toward deep rest.",
+      "sleep.06.s1": "Three materials: ink-black, washi paper, solid wood",
+      "sleep.06.s2": "Bedroom illuminance: 10–50 lux, indirect",
+      "sleep.06.s3": "One group per night — a self-contained stillness",
+      "sleep.labelOpen": "View details",
+      "sleep.labelClose": "Close",
+
+      "options.h2": "Go <em>deeper</em> into the night.",
+      "options.01.h3": "Digital Detox",
+      "options.01.p": "After 9 PM, your phone goes into a time-locked container — or into our keeping. A quiet evening, free from the tide of information, for the mind and for sleep.",
+      "options.02.h3": "Sleep Analysis with Oura Ring",
+      "options.02.p": "Wear an Oura Ring during your stay, and a doctor will review your sleep data with you. Take the insights back into your everyday nights.",
+
+      "journal.h2": "A doctor on <em>designing the night</em>.",
+      "journal.quote": "I wanted to design a night that truly restores —<br />and everything began there.",
+      "journal.p1": "In clinical practice, I've long worked with people who cannot sleep without medication. At the same time, science tells us that with the right environment, deep sleep is often reachable without it.",
+      "journal.p2": "THE HOSPITEL is neither a hospital nor an ordinary inn. It stands at the border of medicine and hospitality — a place where sleep itself is what's being designed. Light, temperature, scent, bedding, bath, tea — every element that shapes a night is held in a doctor's intention.",
+      "journal.p3": "To ease the weariness of travel, and to become a starting point for rethinking the nights of everyday life. Such a night is prepared here, for you.",
+
+      "bleed2.h3": "Medical insight,<br />reshaping a single night.",
+
+      "info.h2": "About the House",
+      "info.p": "A hideaway for one group a night, set in a quiet Tokyo neighborhood. Check-in times and detailed amenities are shared individually once your reservation is confirmed.",
+      "info.location": "1-20-13 Higashi-Mukojima, Sumida-ku, Tokyo",
+      "info.type": "Private Residence · Whole-House Rental",
+      "info.capacity": "One group per night",
+      "info.checkin": "From 16:00",
+      "info.checkout": "Until 10:00",
+      "info.amenity": "Circadian lighting / Doctor's choice bedding / Medicinal bath / Herbal tea / Wake-up light",
+      "info.option": "Digital detox / Oura Ring sleep analysis with doctor feedback",
+
+      "booking.h2": "Reserve<br />a deeper night.",
+      "booking.p": "THE HOSPITEL is by reservation only.<br />For bookings, availability, options, or press inquiries, please feel free to reach out below.",
+
+      "footer.intro": "A doctor-curated private villa for deep sleep. At the border of medicine and hospitality — a place that shapes the quality of a single night.",
+      "footer.operator.company": "Ishi-no-Fudousan Co., Ltd.",
+      "footer.operator.address": "5-16-10-3 Honkomagome, Bunkyo-ku, Tokyo 113-0021, Japan",
+
+      "bookBar.text": "Reserve a deeper night.",
+      "bookBar.cta": "Book"
+    }
+  };
+
+  function setLang(lang){
+    if (lang !== 'ja' && lang !== 'en') lang = 'ja';
+    var dict = translations[lang];
+    document.documentElement.lang = lang;
+    document.body.classList.remove('lang-ja','lang-en');
+    document.body.classList.add('lang-' + lang);
+    var nodes = document.querySelectorAll('[data-i18n]');
+    for (var i = 0; i < nodes.length; i++){
+      var key = nodes[i].getAttribute('data-i18n');
+      if (dict[key] !== undefined) nodes[i].innerHTML = dict[key];
+    }
+    if (dict['meta.title']) document.title = dict['meta.title'];
+    var metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc && dict['meta.description']) metaDesc.setAttribute('content', dict['meta.description']);
+    var btns = document.querySelectorAll('.lang-toggle button');
+    for (var j = 0; j < btns.length; j++){
+      if (btns[j].getAttribute('data-lang') === lang) btns[j].classList.add('is-active');
+      else btns[j].classList.remove('is-active');
+    }
+    try { localStorage.setItem('hospitel_lang', lang); } catch(e) {}
+  }
+
+  (function(){
+    var saved = null;
+    try { saved = localStorage.getItem('hospitel_lang'); } catch(e) {}
+    var initial = saved || 'ja';
+    setLang(initial);
+    document.querySelectorAll('.lang-toggle button').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        setLang(btn.getAttribute('data-lang'));
+      });
+    });
+  })();
+
   (function(){
     var overlay = document.getElementById('menu-overlay');
     var openBtn = document.getElementById('menu-open');
@@ -803,6 +1110,51 @@
     document.addEventListener('keydown', function(e){
       if (e.key === 'Escape' && overlay.classList.contains('open')) close();
     });
+  })();
+
+  (function(){
+    var bar = document.getElementById('book-bar');
+    var closeBtn = document.getElementById('book-bar-close');
+    var target = document.getElementById('booking');
+    if (!bar || !target) return;
+
+    var dismissed = false;
+    try { dismissed = sessionStorage.getItem('hospitel_book_bar_dismissed') === '1'; } catch(e) {}
+
+    var bookingInView = false;
+    if ('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        bookingInView = entries[0].isIntersecting;
+        update();
+      }, {threshold:0.15});
+      io.observe(target);
+    }
+
+    function update(){
+      if (dismissed){
+        bar.classList.remove('is-visible');
+        bar.setAttribute('aria-hidden','true');
+        return;
+      }
+      var past = window.scrollY > 400;
+      var show = past && !bookingInView;
+      bar.classList.toggle('is-visible', show);
+      bar.setAttribute('aria-hidden', show ? 'false' : 'true');
+    }
+
+    window.addEventListener('scroll', function(){
+      window.requestAnimationFrame(update);
+    }, {passive:true});
+
+    closeBtn.addEventListener('click', function(){
+      dismissed = true;
+      try { sessionStorage.setItem('hospitel_book_bar_dismissed','1'); } catch(e) {}
+      bar.classList.remove('is-visible');
+      bar.classList.add('is-hidden');
+      bar.setAttribute('aria-hidden','true');
+    });
+
+    update();
   })();
 
   (function(){
