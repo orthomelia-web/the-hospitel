@@ -87,10 +87,15 @@
     body.lang-en .book-bar-cta{font-size:.85rem}
   }
 
-  /* BG KEN BURNS on mobile — substitute for fixed parallax */
-  @keyframes bg-ken-burns{0%{background-size:108%}50%{background-size:120%}100%{background-size:108%}}
+  /* MOBILE FIXED-BG PARALLAX (::before position:fixed + IntersectionObserver) */
   @media (max-width:860px){
-    .prologue,.story,.bleed{animation:bg-ken-burns 30s ease-in-out infinite}
+    .prologue,.story,.bleed{background-image:none !important;animation:none !important;isolation:isolate}
+    .prologue::before,.story::before,.bleed::before{content:"";position:fixed;inset:0;background-size:cover;background-position:center;background-repeat:no-repeat;z-index:-1;pointer-events:none;opacity:0;transition:opacity .55s ease;will-change:opacity}
+    .prologue.is-active::before,.story.is-active::before,.bleed.is-active::before{opacity:1}
+    .prologue::before{background-image:linear-gradient(rgba(13,13,16,.55),rgba(13,13,16,.82)),url('quality-sleep.jpg')}
+    .story::before{background-image:linear-gradient(rgba(13,13,16,.35),rgba(13,13,16,.62)),url('tokyo-night.jpg')}
+    .bleed-1::before{background-image:linear-gradient(rgba(13,13,16,.35),rgba(13,13,16,.55)),url('dawn-new.jpg')}
+    .bleed-2::before{background-image:linear-gradient(rgba(13,13,16,.35),rgba(13,13,16,.55)),url('dawn.jpg')}
   }
   body{background:var(--bg);color:var(--ink);font-family:var(--serif-jp);font-weight:400;line-height:1.95;letter-spacing:.04em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
   a{color:inherit;text-decoration:none;transition:color .3s,opacity .3s}
@@ -667,7 +672,7 @@
 </section>
 
 <!-- BLEED IMAGE -->
-<section class="bleed" style="background-image:url('dawn-new.jpg')">
+<section class="bleed bleed-1" style="background-image:url('dawn-new.jpg')">
   <div class="bleed-text">
     <div class="ey">A Night of True Rest</div>
     <h3 data-i18n="bleed1.h3">深い眠りは、<br />明日の景色を変える。</h3>
@@ -844,7 +849,7 @@
 </section>
 
 <!-- BLEED 2 -->
-<section class="bleed" style="background-image:url('dawn.jpg')">
+<section class="bleed bleed-2" style="background-image:url('dawn.jpg')">
   <div class="bleed-text">
     <div class="ey">Doctor-Curated Wellness</div>
     <h3 data-i18n="bleed2.h3">医学の英知が、<br />ひと夜の質を変える。</h3>
@@ -1200,6 +1205,36 @@
     document.addEventListener('keydown', function(e){
       if (e.key === 'Escape' && overlay.classList.contains('open')) close();
     });
+  })();
+
+  (function(){
+    /* Mobile fixed-bg parallax: toggle .is-active based on viewport intersection */
+    if (!window.matchMedia || !window.IntersectionObserver) return;
+    var mq = window.matchMedia('(max-width:860px)');
+    var sections = document.querySelectorAll('.prologue, .story, .bleed');
+    if (!sections.length) return;
+    var observer = null;
+    function enable(){
+      if (observer) return;
+      observer = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          e.target.classList.toggle('is-active', e.isIntersecting);
+        });
+      }, { threshold: 0.25, rootMargin: '-15% 0px -15% 0px' });
+      sections.forEach(function(s){ observer.observe(s); });
+    }
+    function disable(){
+      if (!observer) return;
+      observer.disconnect();
+      observer = null;
+      sections.forEach(function(s){ s.classList.remove('is-active'); });
+    }
+    function sync(){
+      if (mq.matches) enable(); else disable();
+    }
+    sync();
+    if (mq.addEventListener) mq.addEventListener('change', sync);
+    else if (mq.addListener) mq.addListener(sync);
   })();
 
   (function(){
