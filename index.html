@@ -99,7 +99,8 @@
   @media (max-width:900px){.feature-inner{padding:0 1.2rem}.feature-grid{grid-template-columns:1fr;gap:2.5rem}.feature-image{aspect-ratio:3/4}}
 
   /* STORY (concept) */
-  .story{padding:10rem 3rem;background:var(--surface);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+  .story{padding:10rem 3rem;background-image:linear-gradient(rgba(13,13,16,.82),rgba(13,13,16,.92)),url("tatami.jpg");background-size:cover;background-position:center;background-attachment:fixed;background-repeat:no-repeat;border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+  @media (max-width:860px){.story{background-attachment:scroll}}
   .story-inner{max-width:880px;margin:0 auto}
   .story-head{text-align:center;margin-bottom:5rem}
   .story-head .eyebrow{justify-content:center}
@@ -184,7 +185,8 @@
   @media (max-width:900px){.journal{padding:5rem 1.2rem}.journal-grid{grid-template-columns:1fr;gap:2.5rem}}
 
   /* FULL BLEED IMAGE */
-  .bleed{position:relative;height:60vh;min-height:420px;background-size:cover;background-position:center;overflow:hidden}
+  .bleed{position:relative;height:60vh;min-height:420px;background-size:cover;background-position:center;background-attachment:fixed;overflow:hidden}
+  @media (max-width:860px){.bleed{background-attachment:scroll}}
   .bleed::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(13,13,16,.35),rgba(13,13,16,.55))}
   .bleed-text{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:1;text-align:center;padding:2rem}
   .bleed-text .ey{font-family:var(--sans-en);font-size:.75rem;letter-spacing:.5em;text-transform:uppercase;color:var(--accent);margin-bottom:1.5rem;text-shadow:0 2px 6px rgba(0,0,0,.8)}
