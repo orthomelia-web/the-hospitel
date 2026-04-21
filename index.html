@@ -62,9 +62,9 @@
     .sleep-row .num{font-size:1.6rem}
     .sleep-specs li{font-size:.62rem;padding:.3rem .6rem}
     .sleep-toggle{font-size:.58rem;letter-spacing:.32em}
-    .opt h3{font-size:.96rem;letter-spacing:.1em}
-    .opt p{font-size:.8rem;line-height:1.9}
-    .opt .no{font-size:.6rem;letter-spacing:.32em;margin-bottom:1rem}
+    .opt h3{font-size:.88rem;letter-spacing:.06em;line-height:1.55;margin-bottom:.65rem}
+    .opt p{font-size:.86rem;line-height:1.9}
+    .opt .no{font-size:.5rem;letter-spacing:.28em;margin-bottom:.6rem}
     .journal-body .quote{font-size:clamp(1rem,3.6vw,1.3rem);letter-spacing:.06em;line-height:1.78;padding-left:1.4rem}
     .journal-body p{font-size:.83rem;line-height:1.95}
     .journal-body .byline{font-size:.58rem;letter-spacing:.32em}
@@ -118,7 +118,7 @@
   header{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.6rem 2.4rem 1.6rem 2.2rem;padding-top:calc(1.6rem + env(safe-area-inset-top,0));padding-left:calc(2.2rem + env(safe-area-inset-left,0));padding-right:calc(2.4rem + env(safe-area-inset-right,0));display:flex;justify-content:space-between;align-items:center;gap:1.2rem;mix-blend-mode:difference;color:#fff;transition:padding .4s ease,background .4s ease,border-color .4s ease,backdrop-filter .4s ease}
   header.scrolled{mix-blend-mode:normal;background:rgba(13,13,16,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);color:var(--ink);padding:1rem 2.4rem 1rem 2.2rem;border-bottom:1px solid var(--line-soft)}
   header.scrolled .header-nav a{opacity:.95}
-  @media (max-width:860px){header.scrolled{padding:.85rem 1.2rem}}
+  @media (max-width:860px){header.scrolled{padding:.85rem 1.2rem;background:#0d0d10;backdrop-filter:none;-webkit-backdrop-filter:none}}
   .brand{font-family:var(--serif-en);font-size:1.25rem;letter-spacing:.4em;font-weight:400;flex-shrink:0;display:inline-flex;align-items:center;gap:.7em}
   .brand .mark{width:1.9em;height:1.9em;flex-shrink:0;background-image:url('logo.png');background-size:contain;background-position:center;background-repeat:no-repeat;filter:brightness(0) invert(1);opacity:.95}
   .brand{letter-spacing:.28em}
@@ -341,7 +341,7 @@
     .sleep-row .thumb{grid-column:3;grid-row:1/span 2;aspect-ratio:1/1;width:84px;height:84px;margin:0;align-self:start}
     .sleep-row h3{font-size:.7rem;letter-spacing:.05em;line-height:1.45;margin-bottom:.1rem}
     .sleep-row h3 .en{font-size:.42rem;letter-spacing:.16em;margin-top:.18rem}
-    .sleep-row p{font-size:.62rem;line-height:1.7}
+    .sleep-row p{font-size:.86rem;line-height:2.05}
     .sleep-specs{gap:.22rem .28rem;margin-top:.5rem}
     .sleep-specs li{font-size:.46rem;padding:.18rem .4rem;letter-spacing:.04em}
     .sleep-toggle{font-size:.44rem;letter-spacing:.24em;margin-top:.5rem}
@@ -367,7 +367,7 @@
   .opt p{color:var(--ink-sub);font-size:.95rem;line-height:2;font-weight:500}
   .opt .icon{position:absolute;top:2.2rem;right:2.2rem;color:var(--gold);opacity:.45}
   .opt .icon svg{width:32px;height:32px}
-  @media (max-width:700px){.options{padding:5rem 1.2rem}.options-flex{grid-template-columns:1fr 1fr;gap:.7rem}.opt{padding:3rem 1.3rem;min-height:280px}}
+  @media (max-width:700px){.options{padding:3rem 1.2rem}.options-flex{grid-template-columns:1fr 1fr;gap:.6rem}.opt{padding:1.8rem 1rem;min-height:200px;justify-content:flex-start}.opt .icon{top:.8rem;right:.8rem}.opt .icon svg{width:22px;height:22px}}
 
   /* JOURNAL (interview / doctor's voice) */
   .journal{padding:10rem 3rem;background:var(--bg);position:relative;overflow:hidden}
@@ -850,8 +850,7 @@
       </div>
       <div class="journal-body">
         <p class="quote" data-i18n="journal.quote">
-          回復できる夜を設計したい——<br />
-          そこから、すべてが始まりました。
+          回復できる夜を設計したい——
         </p>
         <p data-i18n="journal.p2">
           THE HOSPITEL は、病院でも、ただの旅館でもありません。医学と宿泊体験の境界で、「眠りそのもの」を設計する場所。光、温度、香り、寝具、湯、茶——夜を構成するすべての要素に、医師の意図を宿らせています。
@@ -1032,7 +1031,7 @@
       "options.02.p": "睡眠分析デバイス Oura Ring を装着し、滞在中の睡眠データを医師がフィードバック。日常の眠りへのヒントを持ち帰れます。",
 
       "journal.h2": "医師が語る、<br /><em>夜の設計</em>。",
-      "journal.quote": "回復できる夜を設計したい——<br />そこから、すべてが始まりました。",
+      "journal.quote": "回復できる夜を設計したい——",
       "journal.p1": "医療の現場では、睡眠薬に頼らざるを得ない方々と日々向き合ってきました。一方で、環境さえ整えば、薬に頼らずとも深い眠りに辿り着けることも、科学は示しています。",
       "journal.p2": "THE HOSPITEL は、病院でも、ただの旅館でもありません。医学と宿泊体験の境界で、「眠りそのもの」を設計する場所。光、温度、香り、寝具、湯、茶——夜を構成するすべての要素に、医師の意図を宿らせました。",
       "journal.p3": "旅の疲れを癒やすだけでなく、ここで得た眠りの知見を、日常と、これからの人生の質へ——。ひと夜の体験が、その後のすべての夜を、そして人生を、静かに変えていく。そんな一夜を、あなたのために用意しています。",
@@ -1141,7 +1140,7 @@
       "options.02.p": "Wear an Oura Ring during your stay, and a doctor will review your sleep data with you. Take the insights back into your everyday nights.",
 
       "journal.h2": "A doctor on<br /><em>designing the night</em>.",
-      "journal.quote": "I wanted to design a night that truly restores —<br />and everything began there.",
+      "journal.quote": "I wanted to design a night that truly restores —",
       "journal.p1": "In clinical practice, I've long worked with people who cannot sleep without medication. At the same time, science tells us that with the right environment, deep sleep is often reachable without it.",
       "journal.p2": "THE HOSPITEL is neither a hospital nor an ordinary inn. It stands at the border of medicine and hospitality — a place where sleep itself is what's being designed. Light, temperature, scent, bedding, bath, tea — every element that shapes a night is held in a doctor's intention.",
       "journal.p3": "Not only to ease the weariness of travel — but to carry the insight of sleep back into everyday nights, and into the life that unfolds beyond. One night here, quietly reshaping every night that follows. Such a night is prepared here, for you.",
