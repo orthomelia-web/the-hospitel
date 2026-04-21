@@ -7,313 +7,633 @@
 <meta name="description" content="医師監修・安眠特化型の1軒家ホテル「THE HOSPITEL」。サーカディアンリズム照明、ドクターズチョイス寝具、薬膳風呂など、医師の知見で設計された深い眠りで、旅の疲れを癒す。" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Shippori+Mincho:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Shippori+Mincho:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #0d0d10;
-    --surface: #16161a;
-    --surface-2: #1d1d22;
+    --surface: #131318;
+    --surface-2: #1a1a20;
     --ink: #ece9e2;
     --ink-sub: #b8b3a8;
     --ink-dim: #7a7468;
-    --line: #2b2a2e;
+    --line: #262628;
+    --line-soft: #1c1c20;
     --gold: #c8a96a;
     --gold-soft: #a98850;
     --accent: #d4b67a;
     --serif-jp: "Shippori Mincho", "游明朝", "Yu Mincho", serif;
     --serif-en: "Cormorant Garamond", "Times New Roman", serif;
+    --sans-en: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth;font-size:17px}
   body{background:var(--bg);color:var(--ink);font-family:var(--serif-jp);font-weight:400;line-height:1.95;letter-spacing:.04em;-webkit-font-smoothing:antialiased}
-  a{color:inherit;text-decoration:none;transition:color .3s}
-  a:hover{color:var(--gold)}
+  a{color:inherit;text-decoration:none;transition:color .3s,opacity .3s}
   img{max-width:100%;display:block}
 
-  header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,13,16,.78);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:1.1rem 3rem;display:flex;justify-content:space-between;align-items:center}
-  .brand{font-family:var(--serif-en);font-size:1.05rem;letter-spacing:.4em;color:var(--ink)}
-  .brand span{color:var(--gold)}
-  nav ul{display:flex;gap:2.2rem;list-style:none}
-  nav a{font-size:.78rem;letter-spacing:.22em;color:var(--ink-sub);text-transform:uppercase}
+  /* HEADER */
+  header{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.6rem 3rem;display:flex;justify-content:space-between;align-items:center;mix-blend-mode:difference;color:#fff}
+  .brand{font-family:var(--serif-en);font-size:1rem;letter-spacing:.4em;font-weight:400}
+  .brand .dot{color:var(--gold);margin:0 .3em}
+  nav ul{display:flex;gap:2.4rem;list-style:none}
+  nav a{font-family:var(--sans-en);font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;font-weight:400;opacity:.85}
+  nav a:hover{opacity:1}
+  @media (max-width:860px){header{padding:1rem 1.2rem;mix-blend-mode:normal;background:rgba(13,13,16,.75);backdrop-filter:blur(10px);color:var(--ink)}nav ul{gap:1rem}nav a{font-size:.62rem;letter-spacing:.18em}}
 
   /* HERO */
-  .hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:6rem 2rem 4rem;overflow:hidden}
-  .hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(13,13,16,.55),rgba(13,13,16,.85)),url("exterior.jpg");background-size:cover;background-position:center;z-index:0}
-  .hero-inner{position:relative;z-index:1;max-width:880px}
-  .hero .en{font-family:var(--serif-en);font-size:1rem;letter-spacing:.55em;color:var(--gold);margin-bottom:1.8rem;text-transform:uppercase}
-  .hero h1{font-family:var(--serif-en);font-weight:300;font-size:clamp(2.4rem,6.5vw,5rem);letter-spacing:.18em;line-height:1.2;margin-bottom:1.5rem}
-  .hero h1 .jp{display:block;font-family:var(--serif-jp);font-size:.32em;letter-spacing:.4em;color:var(--gold);margin-top:1.4rem;font-weight:400}
-  .hero .lead{font-size:1.05rem;color:var(--ink-sub);margin:2.2rem auto 0;max-width:32rem;line-height:2.1}
-  .hero .scroll{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);font-family:var(--serif-en);font-size:.7rem;letter-spacing:.4em;color:var(--gold);z-index:1}
-  .hero .scroll::after{content:"";display:block;width:1px;height:50px;background:linear-gradient(to bottom,var(--gold),transparent);margin:.8rem auto 0}
+  .hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:3rem 3rem 5rem;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(13,13,16,.35) 0%,rgba(13,13,16,.55) 60%,rgba(13,13,16,.85) 100%),url("exterior.jpg");background-size:cover;background-position:center 35%;z-index:0}
+  .hero-head{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:auto;padding-top:5rem}
+  .hero-head .label{font-family:var(--sans-en);font-size:.7rem;letter-spacing:.4em;text-transform:uppercase;color:var(--accent)}
+  .hero-head .index{font-family:var(--serif-en);font-size:.85rem;letter-spacing:.3em;color:var(--ink-sub);writing-mode:vertical-rl;text-orientation:mixed}
+  .hero-body{position:relative;z-index:2;max-width:1100px}
+  .hero-body .kicker{font-family:var(--sans-en);font-size:.75rem;letter-spacing:.5em;text-transform:uppercase;color:var(--accent);margin-bottom:2rem;display:flex;align-items:center;gap:1rem}
+  .hero-body .kicker::before{content:"";display:inline-block;width:40px;height:1px;background:var(--accent)}
+  .hero h1{font-family:var(--serif-en);font-weight:300;font-size:clamp(3rem,10vw,8rem);letter-spacing:.04em;line-height:.95;margin-bottom:1.8rem;color:#fbf8f1;text-shadow:0 2px 20px rgba(0,0,0,.6)}
+  .hero h1 em{font-style:normal;color:var(--gold);font-weight:400}
+  .hero .sub{font-family:var(--serif-jp);font-size:clamp(1rem,1.4vw,1.25rem);letter-spacing:.35em;color:#e8dcbe;margin-bottom:2rem;font-weight:500;text-shadow:0 2px 10px rgba(0,0,0,.7)}
+  .hero .lead{max-width:30rem;color:#d8d1c2;font-size:1rem;line-height:2.1;text-shadow:0 1px 6px rgba(0,0,0,.6)}
+  .hero-foot{position:relative;z-index:2;margin-top:3.5rem;display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap}
+  .hero-foot .meta{display:flex;gap:2.5rem;font-family:var(--sans-en);font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-sub)}
+  .hero-foot .meta span b{display:block;font-weight:400;color:var(--accent);font-size:.95rem;letter-spacing:.2em;margin-bottom:.35rem;font-family:var(--serif-en)}
+  .hero-foot .scroll{font-family:var(--sans-en);font-size:.65rem;letter-spacing:.45em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:.8rem}
+  .hero-foot .scroll::after{content:"";width:80px;height:1px;background:linear-gradient(to right,var(--accent),transparent);display:inline-block}
+  @media (max-width:860px){.hero{padding:6rem 1.2rem 3rem}.hero-head{display:none}.hero-body .kicker::before{width:28px}.hero-foot .meta{gap:1.2rem;font-size:.6rem}.hero-foot .scroll::after{width:40px}}
 
-  section{padding:7rem 2rem;max-width:1100px;margin:0 auto}
-  .section-head{text-align:center;margin-bottom:4rem}
-  .section-head .en{font-family:var(--serif-en);font-size:.85rem;letter-spacing:.55em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:.9rem}
-  .section-head h2{font-weight:500;font-size:clamp(1.6rem,2.6vw,2.1rem);letter-spacing:.28em}
-  .section-head h2::after{content:"";display:block;width:50px;height:1px;background:var(--gold);margin:1.4rem auto 0}
+  /* SECTION BASE */
+  section{padding:9rem 3rem;position:relative}
+  @media (max-width:860px){section{padding:5rem 1.2rem}}
+  .section-inner{max-width:1200px;margin:0 auto}
+  .section-wide{max-width:1400px;margin:0 auto}
 
-  /* CONCEPT / STORY */
-  #concept{position:relative;max-width:none;margin:0;padding:9rem 2rem;background-image:linear-gradient(rgba(13,13,16,.85),rgba(13,13,16,.95)),url("exterior.jpg");background-size:cover;background-position:center;background-attachment:fixed;background-repeat:no-repeat;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .concept-body{max-width:720px;margin:0 auto;background:rgba(22,22,26,.55);backdrop-filter:blur(3px);padding:3.5rem 2.5rem;border:1px solid var(--line);border-radius:2px}
-  .concept-body p{margin-bottom:1.5rem;color:var(--ink-sub);font-size:1.02rem;line-height:2.05}
-  .concept-body p.highlight{color:var(--ink);font-size:1.1rem;text-align:center;font-style:italic;letter-spacing:.08em;margin:2.5rem 0;padding:1.5rem 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .concept-body .signature{margin-top:2.5rem;text-align:center;font-family:var(--serif-en);color:var(--gold);letter-spacing:.3em;font-size:.95rem}
-  @media (max-width:860px){#concept{background-attachment:scroll}}
+  .eyebrow{font-family:var(--sans-en);font-size:.7rem;letter-spacing:.45em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:1rem;margin-bottom:2.2rem}
+  .eyebrow::before{content:"";display:inline-block;width:40px;height:1px;background:var(--accent)}
+  .h-display{font-family:var(--serif-jp);font-weight:500;font-size:clamp(1.8rem,4vw,3.4rem);letter-spacing:.18em;line-height:1.45;color:var(--ink)}
+  .h-display em{font-family:var(--serif-en);font-style:normal;color:var(--gold);font-weight:400;letter-spacing:.05em}
+  .h-en{font-family:var(--serif-en);font-weight:300;font-size:clamp(2rem,5vw,4rem);letter-spacing:.04em;line-height:1;color:var(--ink)}
 
-  /* REASONS */
-  .reasons-intro{text-align:center;color:var(--ink-sub);max-width:600px;margin:0 auto 4rem;font-size:1rem;line-height:2.1}
-  .reasons-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-bottom:5rem}
-  .reason{background:var(--surface);border:1px solid var(--line);padding:2.5rem 2rem;border-radius:2px;transition:transform .4s,border-color .4s,background .4s;position:relative;overflow:hidden}
-  .reason:hover{transform:translateY(-4px);border-color:var(--gold);background:var(--surface-2)}
-  .reason .num{font-family:var(--serif-en);color:var(--gold);font-size:.85rem;letter-spacing:.4em;margin-bottom:1rem}
-  .reason h3{font-weight:500;font-size:1.08rem;letter-spacing:.12em;line-height:1.7;margin-bottom:.8rem;color:var(--ink)}
-  .reason p{font-size:.92rem;color:var(--ink-sub);line-height:1.85}
-  .reason .icon{position:absolute;top:1.5rem;right:1.5rem;width:28px;height:28px;color:var(--gold-soft);opacity:.55}
+  /* PROLOGUE */
+  .prologue{padding-top:11rem;padding-bottom:7rem;border-bottom:1px solid var(--line-soft)}
+  .prologue-grid{display:grid;grid-template-columns:1fr 2fr;gap:5rem;align-items:start}
+  .prologue .no{font-family:var(--serif-en);font-size:.9rem;letter-spacing:.35em;color:var(--gold-soft);margin-bottom:1.2rem}
+  .prologue .no::after{content:"";display:block;width:32px;height:1px;background:var(--gold-soft);margin-top:1rem}
+  .prologue .aside{font-family:var(--sans-en);font-size:.7rem;letter-spacing:.4em;text-transform:uppercase;color:var(--ink-dim);margin-top:2rem;line-height:2}
+  .prologue-text .h-display{margin-bottom:2.5rem}
+  .prologue-text p{color:var(--ink-sub);font-size:1.05rem;line-height:2.15;margin-bottom:1.4rem;max-width:36rem}
+  @media (max-width:860px){.prologue{padding-top:6rem;padding-bottom:4rem}.prologue-grid{grid-template-columns:1fr;gap:2rem}}
 
-  .options-divider{text-align:center;margin:3rem 0 2.5rem}
-  .options-divider .label{display:inline-block;padding:.4rem 1.5rem;font-family:var(--serif-en);font-size:.78rem;letter-spacing:.4em;color:var(--gold);border:1px solid var(--gold);background:var(--bg)}
-  .options-divider::before{content:"";display:block;height:1px;background:var(--line);margin-bottom:-1rem}
+  /* FEATURED SHOWCASE */
+  .feature{padding:8rem 0;background:var(--bg)}
+  .feature-inner{max-width:1400px;margin:0 auto;padding:0 3rem}
+  .feature-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:5rem;align-items:center}
+  .feature-image{position:relative;aspect-ratio:4/5;overflow:hidden;border-radius:2px}
+  .feature-image img{width:100%;height:100%;object-fit:cover;transition:transform 2s ease}
+  .feature-image:hover img{transform:scale(1.04)}
+  .feature-image .tag{position:absolute;top:1.5rem;left:1.5rem;font-family:var(--sans-en);font-size:.65rem;letter-spacing:.4em;text-transform:uppercase;color:var(--accent);background:rgba(13,13,16,.65);backdrop-filter:blur(6px);padding:.5rem .9rem;border:1px solid rgba(200,169,106,.35)}
+  .feature-text .eyebrow{margin-bottom:1.8rem}
+  .feature-text h2{margin-bottom:2rem}
+  .feature-text p{color:var(--ink-sub);font-size:1.02rem;line-height:2.1;margin-bottom:1.4rem}
+  .feature-text .detail{margin-top:3rem;display:grid;grid-template-columns:auto 1fr;gap:.7rem 1.5rem;padding-top:2rem;border-top:1px solid var(--line)}
+  .feature-text .detail dt{font-family:var(--sans-en);font-size:.65rem;letter-spacing:.35em;text-transform:uppercase;color:var(--accent);padding-top:.35rem}
+  .feature-text .detail dd{color:var(--ink-sub);font-size:.95rem;line-height:1.6}
+  @media (max-width:900px){.feature-inner{padding:0 1.2rem}.feature-grid{grid-template-columns:1fr;gap:2.5rem}.feature-image{aspect-ratio:3/4}}
 
-  .options-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
-  .option{background:transparent;border:1px dashed var(--gold-soft);padding:2rem 1.8rem;border-radius:2px}
-  .option .num{font-family:var(--serif-en);color:var(--gold);font-size:.78rem;letter-spacing:.3em;margin-bottom:.6rem}
-  .option h3{font-weight:500;font-size:1rem;letter-spacing:.1em;line-height:1.7;margin-bottom:.6rem}
-  .option p{font-size:.88rem;color:var(--ink-sub);line-height:1.8}
+  /* STORY (concept) */
+  .story{padding:10rem 3rem;background:var(--surface);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+  .story-inner{max-width:880px;margin:0 auto}
+  .story-head{text-align:center;margin-bottom:5rem}
+  .story-head .eyebrow{justify-content:center}
+  .story-head .eyebrow::before{display:none}
+  .story-head h2{margin-top:0}
+  .story-body{font-size:1.08rem;line-height:2.25;color:var(--ink-sub)}
+  .story-body .lead-para{font-size:1.25rem;color:var(--ink);margin-bottom:3rem;letter-spacing:.08em;font-weight:500;line-height:2}
+  .story-body p{margin-bottom:1.8rem}
+  .story-body .pull{display:block;font-family:var(--serif-jp);text-align:center;font-size:clamp(1.25rem,2.2vw,1.7rem);color:var(--accent);margin:4rem 0;padding:2.5rem 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);line-height:2;letter-spacing:.15em;font-weight:500}
+  .story-body .signoff{margin-top:4rem;display:flex;align-items:center;gap:1.5rem;padding-top:2rem;border-top:1px solid var(--line-soft)}
+  .story-body .signoff .name{font-family:var(--serif-en);letter-spacing:.3em;color:var(--accent);font-size:.95rem}
+  .story-body .signoff .title{font-family:var(--sans-en);font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-dim)}
+  @media (max-width:860px){.story{padding:5rem 1.2rem}}
 
-  /* GALLERY */
-  .gallery{background:var(--surface);max-width:none;padding-left:2rem;padding-right:2rem;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .gallery-inner{max-width:1100px;margin:0 auto}
-  .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin-top:1rem}
-  .gallery-item{aspect-ratio:4/3;background:var(--surface-2);border:1px solid var(--line);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;color:var(--ink-dim);font-family:var(--serif-en);font-size:.78rem;letter-spacing:.3em;text-transform:uppercase}
-  .gallery-item.has-image{background-size:cover;background-position:center}
-  .gallery-item.feature{grid-column:span 2;aspect-ratio:16/9}
-  @media (max-width:700px){.gallery-item.feature{grid-column:span 1;aspect-ratio:4/3}}
-  .gallery-item.has-image::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 60%,rgba(13,13,16,.4));pointer-events:none}
+  /* SPACES GRID */
+  .spaces{padding:10rem 3rem}
+  .spaces-inner{max-width:1400px;margin:0 auto}
+  .spaces-head{display:grid;grid-template-columns:1fr 1.5fr;gap:4rem;align-items:end;margin-bottom:5rem}
+  .spaces-head .note{color:var(--ink-sub);line-height:2.1;font-size:1rem}
+  .spaces-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:2rem}
+  .space{position:relative;overflow:hidden;cursor:pointer;display:block}
+  .space-img{aspect-ratio:4/5;background-size:cover;background-position:center;transition:transform 1.6s ease;position:relative}
+  .space:hover .space-img{transform:scale(1.05)}
+  .space-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(13,13,16,.75) 100%)}
+  .space-meta{position:absolute;bottom:1.5rem;left:1.5rem;right:1.5rem;z-index:2}
+  .space-meta .num{font-family:var(--serif-en);font-size:.75rem;letter-spacing:.35em;color:var(--accent);margin-bottom:.5rem}
+  .space-meta h3{font-family:var(--serif-jp);font-weight:500;font-size:1.15rem;letter-spacing:.18em;color:#fbf8f1;margin-bottom:.3rem}
+  .space-meta .en{font-family:var(--serif-en);font-size:.8rem;letter-spacing:.35em;color:var(--ink-sub);text-transform:uppercase}
+  .space.wide{grid-column:span 7}
+  .space.narrow{grid-column:span 5}
+  .space.third{grid-column:span 4}
+  .space.wide .space-img{aspect-ratio:16/11}
+  .space.narrow .space-img{aspect-ratio:4/5}
+  @media (max-width:900px){.spaces{padding:5rem 1.2rem}.spaces-head{grid-template-columns:1fr;gap:1.5rem}.spaces-grid{grid-template-columns:1fr;gap:1rem}.space.wide,.space.narrow,.space.third{grid-column:span 1}.space.wide .space-img,.space.narrow .space-img{aspect-ratio:4/3}}
 
-  /* INFO TABLE */
-  .info{display:grid;grid-template-columns:1fr 1.3fr;gap:4rem;align-items:start}
-  .info-text h3{font-family:var(--serif-en);font-size:.85rem;letter-spacing:.4em;color:var(--gold);margin-bottom:1rem;text-transform:uppercase}
-  .info-text h4{font-weight:500;font-size:1.5rem;letter-spacing:.15em;line-height:1.7;margin-bottom:1.5rem}
-  .info-text p{color:var(--ink-sub);font-size:1rem;line-height:2;margin-bottom:1rem}
-  .info-list{list-style:none;border-top:1px solid var(--line)}
-  .info-list li{display:grid;grid-template-columns:120px 1fr;gap:1rem;padding:1.1rem 0;border-bottom:1px solid var(--line);font-size:.95rem;align-items:baseline}
-  .info-list .k{font-family:var(--serif-en);color:var(--gold);letter-spacing:.25em;font-size:.78rem;text-transform:uppercase}
-  .info-list .v{color:var(--ink-sub);line-height:1.8}
+  /* SLEEP DESIGN (reasons) */
+  .sleep{padding:10rem 3rem;background:var(--surface);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+  .sleep-inner{max-width:1200px;margin:0 auto}
+  .sleep-head{display:grid;grid-template-columns:1fr 1.2fr;gap:4rem;align-items:end;margin-bottom:5rem}
+  .sleep-head p{color:var(--ink-sub);line-height:2.1;font-size:1rem}
+  .sleep-list{border-top:1px solid var(--line)}
+  .sleep-row{display:grid;grid-template-columns:90px 1fr 1.6fr 60px;gap:2.5rem;padding:3rem 0;border-bottom:1px solid var(--line);align-items:start;transition:background .4s;position:relative}
+  .sleep-row:hover{background:rgba(200,169,106,.03)}
+  .sleep-row .num{font-family:var(--serif-en);font-size:2.2rem;color:var(--gold);letter-spacing:.1em;line-height:1;font-weight:300}
+  .sleep-row h3{font-family:var(--serif-jp);font-weight:500;font-size:1.25rem;letter-spacing:.15em;line-height:1.7;color:var(--ink);margin-bottom:.5rem}
+  .sleep-row h3 .en{display:block;font-family:var(--serif-en);font-size:.72rem;letter-spacing:.35em;color:var(--gold-soft);margin-top:.7rem;text-transform:uppercase;font-weight:400}
+  .sleep-row p{color:var(--ink-sub);font-size:.98rem;line-height:2;max-width:42rem}
+  .sleep-row .icon{color:var(--gold);display:flex;align-items:center;justify-content:flex-end;opacity:.7;transition:opacity .4s}
+  .sleep-row:hover .icon{opacity:1}
+  .sleep-row .icon svg{width:44px;height:44px}
+  @media (max-width:900px){.sleep{padding:5rem 1.2rem}.sleep-head{grid-template-columns:1fr;gap:1.5rem}.sleep-row{grid-template-columns:60px 1fr;gap:1rem 1.5rem;padding:2rem 0}.sleep-row p{grid-column:2;font-size:.93rem}.sleep-row .icon{display:none}}
 
-  /* CTA */
-  .cta{position:relative;max-width:none;margin:0;padding:8rem 2rem;text-align:center;background-image:linear-gradient(rgba(13,13,16,.7),rgba(13,13,16,.85)),url("exterior.jpg");background-size:cover;background-position:center;background-attachment:fixed;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  @media (max-width:860px){.cta{background-attachment:scroll}}
-  .cta .en{font-family:var(--serif-en);font-size:.9rem;letter-spacing:.55em;color:var(--gold);margin-bottom:1.5rem;text-transform:uppercase}
-  .cta h2{font-weight:500;font-size:clamp(1.5rem,3vw,2.2rem);letter-spacing:.25em;margin-bottom:1rem}
-  .cta p{color:var(--ink-sub);max-width:38rem;margin:1.5rem auto 2.5rem;line-height:2.1}
-  .btn{display:inline-block;padding:1.1rem 3.5rem;border:1px solid var(--gold);color:var(--gold);font-family:var(--serif-en);font-size:.85rem;letter-spacing:.4em;text-transform:uppercase;transition:all .4s;cursor:pointer;background:transparent}
+  /* OPTIONS */
+  .options{padding:8rem 3rem;border-bottom:1px solid var(--line-soft)}
+  .options-inner{max-width:1100px;margin:0 auto}
+  .options-head{text-align:center;margin-bottom:4rem}
+  .options-head .eyebrow{justify-content:center}
+  .options-head .eyebrow::before{display:none}
+  .options-flex{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+  .opt{padding:3rem 2.5rem;border:1px solid var(--line);background:var(--surface-2);position:relative;transition:all .4s}
+  .opt:hover{border-color:var(--gold);background:rgba(200,169,106,.04)}
+  .opt .no{font-family:var(--serif-en);font-size:.75rem;letter-spacing:.4em;color:var(--gold);margin-bottom:1.5rem;text-transform:uppercase}
+  .opt h3{font-family:var(--serif-jp);font-weight:500;font-size:1.2rem;letter-spacing:.16em;margin-bottom:1.2rem;line-height:1.7}
+  .opt p{color:var(--ink-sub);font-size:.95rem;line-height:2}
+  .opt .icon{position:absolute;top:2.2rem;right:2.2rem;color:var(--gold);opacity:.45}
+  .opt .icon svg{width:32px;height:32px}
+  @media (max-width:700px){.options{padding:5rem 1.2rem}.options-flex{grid-template-columns:1fr}}
+
+  /* JOURNAL (interview / doctor's voice) */
+  .journal{padding:10rem 3rem;background:var(--bg);position:relative;overflow:hidden}
+  .journal-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1}
+  .journal-head{margin-bottom:5rem}
+  .journal-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:5rem;align-items:start}
+  .journal-portrait{aspect-ratio:3/4;background:var(--surface-2) center/cover;position:relative;border:1px solid var(--line)}
+  .journal-portrait .meta{position:absolute;bottom:1.5rem;left:1.5rem;right:1.5rem;background:rgba(13,13,16,.75);backdrop-filter:blur(6px);padding:1.2rem 1.4rem;border:1px solid var(--line)}
+  .journal-portrait .meta .role{font-family:var(--sans-en);font-size:.65rem;letter-spacing:.4em;text-transform:uppercase;color:var(--accent);margin-bottom:.4rem}
+  .journal-portrait .meta .name{font-family:var(--serif-jp);font-weight:500;font-size:1rem;letter-spacing:.2em;color:var(--ink)}
+  .journal-body .quote{font-family:var(--serif-jp);font-size:clamp(1.35rem,2.3vw,1.9rem);line-height:1.95;letter-spacing:.1em;color:var(--ink);font-weight:500;margin-bottom:2.5rem;position:relative;padding-left:2rem}
+  .journal-body .quote::before{content:"";position:absolute;left:0;top:.5rem;bottom:.5rem;width:2px;background:var(--gold)}
+  .journal-body p{color:var(--ink-sub);font-size:1rem;line-height:2.1;margin-bottom:1.2rem}
+  .journal-body .byline{margin-top:2.5rem;font-family:var(--sans-en);font-size:.7rem;letter-spacing:.4em;text-transform:uppercase;color:var(--ink-dim)}
+  @media (max-width:900px){.journal{padding:5rem 1.2rem}.journal-grid{grid-template-columns:1fr;gap:2.5rem}}
+
+  /* FULL BLEED IMAGE */
+  .bleed{position:relative;height:60vh;min-height:420px;background-size:cover;background-position:center;overflow:hidden}
+  .bleed::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(13,13,16,.35),rgba(13,13,16,.55))}
+  .bleed-text{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:1;text-align:center;padding:2rem}
+  .bleed-text .ey{font-family:var(--sans-en);font-size:.75rem;letter-spacing:.5em;text-transform:uppercase;color:var(--accent);margin-bottom:1.5rem;text-shadow:0 2px 6px rgba(0,0,0,.8)}
+  .bleed-text h3{font-family:var(--serif-jp);font-weight:500;font-size:clamp(1.5rem,3vw,2.5rem);letter-spacing:.2em;line-height:1.8;color:#fbf8f1;max-width:30em;margin:0 auto;text-shadow:0 2px 16px rgba(0,0,0,.8)}
+  @media (max-width:700px){.bleed{height:50vh;min-height:340px}}
+
+  /* INFORMATION */
+  .info{padding:10rem 3rem}
+  .info-inner{max-width:1100px;margin:0 auto}
+  .info-head{display:grid;grid-template-columns:1fr 1.3fr;gap:4rem;align-items:end;margin-bottom:4rem}
+  .info-head p{color:var(--ink-sub);font-size:1rem;line-height:2.1;max-width:36rem}
+  .info-table{list-style:none;border-top:1px solid var(--line)}
+  .info-table li{display:grid;grid-template-columns:200px 1fr;gap:2rem;padding:1.4rem 0;border-bottom:1px solid var(--line);align-items:baseline}
+  .info-table .k{font-family:var(--sans-en);font-size:.72rem;letter-spacing:.4em;text-transform:uppercase;color:var(--accent);font-weight:400}
+  .info-table .v{color:var(--ink);font-size:1rem;line-height:1.85}
+  @media (max-width:700px){.info{padding:5rem 1.2rem}.info-head{grid-template-columns:1fr;gap:1.5rem}.info-table li{grid-template-columns:1fr;gap:.3rem;padding:1.2rem 0}}
+
+  /* BOOKING */
+  .booking{position:relative;padding:12rem 3rem;text-align:center;background-image:linear-gradient(rgba(13,13,16,.72),rgba(13,13,16,.88)),url("entrance.jpg");background-size:cover;background-position:center;border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+  .booking-inner{max-width:720px;margin:0 auto;position:relative;z-index:1}
+  .booking .eyebrow{justify-content:center;margin-bottom:2rem}
+  .booking .eyebrow::before{display:none}
+  .booking h2{font-family:var(--serif-jp);font-weight:500;font-size:clamp(1.8rem,3.6vw,3rem);letter-spacing:.2em;line-height:1.6;margin-bottom:2rem;color:#fbf8f1;text-shadow:0 2px 14px rgba(0,0,0,.7)}
+  .booking p{color:var(--ink-sub);font-size:1rem;line-height:2.1;margin-bottom:3rem}
+  .btn-row{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:.8rem;padding:1.2rem 3.2rem;border:1px solid var(--gold);color:var(--gold);font-family:var(--sans-en);font-size:.75rem;letter-spacing:.4em;text-transform:uppercase;transition:all .4s;background:transparent;font-weight:400}
   .btn:hover{background:var(--gold);color:var(--bg)}
-  .btn + .btn{margin-left:1rem}
-  @media (max-width:600px){.btn + .btn{margin-left:0;margin-top:1rem}}
+  .btn.primary{background:var(--gold);color:var(--bg)}
+  .btn.primary:hover{background:var(--accent);border-color:var(--accent)}
+  @media (max-width:700px){.booking{padding:6rem 1.2rem}}
 
-  footer{border-top:1px solid var(--line);padding:3rem 2rem 2rem;text-align:center;font-size:.78rem;letter-spacing:.2em;color:var(--ink-dim);background:var(--surface)}
-  footer .brand{font-size:1rem;margin-bottom:1rem;display:block}
-  footer .links{margin:1rem 0 1.5rem;display:flex;justify-content:center;gap:2rem;flex-wrap:wrap}
-  footer .links a{color:var(--ink-sub);font-size:.75rem;letter-spacing:.25em}
-  footer .copyright{color:var(--ink-dim);font-family:var(--serif-en);letter-spacing:.3em;font-size:.7rem}
-
-  @media(max-width:860px){
-    header{padding:.9rem 1rem}
-    nav ul{gap:.9rem}
-    nav a{font-size:.62rem;letter-spacing:.1em}
-    section{padding:4.5rem 1.2rem}
-    #concept{padding:5rem 1.2rem}
-    .concept-body{padding:2rem 1.4rem}
-    .info{grid-template-columns:1fr;gap:2rem}
-  }
+  /* FOOTER */
+  footer{background:var(--surface);padding:5rem 3rem 2.5rem;border-top:1px solid var(--line-soft)}
+  .footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:3rem;max-width:1200px;margin:0 auto 3rem}
+  .footer-brand .brand{font-size:1.1rem;margin-bottom:1.2rem;display:block}
+  .footer-brand p{color:var(--ink-dim);font-size:.85rem;letter-spacing:.15em;line-height:2;max-width:24rem}
+  .footer-col h5{font-family:var(--sans-en);font-size:.7rem;letter-spacing:.4em;text-transform:uppercase;color:var(--accent);margin-bottom:1.2rem;font-weight:400}
+  .footer-col ul{list-style:none}
+  .footer-col li{margin-bottom:.6rem}
+  .footer-col a{color:var(--ink-sub);font-size:.85rem;letter-spacing:.12em}
+  .footer-col a:hover{color:var(--gold)}
+  .footer-bottom{display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;padding-top:2rem;border-top:1px solid var(--line);gap:1rem;flex-wrap:wrap}
+  .footer-bottom .copy{font-family:var(--serif-en);font-size:.75rem;letter-spacing:.3em;color:var(--ink-dim)}
+  .footer-bottom .note{font-family:var(--sans-en);font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-dim)}
+  @media (max-width:860px){footer{padding:3rem 1.2rem 2rem}.footer-top{grid-template-columns:1fr 1fr;gap:2rem}.footer-bottom{justify-content:center;text-align:center}}
 </style>
 </head>
 <body>
 
 <header>
-  <div class="brand">THE <span>HOSPITEL</span></div>
+  <div class="brand">THE<span class="dot">·</span>HOSPITEL</div>
   <nav>
     <ul>
-      <li><a href="#concept">Concept</a></li>
-      <li><a href="#reasons">Sleep</a></li>
-      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#prologue">Prologue</a></li>
+      <li><a href="#feature">Sanctuary</a></li>
+      <li><a href="#story">Story</a></li>
+      <li><a href="#spaces">Spaces</a></li>
+      <li><a href="#sleep">Sleep</a></li>
+      <li><a href="#journal">Journal</a></li>
       <li><a href="#info">Info</a></li>
-      <li><a href="#contact">Booking</a></li>
+      <li><a href="#booking">Booking</a></li>
     </ul>
   </nav>
 </header>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-inner">
-    <div class="en">Doctor-Curated Sleep Sanctuary</div>
-    <h1>
-      THE HOSPITEL
-      <span class="jp">医師監修・安眠特化型 1軒家ホテル</span>
-    </h1>
+  <div class="hero-head">
+    <div class="label">Tokyo · Private Stay</div>
+    <div class="index">N°01 / Sleep Sanctuary</div>
+  </div>
+  <div class="hero-body">
+    <div class="kicker">Doctor-Curated Sleep Sanctuary</div>
+    <h1>The art<br />of <em>deep</em> sleep.</h1>
+    <div class="sub">医師監修・安眠特化型 1軒家ホテル</div>
     <p class="lead">
-      旅の疲れを、深い眠りで癒す。<br />
-      医師の知見で設計された、東京の隠れ家。
+      旅の疲れを、深い眠りで解き放つ。<br />
+      医師の知見で設計された、東京の夜の隠れ家。
     </p>
   </div>
-  <div class="scroll">SCROLL</div>
-</section>
-
-<!-- CONCEPT -->
-<section id="concept">
-  <div class="section-head">
-    <span class="en">Concept</span>
-    <h2>開業への思い</h2>
-  </div>
-  <div class="concept-body">
-    <p>日本という素晴らしい国を、もっと多くの方に知ってほしい。</p>
-    <p>日本人にとって当たり前のことでも、外国の方にとっては大変魅力的なのが今の日本です。治安がよく、食事が美味しく、観光地も日帰り可能なエリアに密集している。浅草、スカイツリー、銀座、渋谷、新宿——異なる顔を持つ街が密集している都市は、世界でも稀有な存在です。</p>
-    <p>けれど旅となると、長旅の疲れで思うように観光を楽しめないことも。それは、すごくもったいないことだと思いました。</p>
-    <p class="highlight">
-      旅館で安眠することができたら、<br />
-      次の日を思いっきり楽しめるのではないか。
-    </p>
-    <p>医師として働く中で、睡眠薬を飲んでいる方の多さに気づきました。睡眠は誰にでも関わる問題で、私自身も不眠に悩んだ時期があります。だからこそ、どのように環境を整えれば良質な睡眠を取れるのか——医師として追求してきました。</p>
-    <p>その知識と経験を応用し、長旅で疲れた体を安眠で存分に回復させ、翌日を思う存分楽しんでいただきたい。さらには旅が終わった後の日常にも、ここでの体験を持ち帰っていただき、人生の質を上げてほしい。</p>
-    <p>そんな想いで、この THE HOSPITEL を開業しました。</p>
-    <div class="signature">— Founder, Doctor of Medicine</div>
+  <div class="hero-foot">
+    <div class="meta">
+      <span><b>1日1組</b>One Group / Night</span>
+      <span><b>Doctor</b>Curated by MD</span>
+      <span><b>Tokyo</b>Private Residence</span>
+    </div>
+    <div class="scroll">Scroll</div>
   </div>
 </section>
 
-<!-- REASONS -->
-<section id="reasons">
-  <div class="section-head">
-    <span class="en">Why You Sleep Well Here</span>
-    <h2>安眠できる理由</h2>
-  </div>
-  <p class="reasons-intro">
-    医師の知見と最新の睡眠科学を融合させた、<br />
-    THE HOSPITEL ならではの 6 つのこだわり。
-  </p>
-
-  <div class="reasons-grid">
-    <div class="reason">
-      <div class="num">01</div>
-      <h3>サーカディアンリズム照明</h3>
-      <p>時間帯に応じて色温度と照度が変化する照明を導入。体内時計に寄り添い、自然な入眠と覚醒を促します。</p>
-    </div>
-    <div class="reason">
-      <div class="num">02</div>
-      <h3>ドクターズチョイス寝具</h3>
-      <p>マットレス・枕・寝具すべてを医師の視点で厳選。体圧分散と寝姿勢の最適化で、深い眠りへ。</p>
-    </div>
-    <div class="reason">
-      <div class="num">03</div>
-      <h3>薬膳風呂</h3>
-      <p>睡眠の質を高める漢方の知見を取り入れたお風呂。湯上りから入眠までを優しく整えます。</p>
-    </div>
-    <div class="reason">
-      <div class="num">04</div>
-      <h3>薬膳茶・漢方プレゼント</h3>
-      <p>就寝前にお召し上がりいただく安眠サポートの薬膳茶と、お持ち帰りいただける漢方を ご用意。</p>
-    </div>
-    <div class="reason">
-      <div class="num">05</div>
-      <h3>ウェイクアップライト</h3>
-      <p>朝日のように徐々に明るくなる目覚まし照明で、自然ですっきりとした目覚めをサポート。</p>
-    </div>
-    <div class="reason">
-      <div class="num">06</div>
-      <h3>シックな安眠空間</h3>
-      <p>視覚的ノイズを排した落ち着いた内装。視覚から脳を鎮め、深い休息へと誘います。</p>
-    </div>
-  </div>
-
-  <div class="options-divider">
-    <span class="label">Optional Experiences</span>
-  </div>
-
-  <div class="options-grid">
-    <div class="option">
-      <div class="num">OPTION 01</div>
-      <h3>デジタルデトックス</h3>
-      <p>夜21時以降、スマートフォンをタイムロッキングコンテナまたはスタッフがお預かり。心と眠りを情報から解き放ちます。</p>
-    </div>
-    <div class="option">
-      <div class="num">OPTION 02</div>
-      <h3>オーラリングによる睡眠分析</h3>
-      <p>睡眠分析デバイス Oura Ring を装着し、滞在中の睡眠データを医師がフィードバック。日常へのヒントを持ち帰れます。</p>
-    </div>
-  </div>
-</section>
-
-<!-- GALLERY -->
-<section class="gallery" id="gallery">
-  <div class="gallery-inner">
-    <div class="section-head">
-      <span class="en">Gallery</span>
-      <h2>邸宅の静謐</h2>
-    </div>
-    <div class="gallery-grid">
-      <div class="gallery-item feature has-image" style="background-image:linear-gradient(transparent 50%,rgba(13,13,16,.5)),url('exterior.jpg')"></div>
-      <div class="gallery-item">Bedroom · Coming Soon</div>
-      <div class="gallery-item">Bath · Coming Soon</div>
-      <div class="gallery-item">Lounge · Coming Soon</div>
-      <div class="gallery-item">Detail · Coming Soon</div>
-    </div>
-  </div>
-</section>
-
-<!-- INFO -->
-<section id="info">
-  <div class="section-head">
-    <span class="en">Information</span>
-    <h2>施設概要</h2>
-  </div>
-  <div class="info">
-    <div class="info-text">
-      <h3>The Property</h3>
-      <h4>1日1組限定<br />静かな住宅街の隠れ家</h4>
-      <p>
-        東京の落ち着いた住宅街に佇む、ダーク基調の一軒家。
-        外の喧騒から解き放たれ、ご家族・ご友人と過ごす特別な滞在をお届けします。
-      </p>
-      <p>
-        館内すべてが安眠のために設計されています。
-      </p>
-    </div>
+<!-- PROLOGUE -->
+<section class="prologue" id="prologue">
+  <div class="section-inner prologue-grid">
     <div>
-      <ul class="info-list">
-        <li><span class="k">Location</span><span class="v">東京都内（詳細は予約確定後にご案内）</span></li>
-        <li><span class="k">Type</span><span class="v">1棟貸し / 1日1組限定</span></li>
-        <li><span class="k">Capacity</span><span class="v">最大 — 名（調整中）</span></li>
-        <li><span class="k">Check-in</span><span class="v">15:00 〜</span></li>
-        <li><span class="k">Check-out</span><span class="v">〜 11:00</span></li>
-        <li><span class="k">Amenity</span><span class="v">サーカディアン照明 / 高級寝具 / 薬膳風呂 / 薬膳茶</span></li>
-        <li><span class="k">Option</span><span class="v">デジタルデトックス / Oura Ring 睡眠分析</span></li>
+      <div class="no">No. 01</div>
+      <div class="aside">
+        A Night<br />
+        of True Rest<br />
+        in Tokyo
+      </div>
+    </div>
+    <div class="prologue-text">
+      <h2 class="h-display">夜の質が、<em>旅の質</em>を決める。</h2>
+      <p>旅の魅力を心ゆくまで味わうための、最初の一晩を。</p>
+      <p>THE HOSPITEL は、医師監修の安眠特化型1軒家ホテル。旅の疲れを、深い眠りで解き放つための静かな邸宅です。</p>
+      <p>東京の落ち着いた住宅街に佇む一棟に、1日1組の皆さまだけをお迎えします。照明、寝具、湯、薬膳——睡眠科学と医師の知見で整えられた夜が、翌日の景色をそっと変える。</p>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED SHOWCASE -->
+<section class="feature" id="feature">
+  <div class="feature-inner feature-grid">
+    <div class="feature-image">
+      <img src="exterior.jpg" alt="THE HOSPITEL 外観" />
+      <div class="tag">The Residence</div>
+    </div>
+    <div class="feature-text">
+      <div class="eyebrow">Featured Sanctuary</div>
+      <h2 class="h-display">夜に沈む、<br /><em>邸宅</em>のかたち。</h2>
+      <p>深い墨色に塗り込められた外壁、玄関先に灯るアンバーの光。都会の喧騒が遠のいていく、静謐な佇まい。</p>
+      <p>中に入れば、ダーク基調の内装、やわらかな間接照明、香りのない清浄な空気——すべてが深い眠りへと意識を誘うよう設計されています。</p>
+      <dl class="detail">
+        <dt>Type</dt><dd>1棟貸し / Private Residence</dd>
+        <dt>Capacity</dt><dd>1日1組限定</dd>
+        <dt>Design</dt><dd>Doctor-Curated Sleep Design</dd>
+        <dt>Location</dt><dd>東京都内 / Tokyo</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story" id="story">
+  <div class="story-inner">
+    <div class="story-head">
+      <div class="eyebrow">Our Story</div>
+      <h2 class="h-display">開業への、<em>想い</em>。</h2>
+    </div>
+    <div class="story-body">
+      <p class="lead-para">日本という素晴らしい国を、もっと多くの方に知ってほしい。</p>
+      <p>日本人にとって当たり前のことでも、外国の方にとっては大変魅力的なのが今の日本です。治安がよく、食事が美味しく、観光地も日帰り可能なエリアに密集している。浅草、スカイツリー、銀座、渋谷、新宿——異なる顔を持つ街が密集している都市は、世界でも稀有な存在です。</p>
+      <p>けれど旅となると、長旅の疲れで思うように観光を楽しめないことも。それは、すごくもったいないことだと思いました。</p>
+      <span class="pull">旅館で安眠することができたら、<br />次の日を思いっきり楽しめるのではないか。</span>
+      <p>医師として働く中で、睡眠薬を飲んでいる方の多さに気づきました。睡眠は誰にでも関わる問題で、私自身も不眠に悩んだ時期があります。だからこそ、どのように環境を整えれば良質な睡眠を取れるのか——医師として追求してきました。</p>
+      <p>その知識と経験を応用し、長旅で疲れた体を安眠で存分に回復させ、翌日を思う存分楽しんでいただきたい。さらには旅が終わった後の日常にも、ここでの体験を持ち帰っていただき、人生の質を上げてほしい。</p>
+      <p>そんな想いで、この THE HOSPITEL を開業しました。</p>
+      <div class="signoff">
+        <div>
+          <div class="name">INASE · Yusuke Sato</div>
+          <div class="title">Founder · Doctor of Medicine</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPACES -->
+<section class="spaces" id="spaces">
+  <div class="spaces-inner">
+    <div class="spaces-head">
+      <div>
+        <div class="eyebrow">The Spaces</div>
+        <h2 class="h-display">眠りのための、<br /><em>静謐</em>な空間。</h2>
+      </div>
+      <p class="note">
+        ダーク基調の内装は、視覚的なノイズを徹底的に削ぎ落とし、脳の覚醒を静かに鎮めます。灯り、壁の色、素材感——すべてが深い休息のために選ばれています。
+      </p>
+    </div>
+    <div class="spaces-grid">
+      <a class="space wide" href="#gallery" aria-label="Bedroom">
+        <div class="space-img" style="background-image:url('bedroom.jpg')"></div>
+        <div class="space-meta">
+          <div class="num">01</div>
+          <h3>洋寝室</h3>
+          <div class="en">Bedroom</div>
+        </div>
+      </a>
+      <a class="space narrow" href="#gallery" aria-label="Bath">
+        <div class="space-img" style="background-image:url('bath.jpg')"></div>
+        <div class="space-meta">
+          <div class="num">02</div>
+          <h3>薬膳風呂</h3>
+          <div class="en">Medicinal Bath</div>
+        </div>
+      </a>
+      <a class="space third" href="#gallery" aria-label="Japanese Bedroom">
+        <div class="space-img" style="background-image:url('bedroom-jp.jpg')"></div>
+        <div class="space-meta">
+          <div class="num">03</div>
+          <h3>和寝室</h3>
+          <div class="en">Japanese Room</div>
+        </div>
+      </a>
+      <a class="space third" href="#gallery" aria-label="Tatami">
+        <div class="space-img" style="background-image:url('tatami.jpg')"></div>
+        <div class="space-meta">
+          <div class="num">04</div>
+          <h3>畳の間</h3>
+          <div class="en">Tatami Suite</div>
+        </div>
+      </a>
+      <a class="space third" href="#gallery" aria-label="Lounge">
+        <div class="space-img" style="background-image:url('lounge.jpg')"></div>
+        <div class="space-meta">
+          <div class="num">05</div>
+          <h3>ラウンジ</h3>
+          <div class="en">Lounge</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- BLEED IMAGE -->
+<section class="bleed" style="background-image:url('bedroom-2.jpg')">
+  <div class="bleed-text">
+    <div class="ey">A Night of True Rest</div>
+    <h3>深い眠りは、<br />明日の景色を変える。</h3>
+  </div>
+</section>
+
+<!-- SLEEP DESIGN -->
+<section class="sleep" id="sleep">
+  <div class="sleep-inner">
+    <div class="sleep-head">
+      <div>
+        <div class="eyebrow">Sleep Design</div>
+        <h2 class="h-display">安眠のための、<br /><em>6 つ</em>の設計。</h2>
+      </div>
+      <p>
+        医師の知見と最新の睡眠科学を融合させた、THE HOSPITEL ならではの空間設計。体内時計、寝具、湯、薬膳、光、視覚——眠りに関わるすべての要素を、医師の手で整えています。
+      </p>
+    </div>
+    <div class="sleep-list">
+      <div class="sleep-row">
+        <div class="num">01</div>
+        <div>
+          <h3>サーカディアンリズム照明<span class="en">Circadian Lighting</span></h3>
+        </div>
+        <p>時間帯に応じて色温度と照度が変化する照明を導入。日没から就寝、朝の覚醒まで、体内時計に寄り添うように光が移ろい、自然な入眠と目覚めを促します。</p>
+        <div class="icon">
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="32" r="9"/><path d="M32 8v6M32 50v6M8 32h6M50 32h6M15 15l4.2 4.2M44.8 44.8l4.2 4.2M15 49l4.2-4.2M44.8 19.2l4.2-4.2"/></svg>
+        </div>
+      </div>
+      <div class="sleep-row">
+        <div class="num">02</div>
+        <div>
+          <h3>ドクターズチョイス寝具<span class="en">Curated Bedding</span></h3>
+        </div>
+        <p>マットレス・枕・寝具のすべてを医師の視点で厳選。体圧分散と寝姿勢の最適化で、身体に負担のかからない深い眠りへと導きます。</p>
+        <div class="icon">
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 42v-8a6 6 0 0 1 6-6h28a12 12 0 0 1 12 12v2"/><path d="M4 42h56v6H4z"/><path d="M4 48v6M60 48v6"/><path d="M14 34h18a4 4 0 0 1 4 4v0H14v-4z"/></svg>
+        </div>
+      </div>
+      <div class="sleep-row">
+        <div class="num">03</div>
+        <div>
+          <h3>薬膳風呂<span class="en">Medicinal Bath</span></h3>
+        </div>
+        <p>睡眠の質を高める漢方の知見を取り入れたお風呂。湯上がりから入眠までの時間を、深部体温の自然な低下とともに穏やかに整えます。</p>
+        <div class="icon">
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M8 32h48v10a10 10 0 0 1-10 10H18a10 10 0 0 1-10-10z"/><path d="M4 32h56"/><path d="M44 32v-6a4 4 0 0 0-4-4h-2a4 4 0 0 1-4-4"/><path d="M22 14c-1.5 2.5-1.5 5 0 7M28 10c-1.5 3-1.5 6 0 9M34 14c-1.5 2.5-1.5 5 0 7" opacity=".7"/></svg>
+        </div>
+      </div>
+      <div class="sleep-row">
+        <div class="num">04</div>
+        <div>
+          <h3>薬膳茶・漢方プレゼント<span class="en">Herbal Gift</span></h3>
+        </div>
+        <p>就寝前にお召し上がりいただく安眠サポートの薬膳茶と、日常にお持ち帰りいただける漢方をご用意。旅の記憶を、体に優しく残します。</p>
+        <div class="icon">
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 26h32v16a10 10 0 0 1-10 10H22a10 10 0 0 1-10-10z"/><path d="M44 30h4a6 6 0 0 1 0 12h-4"/><path d="M12 56h36"/><path d="M22 12c-2 3-2 6 0 9M28 8c-2 4-2 8 0 12M34 12c-2 3-2 6 0 9" opacity=".7"/></svg>
+        </div>
+      </div>
+      <div class="sleep-row">
+        <div class="num">05</div>
+        <div>
+          <h3>ウェイクアップライト<span class="en">Wake-up Light</span></h3>
+        </div>
+        <p>朝日のように徐々に明るくなる目覚まし照明。静かにコルチゾールの分泌を促し、目覚まし音ではなく光で、すっきりとした朝を迎えます。</p>
+        <div class="icon">
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 50h52"/><path d="M14 50a18 18 0 0 1 36 0"/><path d="M32 18v8M32 12v2M16 30l4 4M48 30l-4 4M8 42h4M52 42h4" opacity=".85"/></svg>
+        </div>
+      </div>
+      <div class="sleep-row">
+        <div class="num">06</div>
+        <div>
+          <h3>シックな安眠空間<span class="en">Calm Interior</span></h3>
+        </div>
+        <p>視覚的ノイズを排した落ち着いた内装。深い墨色、間接照明、静かな素材感——視覚から脳を鎮め、深い休息へと誘います。</p>
+        <div class="icon">
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M44 36a16 16 0 1 1-16-20 13 13 0 0 0 16 20z"/><path d="M14 16l1.5 3 3 1.5-3 1.5L14 25l-1.5-3-3-1.5 3-1.5z" opacity=".7"/></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OPTIONS -->
+<section class="options">
+  <div class="options-inner">
+    <div class="options-head">
+      <div class="eyebrow">Optional Experiences</div>
+      <h2 class="h-display">夜を、<em>さらに深く</em>。</h2>
+    </div>
+    <div class="options-flex">
+      <div class="opt">
+        <div class="icon">
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="20" y="8" width="24" height="48" rx="4"/><line x1="20" y1="14" x2="44" y2="14"/><line x1="20" y1="50" x2="44" y2="50"/><line x1="14" y1="22" x2="50" y2="42" stroke-width="2"/></svg>
+        </div>
+        <div class="no">Option 01</div>
+        <h3>デジタルデトックス</h3>
+        <p>夜21時以降、スマートフォンをタイムロッキングコンテナまたはスタッフがお預かり。心と眠りを情報の波から解き放ちます。</p>
+      </div>
+      <div class="opt">
+        <div class="icon">
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="32" cy="32" rx="18" ry="12"/><ellipse cx="32" cy="32" rx="14" ry="9"/><circle cx="32" cy="32" r="2" fill="currentColor"/></svg>
+        </div>
+        <div class="no">Option 02</div>
+        <h3>オーラリングで睡眠分析</h3>
+        <p>睡眠分析デバイス Oura Ring を装着し、滞在中の睡眠データを医師がフィードバック。日常の眠りへのヒントを持ち帰れます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNAL -->
+<section class="journal" id="journal">
+  <div class="journal-inner">
+    <div class="journal-head">
+      <div class="eyebrow">Journal · Voice of the Doctor</div>
+      <h2 class="h-display">医師が語る、<em>夜の設計</em>。</h2>
+    </div>
+    <div class="journal-grid">
+      <div class="journal-portrait" style="background-image:url('bedroom-jp.jpg')">
+        <div class="meta">
+          <div class="role">Founder · Doctor of Medicine</div>
+          <div class="name">INASE · 佐藤 雄亮</div>
+        </div>
+      </div>
+      <div class="journal-body">
+        <p class="quote">
+          睡眠は、医療の言葉で<br />
+          「治療」ではなく「回復」と呼ばれます。<br />
+          回復できる夜を設計したい——<br />
+          そこから、すべてが始まりました。
+        </p>
+        <p>
+          医療の現場では、睡眠薬に頼らざるを得ない方々と日々向き合ってきました。一方で、環境さえ整えば、薬に頼らずとも深い眠りに辿り着けることも、科学は示しています。
+        </p>
+        <p>
+          THE HOSPITEL は、病院でも、ただの旅館でもありません。医学と宿泊体験の境界で、「眠りそのもの」を設計する場所。光、温度、香り、寝具、湯、茶——夜を構成するすべての要素に、医師の意図を宿らせました。
+        </p>
+        <p>
+          旅の疲れを癒やし、日常の眠りを見つめ直すきっかけに。そんな夜を、あなたのために用意しています。
+        </p>
+        <div class="byline">— Interview · THE HOSPITEL Journal</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLEED 2 -->
+<section class="bleed" style="background-image:url('bath.jpg')">
+  <div class="bleed-text">
+    <div class="ey">Doctor-Curated Wellness</div>
+    <h3>医師の知見が、<br />ひと夜の質を変える。</h3>
+  </div>
+</section>
+
+<!-- INFORMATION -->
+<section class="info" id="info">
+  <div class="info-inner">
+    <div class="info-head">
+      <div>
+        <div class="eyebrow">Information</div>
+        <h2 class="h-display">施設概要</h2>
+      </div>
+      <p>
+        1日1組限定、東京の静かな住宅街に佇む一棟貸しの隠れ家。チェックイン時刻や設備の詳細については、ご予約確定後に個別にご案内いたします。
+      </p>
+    </div>
+    <ul class="info-table">
+      <li><span class="k">Location</span><span class="v">東京都内（詳細は予約確定後にご案内）</span></li>
+      <li><span class="k">Type</span><span class="v">1棟貸し / Private Residence</span></li>
+      <li><span class="k">Capacity</span><span class="v">1日1組限定</span></li>
+      <li><span class="k">Check-in</span><span class="v">15:00 〜</span></li>
+      <li><span class="k">Check-out</span><span class="v">〜 11:00</span></li>
+      <li><span class="k">Amenity</span><span class="v">サーカディアン照明 / ドクターズチョイス寝具 / 薬膳風呂 / 薬膳茶 / ウェイクアップライト</span></li>
+      <li><span class="k">Option</span><span class="v">デジタルデトックス / Oura Ring 睡眠分析・医師フィードバック</span></li>
+      <li><span class="k">Language</span><span class="v">日本語 / English</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section class="booking" id="booking">
+  <div class="booking-inner">
+    <div class="eyebrow">Reservation</div>
+    <h2>深い眠りを、<br />予約する。</h2>
+    <p>
+      THE HOSPITEL は完全予約制です。<br />
+      ご予約・空室状況・オプションに関するお問い合わせは、以下よりお気軽にご連絡ください。
+    </p>
+    <div class="btn-row">
+      <a href="mailto:info@the-hospitel.jp" class="btn primary">Book a Stay</a>
+      <a href="#" class="btn">Inquire</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <span class="brand">THE<span class="dot">·</span>HOSPITEL</span>
+      <p>医師監修・安眠特化型 1軒家ホテル。医学と宿泊体験の境界で、ひと夜の質を設計する場所。</p>
+    </div>
+    <div class="footer-col">
+      <h5>Discover</h5>
+      <ul>
+        <li><a href="#prologue">Prologue</a></li>
+        <li><a href="#feature">Sanctuary</a></li>
+        <li><a href="#story">Story</a></li>
+        <li><a href="#spaces">Spaces</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Experience</h5>
+      <ul>
+        <li><a href="#sleep">Sleep Design</a></li>
+        <li><a href="#journal">Journal</a></li>
+        <li><a href="#info">Information</a></li>
+        <li><a href="#booking">Booking</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="mailto:info@the-hospitel.jp">info@the-hospitel.jp</a></li>
+        <li><a href="#">Inquire</a></li>
       </ul>
     </div>
   </div>
-</section>
-
-<!-- CTA / BOOKING -->
-<section class="cta" id="contact">
-  <div class="en">Reservation</div>
-  <h2>深い眠りを、予約する</h2>
-  <p>
-    THE HOSPITEL は完全予約制です。<br />
-    ご予約方法・空室状況については、以下よりお問い合わせください。
-  </p>
-  <a href="mailto:info@the-hospitel.jp" class="btn">Inquire</a>
-  <a href="#" class="btn">Book Online</a>
-</section>
-
-<footer>
-  <span class="brand">THE <span style="color:var(--gold)">HOSPITEL</span></span>
-  <div class="links">
-    <a href="#concept">Concept</a>
-    <a href="#reasons">Sleep</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#info">Info</a>
-    <a href="#contact">Booking</a>
+  <div class="footer-bottom">
+    <div class="copy">© THE HOSPITEL · Doctor-Curated Sleep Sanctuary</div>
+    <div class="note">Tokyo · Private Residence</div>
   </div>
-  <div class="copyright">© THE HOSPITEL · Doctor-Curated Sleep Sanctuary</div>
 </footer>
 
 </body>
