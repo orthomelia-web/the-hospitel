@@ -249,7 +249,7 @@
   .menu-trigger .bars span:nth-child(1){width:100%}
   .menu-trigger .bars span:nth-child(2){width:65%;margin-left:auto}
   .menu-trigger:hover .bars span:nth-child(2){width:100%;margin-left:0}
-  @media (max-width:860px){header{padding:1rem 1.2rem;gap:.9rem}.brand{font-size:1rem;letter-spacing:.28em}.menu-trigger{font-size:.62rem;letter-spacing:.25em;gap:.6rem}.menu-trigger .bars{width:22px}}
+  @media (max-width:860px){header{padding:1rem 1.2rem;gap:.9rem;mix-blend-mode:normal;color:#fff;isolation:isolate;-webkit-transform:translateZ(0);transform:translateZ(0)}.brand{font-size:1rem;letter-spacing:.28em}.menu-trigger{font-size:.62rem;letter-spacing:.25em;gap:.6rem}.menu-trigger .bars{width:22px}}
   @media (max-width:520px){.menu-trigger > span:first-child{display:none}.menu-trigger{gap:0}header{gap:.5rem}.brand{font-size:.9rem;letter-spacing:.22em}}
 
   /* LANG TOGGLE */
@@ -591,6 +591,23 @@
     .footer-bottom .copy, .footer-bottom .note{font-size:.6rem;letter-spacing:.24em}
   }
 </style>
+<script>
+  /* Mobile: strip any #anchor on initial load so the page opens at the hero,
+     not at the section referenced in the URL (e.g. shared #story link). */
+  (function(){
+    try {
+      if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+      var isMobile = window.matchMedia && window.matchMedia('(max-width:860px)').matches;
+      if (isMobile && window.location.hash) {
+        history.replaceState(null, '', window.location.pathname + window.location.search);
+        var toTop = function(){ window.scrollTo(0, 0); };
+        toTop();
+        document.addEventListener('DOMContentLoaded', toTop);
+        window.addEventListener('load', toTop);
+      }
+    } catch(e) {}
+  })();
+</script>
 </head>
 <body class="lang-ja">
 
